@@ -149,5 +149,4 @@
     margin: 0px auto 0px auto;
     position: relative;
     margin-top: calc(var(--navbar-h) + 42px + 21px);
-    padding-bottom: 42vh;
 }
