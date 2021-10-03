@@ -337,7 +337,7 @@ function getBlogDetail(blogId){
             setUserBlogs(b);
         }
         apiBlog.resultErrFunction = apiBlog.resultErrFunction;
-        apiBlog.GetAuth("users/getBlogDraft?id="+blogId, t.token);
+        apiBlog.GetAuth("blogs/getBlogDraft?id="+blogId, t.token);
     }
     apiBlog.resultErrFunction = (t) => {
         console.log(t);
