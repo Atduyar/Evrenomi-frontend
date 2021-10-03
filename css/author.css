@@ -150,6 +150,9 @@
     position: relative;
     margin-top: calc(var(--navbar-h) + 42px + 21px);
 }
+#author-menu{
+    margin: 25px;
+}
 #author-menu button{
     text-align: left;
     display: inline-block;
