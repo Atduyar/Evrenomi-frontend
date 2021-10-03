@@ -1,4 +1,4 @@
-makeall: mIndex mblogs mblogView mlogin msignup muser mwrite github 
+makeall: mIndex mblogs mblogView mlogin msignup muser mwrite mauthor github 
 
 mIndex:
 	htmlCreator/main.exe Index blogs 
@@ -14,6 +14,8 @@ muser:
 	htmlCreator/main.exe user user
 mwrite:
 	htmlCreator/main.exe write write
+mauthor:
+	htmlCreator/main.exe author author
 
 
 
