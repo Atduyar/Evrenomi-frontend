@@ -133,8 +133,8 @@ function addElement(tagName, data="", des="", lock=false, menu=true){
     }
 }
 
-function addElementToEnd(tagName, data="", des="", lock=false){
-    icerikDiv.innerHTML += addElement(tagName, data, des, lock);
+function addElementToEnd(tagName, data="", des="", lock=false, menu=true){
+    icerikDiv.innerHTML += addElement(tagName, data, des, lock, menu);
 }
 function addElementToNext(thisItem, tagName){
     thisItem.outerHTML += addElement(tagName.toLocaleLowerCase());//outerHTML brok this element event
