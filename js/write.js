@@ -45,7 +45,7 @@ function addEvent(x){
     })
 }
 
-addElementToEnd("img","","",true);
+addElementToEnd("img","","",true, false);
 addElementToEnd("h","Baslık","",true);
 addElementToEnd("p","paragraf","");
 fixEvents();
