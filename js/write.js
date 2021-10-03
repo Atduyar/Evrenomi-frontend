@@ -95,40 +95,40 @@ function findNextElement(tagName){
     }
     return tagName;
 }
-function addElement(tagName, data="", des="", lock=false){
+function addElement(tagName, data="", des="", lock=false, menu=true){
     switch(tagName){
         case "p":
-            return getDefualtElement(`<p contenteditable class="textbox" placeholder="Type something...">${data}</p>`, "p", lock)
+            return getDefualtElement(`<p contenteditable class="textbox" placeholder="Type something...">${data}</p>`, "p", lock, menu)
             break;
         case "h":
-            return getDefualtElement(`<h1 contenteditable class="textbox title" placeholder="Type something...">${data}</h1>`, "h", lock)
+            return getDefualtElement(`<h1 contenteditable class="textbox title" placeholder="Type something...">${data}</h1>`, "h", lock, menu)
             break;
         case "quote":
-            return getDefualtElement(`<p contenteditable class="textbox quote" placeholder="Type something...">${data}</p>`, "quote", lock)
+            return getDefualtElement(`<p contenteditable class="textbox quote" placeholder="Type something...">${data}</p>`, "quote", lock, menu)
             break;
         case "a":
-            return getDefualtElement(`<a contenteditable class="textbox" spellcheck="false" placeholder="Type something...">${data}</a>`, "a", lock)
+            return getDefualtElement(`<a contenteditable class="textbox" spellcheck="false" placeholder="Type something...">${data}</a>`, "a", lock, menu)
             break;
         case "li":
         case "lı":
-            return getDefualtElement(`<li contenteditable class="textbox li" placeholder="Type something...">${data}</li>`, "li", lock)
+            return getDefualtElement(`<li contenteditable class="textbox li" placeholder="Type something...">${data}</li>`, "li", lock, menu)
             break;
         case "hr":
-            return getDefualtElement(`<hr>`, "hr", lock)
+            return getDefualtElement(`<hr>`, "hr", lock, menu)
             break;
         case "img":
         case "ımg":
             if(data == ""){
                 data = "https://api.atduyar.com/BlogImages/manzara.jpg";
             }
-            return getDefualtElement(`<img onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="https://api.atduyar.com/BlogImages/manzara.jpg"><p contenteditable class="textbox img" placeholder="Type some url...">${data}</p>`, "img", lock)
+            return getDefualtElement(`<img onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="https://api.atduyar.com/BlogImages/manzara.jpg"><p contenteditable class="textbox img" placeholder="Type some url...">${data}</p>`, "img", lock, menu)
             break;
         case "video":
         case "vıdeo":
             if(data == ""){
                 data = "https://www.youtube.com/embed/iik25wqIuFo";
             }
-            return getDefualtElement(`<iframe onerror="this.src='https://www.youtube.com/embed/iik25wqIuFo';" src="https://www.youtube.com/embed/iik25wqIuFo"></iframe><p contenteditable class="textbox video" placeholder="Type some url...">${data}</p>`, "img", lock)
+            return getDefualtElement(`<iframe onerror="this.src='https://www.youtube.com/embed/iik25wqIuFo';" src="https://www.youtube.com/embed/iik25wqIuFo"></iframe><p contenteditable class="textbox video" placeholder="Type some url...">${data}</p>`, "img", lock, menu)
             break;
     }
 }
@@ -275,7 +275,7 @@ function publishBlog(){
 
 //////////////
 
-function getDefualtElement(htl, itemTag, lock=false){
+function getDefualtElement(htl, itemTag, lock=false, menu=true){
     return `
     <div class="item" atdTag="${itemTag}" ${lock ? "lock" : ""} >
         <div class="item-plus" onclick="openItemMenu(this.parentElement)">
@@ -285,6 +285,7 @@ function getDefualtElement(htl, itemTag, lock=false){
                     <svg height="426.66667pt" viewBox="0 0 426.66667 426.66667" width="426.66667pt" xmlns="http://www.w3.org/2000/svg"><path d="m405.332031 192h-170.664062v-170.667969c0-11.773437-9.558594-21.332031-21.335938-21.332031-11.773437 0-21.332031 9.558594-21.332031 21.332031v170.667969h-170.667969c-11.773437 0-21.332031 9.558594-21.332031 21.332031 0 11.777344 9.558594 21.335938 21.332031 21.335938h170.667969v170.664062c0 11.777344 9.558594 21.335938 21.332031 21.335938 11.777344 0 21.335938-9.558594 21.335938-21.335938v-170.664062h170.664062c11.777344 0 21.335938-9.558594 21.335938-21.335938 0-11.773437-9.558594-21.332031-21.335938-21.332031zm0 0"/></svg>
                 </div>
             </div>
+            ${menu ? `
             <div class="menu">
                 <ul>
                     <li onclick="addElementToNext(this.parentElement.parentElement.parentElement.parentElement, 'h')">
@@ -320,7 +321,7 @@ function getDefualtElement(htl, itemTag, lock=false){
                         <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" style="&#10;    fill: red;&#10;"><g><path d="m424 64h-88v-16c0-26.467-21.533-48-48-48h-64c-26.467 0-48 21.533-48 48v16h-88c-22.056 0-40 17.944-40 40v56c0 8.836 7.164 16 16 16h8.744l13.823 290.283c1.221 25.636 22.281 45.717 47.945 45.717h242.976c25.665 0 46.725-20.081 47.945-45.717l13.823-290.283h8.744c8.836 0 16-7.164 16-16v-56c0-22.056-17.944-40-40-40zm-216-16c0-8.822 7.178-16 16-16h64c8.822 0 16 7.178 16 16v16h-96zm-128 56c0-4.411 3.589-8 8-8h336c4.411 0 8 3.589 8 8v40c-4.931 0-331.567 0-352 0zm313.469 360.761c-.407 8.545-7.427 15.239-15.981 15.239h-242.976c-8.555 0-15.575-6.694-15.981-15.239l-13.751-288.761h302.44z"/><path d="m256 448c8.836 0 16-7.164 16-16v-208c0-8.836-7.164-16-16-16s-16 7.164-16 16v208c0 8.836 7.163 16 16 16z"/><path d="m336 448c8.836 0 16-7.164 16-16v-208c0-8.836-7.164-16-16-16s-16 7.164-16 16v208c0 8.836 7.163 16 16 16z"/><path d="m176 448c8.836 0 16-7.164 16-16v-208c0-8.836-7.164-16-16-16s-16 7.164-16 16v208c0 8.836 7.163 16 16 16z"/></g></svg>
                     </li>`}
                 </ul>
-            </div>
+            </div>`:``}
             <div class="fake-menu"></div>
         </div>
         <div class="item-body">
