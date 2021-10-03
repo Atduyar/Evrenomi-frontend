@@ -7,9 +7,9 @@ var aaa;
 function addEvent(x){
     if(x.classList.contains("img")){
         x.addEventListener("input", (evt)=>{
-            changeImgeUrl(evt.target)
+            changeImgeUrl(evt.target);
         }, false);
-        changeImgeUrl(evt.target)
+        changeImgeUrl(evt.target);
     }
     if(x.classList.contains("video")){
         x.addEventListener("input", (evt)=>{
