@@ -351,7 +351,7 @@ function getBlogDetail(blogId){
 function setBlogWrite(b){
     
     for(var i = 0;i< b.blogContent.length;i++){
-        addElementToEnd(b.blogContent[i].type,b.blogContent[i].data,b.blogContent[i].description);
+        addElementToEnd(b.blogContent[i].type,b.blogContent[i].data,b.blogContent[i].description,i<2);
     }
 }
 
