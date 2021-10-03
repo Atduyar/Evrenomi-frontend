@@ -44,7 +44,7 @@ function setUserBlogs(b){
     console.log(b);
     var userBlogsPage = document.getElementById("user-blog-list");
     if(userBlogsPageId == 1){
-        readedPage.innerHTML = "";
+        userBlogsPage.innerHTML = "";
     } 
     userBlogsPageId++;
     for(var i = 0; i< b.length;i++){
