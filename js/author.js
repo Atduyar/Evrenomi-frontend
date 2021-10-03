@@ -37,7 +37,7 @@ function getUserBlogs(userId) {
         console.log(t);
     }
     ApiAuth.GetToken(apiUser)
-}//https://api.atduyar.com/api/users/getUserReaded?id=1&pageId=1&pageSize=3
+}//https://api.atduyar.com/api/users/getUserBlog?id=1&pageId=1&pageSize=42
 
 
 function setUserBlogs(b){
