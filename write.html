@@ -97,7 +97,8 @@
         <button>Kaydet</button>
         <button onclick="publishBlog()" style="border-color: #39D1B4;">Yayınla</button> 
     </div>
-    <iframe id="mobilView" src="https://Evrenomi.com/blogView/0" style="width: 90%;height: 75%;margin: 5% 5%;" onload="this.src = window.location.origin + '/blogView/0'"></iframe>
+    <iframe id="mobilView" src="https://Evrenomi.com/blogView/0" style="width: 90%;height: 75%;margin: 5% 5%;"></iframe>
+    <script>document.getElementById("mobilView").src = window.location.origin + '/blogView/0'</script>
 </div>
 <!-- STOP  WRITE R-->
 
