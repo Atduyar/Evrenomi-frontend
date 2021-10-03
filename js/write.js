@@ -15,6 +15,7 @@ function addEvent(x){
         x.addEventListener("input", (evt)=>{
             changeVideoUrl(evt.target)
         }, false);
+        changeVideoUrl(x)
     }
     x.addEventListener('keydown', (evt) => {
         var itemTemp = evt.target.parentElement.parentElement;
