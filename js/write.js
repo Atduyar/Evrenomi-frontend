@@ -45,9 +45,9 @@ function addEvent(x){
     })
 }
 
-addElementToEnd("img","",true);
-addElementToEnd("h","Baslık",true);
-addElementToEnd("p","paragraf",true);
+addElementToEnd("img","","",true);
+addElementToEnd("h","Baslık","",true);
+addElementToEnd("p","paragraf","");
 fixEvents();
 var max = -1;
 function fixEvents(){
@@ -95,46 +95,46 @@ function findNextElement(tagName){
     }
     return tagName;
 }
-function addElement(tagName,inlineText="", lock=false){
+function addElement(tagName, data="", des="", lock=false){
     switch(tagName){
         case "p":
-            return getDefualtElement(`<p contenteditable class="textbox" placeholder="Type something...">${inlineText}</p>`, "p", lock)
+            return getDefualtElement(`<p contenteditable class="textbox" placeholder="Type something...">${data}</p>`, "p", lock)
             break;
         case "h":
-            return getDefualtElement(`<h1 contenteditable class="textbox title" placeholder="Type something...">${inlineText}</h1>`, "h", lock)
+            return getDefualtElement(`<h1 contenteditable class="textbox title" placeholder="Type something...">${data}</h1>`, "h", lock)
             break;
         case "quote":
-            return getDefualtElement(`<p contenteditable class="textbox quote" placeholder="Type something...">${inlineText}</p>`, "quote", lock)
+            return getDefualtElement(`<p contenteditable class="textbox quote" placeholder="Type something...">${data}</p>`, "quote", lock)
             break;
         case "a":
-            return getDefualtElement(`<a contenteditable class="textbox" spellcheck="false" placeholder="Type something...">${inlineText}</a>`, "a", lock)
+            return getDefualtElement(`<a contenteditable class="textbox" spellcheck="false" placeholder="Type something...">${data}</a>`, "a", lock)
             break;
         case "li":
         case "lı":
-            return getDefualtElement(`<li contenteditable class="textbox li" placeholder="Type something...">${inlineText}</li>`, "li", lock)
+            return getDefualtElement(`<li contenteditable class="textbox li" placeholder="Type something...">${data}</li>`, "li", lock)
             break;
         case "hr":
             return getDefualtElement(`<hr>`, "hr", lock)
             break;
         case "img":
         case "ımg":
-            if(inlineText == ""){
-                inlineText = "https://api.atduyar.com/BlogImages/manzara.jpg";
+            if(data == ""){
+                data = "https://api.atduyar.com/BlogImages/manzara.jpg";
             }
-            return getDefualtElement(`<img onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="https://api.atduyar.com/BlogImages/manzara.jpg"><p contenteditable class="textbox img" placeholder="Type some url...">${inlineText}</p>`, "img", lock)
+            return getDefualtElement(`<img onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="https://api.atduyar.com/BlogImages/manzara.jpg"><p contenteditable class="textbox img" placeholder="Type some url...">${data}</p>`, "img", lock)
             break;
         case "video":
         case "vıdeo":
-            if(inlineText == ""){
-                inlineText = "https://www.youtube.com/embed/iik25wqIuFo";
+            if(data == ""){
+                data = "https://www.youtube.com/embed/iik25wqIuFo";
             }
-            return getDefualtElement(`<iframe onerror="this.src='https://www.youtube.com/embed/iik25wqIuFo';" src="https://www.youtube.com/embed/iik25wqIuFo"></iframe><p contenteditable class="textbox video" placeholder="Type some url...">${inlineText}</p>`, "img", lock)
+            return getDefualtElement(`<iframe onerror="this.src='https://www.youtube.com/embed/iik25wqIuFo';" src="https://www.youtube.com/embed/iik25wqIuFo"></iframe><p contenteditable class="textbox video" placeholder="Type some url...">${data}</p>`, "img", lock)
             break;
     }
 }
 
-function addElementToEnd(tagName, inlineText="", lock=false){
-    icerikDiv.innerHTML += addElement(tagName, inlineText, lock);
+function addElementToEnd(tagName, data="", des="", lock=false){
+    icerikDiv.innerHTML += addElement(tagName, data, des, lock);
 }
 function addElementToNext(thisItem, tagName){
     thisItem.outerHTML += addElement(tagName.toLocaleLowerCase());//outerHTML brok this element event
@@ -334,7 +334,7 @@ function getBlogDetail(blogId){
     apiBlog.resultFunction = (t) => {
         apiBlog.resultFunction = (b) => {
             console.log(b);
-            setUserBlogs(b);
+            setBlogWrite(b);
         }
         apiBlog.resultErrFunction = apiBlog.resultErrFunction;
         apiBlog.GetAuth("blogs/getBlogDraft?id="+blogId, t.token);
@@ -348,7 +348,13 @@ function getBlogDetail(blogId){
     ApiAuth.GetToken(apiBlog)
 }
 
-//getBlogDraft
+function setBlogWrite(b){
+    
+    for(var i = 0;i< b.blogContent.length;i++){
+        addElementToEnd(b.blogContent.type,b.blogContent.data,b.blogContent.description);
+        
+    }
+}
 
 
 
