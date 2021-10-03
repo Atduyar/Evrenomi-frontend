@@ -150,3 +150,13 @@
     position: relative;
     margin-top: calc(var(--navbar-h) + 42px + 21px);
 }
+#author-menu button{
+    text-align: left;
+    display: inline-block;
+    font-size: 0.99em;
+    padding: 10px;
+    background-color: #0f0e15;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+}
