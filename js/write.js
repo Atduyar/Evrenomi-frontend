@@ -351,8 +351,10 @@ function getBlogDetail(blogId){
 
 function setBlogWrite(b){
     icerikDiv.innerHTML = "";
+    addElementToEnd("img", b.blogTitlePhotoUrl, "", true, fasle);
+    addElementToEnd("h", b.blogTitle, "", true, true);
     for(var i = 0;i< b.blogContent.length;i++){
-        addElementToEnd(b.blogContent[i].type, b.blogContent[i].data, b.blogContent[i].description, i<2, i!=0);
+        addElementToEnd(b.blogContent[i].type, b.blogContent[i].data, b.blogContent[i].description);
     }
 }
 
