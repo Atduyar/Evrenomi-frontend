@@ -40,7 +40,7 @@ function getUserBlogs(userId) {
 }//https://api.atduyar.com/api/users/getUserReaded?id=1&pageId=1&pageSize=3
 
 
-function setUserBlog(b){
+function setUserBlogs(b){
     console.log(b);
     var userBlogsPage = document.getElementById("user-blog-list");
     if(userBlogsPageId == 1){
