@@ -27,7 +27,7 @@ function getUserBlogs(userId) {
             console.log(b);
             setUserBlogs(b);
         }
-        apiUser.resultErrFunction = apiUser2.resultErrFunction;
+        apiUser.resultErrFunction = apiUser.resultErrFunction;
         apiUser.GetAuth("users/getUserBlog?id="+userId+"&pageId="+userBlogsPageId+"&pageSize=42", t.token);
     }
     apiUser.resultErrFunction = (t) => {
