@@ -1,4 +1,4 @@
-
+getUser();
 function getUser() {
     apiUser.resultFunction = (t) => {
         console.log(t);
