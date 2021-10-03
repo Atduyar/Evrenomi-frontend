@@ -8,7 +8,7 @@ function getUser() {
             console.log(b);
             getUserBlogs(b.id);
         }
-        apiNav.GetMyProfil(t.token);
+        apiUser.GetMyProfil(t.token);
     }
     apiUser.resultErrFunction = (t) => {
         console.log(t);
