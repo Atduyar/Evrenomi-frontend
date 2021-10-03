@@ -1,3 +1,5 @@
+var apiUser = new ApiAuth();
+
 getUser();
 function getUser() {
     apiUser.resultFunction = (t) => {
