@@ -28,7 +28,7 @@ function getUserBlogs(userId) {
             setUserBlogs(b);
         }
         apiUser.resultErrFunction = apiUser.resultErrFunction;
-        apiUser.GetAuth("users/getUserBlog?id="+userId+"&pageId="+userBlogsPageId+"&pageSize=42", t.token);
+        apiUser.GetAuth("blogs/getBlogDraft?id="+userId+"&pageId="+userBlogsPageId+"&pageSize=42", t.token);
     }
     apiUser.resultErrFunction = (t) => {
         console.log(t);
@@ -37,7 +37,7 @@ function getUserBlogs(userId) {
         console.log(t);
     }
     ApiAuth.GetToken(apiUser)
-}//https://api.atduyar.com/api/users/getUserBlog?id=1&pageId=1&pageSize=42
+}//https://api.atduyar.com/api/blogs/getBlogDraft?id=1&pageId=1&pageSize=42
 
 
 function setUserBlogs(b){
