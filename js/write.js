@@ -1,3 +1,5 @@
+var apiBlog = new ApiAuth();
+var BlogId = 0;
 var textboxs = document.getElementsByClassName('textbox');
 var icerikDiv = document.getElementById("div-icerik");
 var aaa;
@@ -325,4 +327,56 @@ function getDefualtElement(htl, itemTag, lock=false){
             ${htl}
         </div>
     </div>`
+}
+
+
+function getBlogDetail(blogId){
+    apiBlog.resultFunction = (t) => {
+        apiBlog.resultFunction = (b) => {
+            console.log(b);
+            setUserBlogs(b);
+        }
+        apiBlog.resultErrFunction = apiBlog.resultErrFunction;
+        apiBlog.GetAuth("users/getBlogDraft?id="+blogId, t.token);
+    }
+    apiBlog.resultErrFunction = (t) => {
+        console.log(t);
+    }
+    apiBlog.resultUnAuthFunction = (t) => {
+        console.log(t);
+    }
+    ApiAuth.GetToken(apiBlog)
+}
+
+//getBlogDraft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var xxTemp = new URLSearchParams(window.location.search).get('id');
+if(xxTemp != null){
+    getBlogDetail(xxidTemp);//, (BlogTitle)=>{history.pushState({}, null, "/blogView.html?name=" + fixUrlChar(BlogTitle) + "&id=" + xxidTemp)});
+    // getUser(xxTemp, (userNickname)=>{history.pushState({}, null, "/user.html?name=" + xxTemp)});
+}
+function setParam(param){
+    var x = param.split("-");
+    BlogId = x[x.length - 1];
+    getBlogDetail(BlogId);//, (BlogTitle)=>{history.pushState({}, null, "/blogView/" + fixUrlChar(BlogTitle) + "-" + BlogId)});
+    // getUser(x[0], (userNickname)=>{history.pushState({}, null, "/user/" + x[0])});
 }
