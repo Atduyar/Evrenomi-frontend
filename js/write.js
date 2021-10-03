@@ -9,7 +9,7 @@ function addEvent(x){
         x.addEventListener("input", (evt)=>{
             changeImgeUrl(evt.target);
         }, false);
-        changeImgeUrl(evt.target);
+        changeImgeUrl(x);
     }
     if(x.classList.contains("video")){
         x.addEventListener("input", (evt)=>{
