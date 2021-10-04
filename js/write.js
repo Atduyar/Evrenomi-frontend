@@ -409,7 +409,7 @@ function updateBlogSummaryText(t){
 function updateBlogTagText(t){////////
     
     for(var i = 0;i<t.length; i++){
-        addTagElementToEnd(t.name);
+        addTagElementToEnd(t[i].name);
     }
     fixTagEvents();
     //document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t
