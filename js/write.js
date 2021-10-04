@@ -194,7 +194,7 @@ function createblog(){
     console.table(blog);
     console.log(JSON.stringify(blog));
 
-    var bd = {
+    var b = {
         "blogTitle": blogTitle.data,
         "blogTitlePhotoUrl": blogTitlePhotoUrl.data,
         "blogSummary": "",
@@ -204,8 +204,31 @@ function createblog(){
         "blogDate":new Date().toDateString(),
         "blogId":0
     };
-    document.getElementById("mobilView").contentWindow.setBlogDetail(bd);
-
+    document.getElementById("mobilView").contentWindow.setBlogDetail(b);
+    document.getElementById("mobilSummaryView").innerHTML += 
+    `<div class="blog-item">
+        <a onclick="toggleBlogView()" class="a-img-blog-item" >
+            <img class="img-blog-item" onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="${b.blogTitlePhotoUrl == null ? "" : b.blogTitlePhotoUrl}" loading="lazy" alt="${b.blogTitle}">
+        </a>
+        <div class='blog-content'>
+            <p class="p-publish-title only-long">
+                ${b.blogDate}
+            </p>
+            <div class="blog-des-group">
+                <p class="text-color p-baslik-blog-item c-p">${b.blogTitle}</p>
+                <p class="p-aciklama-blog-item">${b.blogSummary != undefined ? ((b.blogSummary.length > 250) ? b.blogSummary.substring(0, 225) + "...":b.blogSummary ) : ""}</p>
+            </div>
+            <div class="blog-item-details">
+                <div class="kategori-bar-blog-item">
+                    <div class="blog-item-author-info">
+                        <a class="inactive-blackbg c-p td-n">${b.authorName}</a>
+                    </div>
+                    <a href="/category/Politika" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">Politika</a>
+                    <a href="/category/Elestiri" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">Eleştiri</a>
+                </div>
+            </div>
+        </div>
+    </div>`
     return blog;
 }
 function getItemJson(item){
@@ -370,7 +393,9 @@ function setBlogWrite(b){
     }
     fixEvents();
 }
-
+function toggleBlogView(){
+    document.getElementById("div-edit-menu").classList.toggle("summary");
+}
 
 
 
