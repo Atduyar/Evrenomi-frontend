@@ -408,17 +408,17 @@ function updateBlogTagText(t){////////
 
 function addTagEvent(x){
     x.addEventListener('keydown', (evt) => {
-        var itemTemp = evt.target.parentElement.parentElement;
+        var itemTemp = evt.target;
         if (evt.keyCode === 13) {
             // addElementToNext(itemTemp, "li")
+            var itemId = itemTemp.id;
+            itemTemp.outerHTML += `<li contenteditable class="textbox li blog-tag-text" placeholder="Type something..."></li>`;//outerHTML brok this element event
+            var idElement = document.getElementById(itemId);
+            var tagList = document.getElementById("tag-list").getElementsByTagName("li");
             
-            itemTemp.outerHTML += addElement("li");//outerHTML brok this element event
-            var temp = itemTemp.getElementsByClassName("item-body")[0];
-            var idElement = document.getElementById(temp.children[temp.children.length-1].id);
             addTagEvent(idElement);//fix new event
             
 
-            var tagList = document.getElementById("tag-list").getElementsByTagName("li");
             maxT = -1;
             for(var i = 0; i < tagList.length; i++) {
                 if(tagList[i].getAttribute("id") != null){
