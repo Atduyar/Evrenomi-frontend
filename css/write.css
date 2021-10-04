@@ -256,7 +256,7 @@
     width: 450px!important;
 }
 
-#div-edit-menu p:nth-child(1){
+#div-edit-menu .closebtn{
     display: block;
     padding-left: calc(100% - 75px);
     font-size: 72px;
