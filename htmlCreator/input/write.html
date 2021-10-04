@@ -24,6 +24,10 @@
     </div>
     <div class="blog-summary">
         <div id="mobilSummaryView"></div>
+        <div style="padding: 0 25px;">
+            <h1>Blog Özeti</h1>
+            <p contenteditable="" class="textbox blog-summary-text" placeholder="Type something..." onkeyup="document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = this.textContent"></p>
+        </div>
     </div>
     <p class="backbtn c-p" onclick="toggleBlogView()">⬅</p>
     <iframe id="mobilView" src="https://Evrenomi.com/blogView/0" style="width: 90%;height: 75%;margin: 0 5% 5% 5%;"></iframe>
