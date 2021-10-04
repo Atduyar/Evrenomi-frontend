@@ -432,9 +432,9 @@ function fixBlogTagText(){////////
     var tags = getBlogTagText();
     
     var blogTags = document.getElementsByClassName("kategori-bar-blog-item")[0];
-    var temp = blogTags.getElementsByTagName("a");
+    var temp = blogTags.children;
     
-    for(var i = temp.length-1;i>=0; i--){
+    for(var i = temp.length-1;i>=1; i--){
         temp[i].outerHTML = "";
     }
     for(var i = 0;i<tags.length; i++){
