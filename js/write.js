@@ -395,7 +395,7 @@ function setBlogWrite(b){
     }
     fixEvents();
     document.getElementById("blog-summary-text").textContent = b.blogSummary;
-    updateBlogSummaryText(b.blogSummary)
+    //updateBlogSummaryText(b.blogSummary)
     updateBlogTagText(b.blogTags);
 }
 function toggleBlogView(){
