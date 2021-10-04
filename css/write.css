@@ -256,7 +256,7 @@
     width: 450px!important;
 }
 
-#div-edit-menu p{
+#div-edit-menu p:nth-child(1){
     display: block;
     padding-left: calc(100% - 75px);
     font-size: 72px;
@@ -354,7 +354,7 @@
 }
 
 .blog-item {
-    width: calc((100% / 3) - 32px);
+    width: calc((100%) - 32px);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
