@@ -26,7 +26,11 @@
         <div id="mobilSummaryView"></div>
         <div style="padding: 0 25px;">
             <h1>Blog Özeti</h1>
-            <p contenteditable="" class="textbox" id="blog-summary-text" placeholder="Type something..." onkeypress="updateBlogSummaryText(this)"></p>
+            <p contenteditable="" class="textbox" id="blog-summary-text" placeholder="Type something..." onkeypress="updateBlogSummaryText(this.textContent)"></p>
+        </div>
+        <div style="padding: 0 25px;">
+            <h1>Blog Kategoriler</h1>
+            <p contenteditable="" class="textbox" id="blog-tag-text" placeholder="Type something..." onkeypress="updateBlogTagText(this.textContent)"></p>
         </div>
     </div>
     <p class="backbtn c-p" onclick="toggleBlogView()">⬅</p>

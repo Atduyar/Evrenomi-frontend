@@ -391,6 +391,8 @@ function setBlogWrite(b){
         addElementToEnd(b.blogContent[i].type, b.blogContent[i].data, b.blogContent[i].description);
     }
     fixEvents();
+    document.getElementById("blog-summary-text").textContent = b.blogSummary;
+    updateBlogSummaryText(b.blogSummary)
 }
 function toggleBlogView(){
     createblog();
@@ -398,7 +400,10 @@ function toggleBlogView(){
 }
 
 function updateBlogSummaryText(t){
-    document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t.textContent
+    document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t
+}
+function updateBlogTagText(t){////////
+    document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t
 }
 
 
