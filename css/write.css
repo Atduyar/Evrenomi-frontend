@@ -138,10 +138,16 @@
 .item-body p[contenteditable] {
     min-height: 1.7em;
 }
+.item-body p .textboxBbTag,
 .item-body p[contenteditable], 
 .item-body a[contenteditable], 
 .item-body h1[contenteditable] {
     border-left: 1px solid white;
+}
+.item-body .textboxBbTag a[contenteditable]{
+    border-left: 0!important;
+    padding: 0!important;
+    display: inline-block!important;
 }
 .item-body img{
     width: 100%;
