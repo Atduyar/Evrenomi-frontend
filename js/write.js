@@ -416,7 +416,7 @@ function updateBlogTagText(t){////////
 }
 
 function addTagElementToEnd(htl=""){
-    tagList.innerHTML += addTagElement(id,htl);
+    tagList.innerHTML += addTagElement(htl);
 }
 function addTagElement(htl=""){
     return `<li contenteditable class="tag-textbox li blog-tag-text" placeholder="Type something...">${htl}}</li>`
