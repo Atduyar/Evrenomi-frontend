@@ -173,6 +173,11 @@
     color: #81C14B;
     text-decoration: underline;
 }
+.item-body .textboxBbTag{
+    display: block;
+    color: #81C14B;
+    text-decoration: underline;
+}
 
 .item-body hr {
     border: 0;
