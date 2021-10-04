@@ -452,7 +452,7 @@ function addTagElement(htl=""){
 function addTagEvent(x){
     x.addEventListener('keyup', (evt) => {
         fixBlogTagText();
-    }
+    });
     x.addEventListener('keydown', (evt) => {
         var itemTemp = evt.target;
         if (evt.keyCode === 13) {
