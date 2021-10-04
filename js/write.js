@@ -220,7 +220,7 @@ function createblog(){
             <div class="blog-item-details">
                 <div class="kategori-bar-blog-item">
                     <div class="blog-item-author-info">
-                        <a class="inactive-blackbg c-p td-n">${b.authorName}</a>
+                        <a class="inactive-blackbg c-p td-n">${b.authorSummary.nickname}</a>
                     </div>
                     <a href="/category/Politika" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">Politika</a>
                     <a href="/category/Elestiri" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">Eleştiri</a>
@@ -393,6 +393,7 @@ function setBlogWrite(b){
     fixEvents();
 }
 function toggleBlogView(){
+    createblog();
     document.getElementById("div-edit-menu").classList.toggle("summary");
 }
 
