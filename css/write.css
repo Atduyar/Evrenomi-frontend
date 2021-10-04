@@ -147,7 +147,14 @@
 .item-body[textboxBbTag] a[contenteditable]{
     border-left: 0!important;
     padding: 0!important;
-    width: 100%;
+    width: 66%;
+}
+.item-body[textboxBbTag] a[contenteditable]:nth-child(1){
+    padding-right: 5px!important;
+    border-right: 1px solid white;
+}
+.item-body[textboxBbTag] a[contenteditable]:nth-child(2){
+    padding-left: 5px!important;
 }
 .item-body img{
     width: 100%;
