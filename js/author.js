@@ -86,7 +86,7 @@ function addBlog(){
     apiAddBlog.resultFunction = (t) => {
         apiAddBlog.resultFunction = (b) => {
             console.log(b);
-            history.pushState({}, null, window.location.origin + '/write/'+b.data);
+            window.location.href = window.location.origin + '/write/'+b.data;
         }
         apiAddBlog.resultErrFunction = apiAddBlog.resultErrFunction;
         apiAddBlog.GetAuth("blogs/addBlogDraft?blogTitle="+blogName, t.token);
