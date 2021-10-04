@@ -417,6 +417,14 @@ function updateBlogTagText(t){////////
     fixTagEvents();
     //document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t
 }
+function getBlogTagText(t){////////
+    var tags = []
+    for(var i = 0;i<tagList.length; i++){
+        tags.push({"name":tagList[i].textContent});
+    }
+    fixTagEvents();
+    //document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t
+}
 
 function addTagElementToEnd(htl=""){
     document.getElementById("tag-list").innerHTML += addTagElement(htl);
