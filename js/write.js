@@ -197,7 +197,7 @@ function createblog(){
     var b = {
         "blogTitle": blogTitle.data,
         "blogTitlePhotoUrl": blogTitlePhotoUrl.data,
-        "blogSummary": "",
+        "blogSummary": document.getElementById("blog-summary-text").textContent,
         "blogContent":blogContent,
         "blogTags":[], 
         "authorSummary":{"nickname":"Sen"},
