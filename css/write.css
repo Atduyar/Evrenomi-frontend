@@ -183,6 +183,8 @@
     display: block;
     color: #81C14B;
     text-decoration: underline;
+    padding: 0px 16px;
+    border-left: 1px solid white;
 }
 
 .item-body hr {
