@@ -50,6 +50,7 @@ function addEvent(x){
 addElementToEnd("img","","",true, false);
 addElementToEnd("h","Baslık","",true);
 addElementToEnd("p","paragraf","");
+addElementToEnd("b","paragraf","");
 fixEvents();
 var max = -1;
 function fixEvents(){
@@ -109,7 +110,10 @@ function addElement(tagName, data="", des="", lock=false, menu=true){
             return getDefualtElement(`<p contenteditable class="textbox quote" placeholder="Type something...">${data}</p>`, "quote", lock, menu)
             break;
         case "a":
-            return getDefualtElement(`<a contenteditable class="textbox" spellcheck="false" placeholder="Type something...">${data}</a>`, "a", lock, menu)
+            return getDefualtElement(`<a contenteditable class="textbox" spellcheck="false" placeholder="Type url...">${data}</a>`, "a", lock, menu)
+            break;
+        case "b":
+            return getDefualtElement(`<p class="textboxBbTag">evrenomi.com/blogView/<a contenteditable class="textbox" spellcheck="false" placeholder="Type url...">${data}</a></p>`, "b", lock, menu)
             break;
         case "li":
         case "lı":
@@ -130,7 +134,7 @@ function addElement(tagName, data="", des="", lock=false, menu=true){
             if(data == ""){
                 data = "https://www.youtube.com/embed/iik25wqIuFo";
             }
-            return getDefualtElement(`<iframe onerror="this.src='https://www.youtube.com/embed/iik25wqIuFo';" src="https://www.youtube.com/embed/iik25wqIuFo"></iframe><p contenteditable class="textbox video" placeholder="Type some url...">${data}</p>`, "img", lock, menu)
+            return getDefualtElement(`<iframe onerror="this.src='https://www.youtube.com/embed/iik25wqIuFo';" src="https://www.youtube.com/embed/iik25wqIuFo"></iframe><p contenteditable class="textbox video" placeholder="Type some url...">${data}</p>`, "vıdeo", lock, menu)
             break;
     }
 }
@@ -219,6 +223,10 @@ function getItemJson(item){
             newItemDescription = "Yazar";
             break;
         case "a":
+            newItemData = item.getElementsByClassName("textbox")[0].textContent;
+            newItemDescription = "Url";
+            break;
+        case "b":
             newItemData = item.getElementsByClassName("textbox")[0].textContent;
             newItemDescription = "Url";
             break;
