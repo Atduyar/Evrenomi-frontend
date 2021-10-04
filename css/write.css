@@ -266,6 +266,7 @@
     display: flex;
     width: 100%;
     padding: 0 25px;
+    margin-bottom: 25px;
     justify-content: space-evenly;
 }
 #div-edit-menu button{
@@ -285,6 +286,9 @@
     display: block;
 }
 .blog-summary{
+    display: none;
+}
+.summary .closebtn:nth-child(2){
     display: none;
 }
 
