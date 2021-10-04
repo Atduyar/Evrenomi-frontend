@@ -205,7 +205,7 @@ function createblog(){
         "blogId":0
     };
     document.getElementById("mobilView").contentWindow.setBlogDetail(b);
-    document.getElementById("mobilSummaryView").innerHTML += 
+    document.getElementById("mobilSummaryView").innerHTML = 
     `<div class="blog-item">
         <a onclick="toggleBlogView()" class="a-img-blog-item" >
             <img class="img-blog-item" onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="${b.blogTitlePhotoUrl == null ? "" : b.blogTitlePhotoUrl}" loading="lazy" alt="${b.blogTitle}">
