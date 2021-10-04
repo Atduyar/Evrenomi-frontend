@@ -209,7 +209,7 @@ function createblog(){
     var tags = getBlogTagText();
     var tagsHtml = "";
     for(var i = 0; i< tags.length;i++){
-        tagsHtml += `<a href="/category/Elestiri" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">Eleştiri</a>`;
+        tagsHtml += `<a href="/category/${tags[i].name}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${tags[i].name}</a>`;
     }
     document.getElementById("mobilSummaryView").innerHTML = `<div class="blog-item">
         <a onclick="toggleBlogView()" class="a-img-blog-item" >
