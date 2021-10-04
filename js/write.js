@@ -450,9 +450,11 @@ function addTagElement(htl=""){
     return `<li contenteditable class="tag-textbox li blog-tag-text" placeholder="Type something...">${htl}</li>`
 }
 function addTagEvent(x){
+    x.addEventListener('keyup', (evt) => {
+        fixBlogTagText();
+    }
     x.addEventListener('keydown', (evt) => {
         var itemTemp = evt.target;
-        fixBlogTagText();
         if (evt.keyCode === 13) {
             // addElementToNext(itemTemp, "li")
             var itemId = itemTemp.getAttribute("tag-id");
