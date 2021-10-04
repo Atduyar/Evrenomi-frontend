@@ -397,6 +397,7 @@ function setBlogWrite(b){
     document.getElementById("blog-summary-text").textContent = b.blogSummary;
     //updateBlogSummaryText(b.blogSummary)
     updateBlogTagText(b.blogTags);
+    fixBlogTagText();
 }
 function toggleBlogView(){
     createblog();
