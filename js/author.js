@@ -81,5 +81,5 @@ function setUserBlogs(b){
 
 
 function addBlog(){
-    prompt("Blog imini giriniz: ")
+    var blogName = prompt("Blog imini giriniz: ")
 }
