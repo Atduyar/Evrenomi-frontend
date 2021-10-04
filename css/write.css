@@ -253,6 +253,7 @@
 #div-edit-menu{
     position: fixed;
     overflow: hidden;
+    overflow-y: auto;
     top: 0;
     z-index: 10;
     right: 0;
