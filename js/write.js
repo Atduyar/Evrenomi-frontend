@@ -228,7 +228,7 @@ function createblog(){
             </div>
         </div>
     </div>`;
-    return blog;
+    return b;
 }
 function getItemJson(item){
     var newItemType = item.getAttribute("atdtag");
