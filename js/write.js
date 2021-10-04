@@ -113,7 +113,7 @@ function addElement(tagName, data="", des="", lock=false, menu=true){
             return getDefualtElement(`<a contenteditable class="textbox" spellcheck="false" placeholder="Type url...">${data}</a>`, "a", lock, menu)
             break;
         case "b":
-            return getDefualtElement(`evrenomi.com/blogView/<a contenteditable class="textbox" spellcheck="false" placeholder="Type url...">${data}-${des}</a>`, "b", lock, menu)
+            return getDefualtElement(`<a href="evrenomi.com/blogView/${data+"-"+des}">evrenomi.com/blogView/</a><a contenteditable class="textbox" spellcheck="false" placeholder="Type url..." onkeyup="this.parentElement.children[0].src = this.textContent">${data}-${des}</a>`, "b", lock, menu)
             break;
         case "li":
         case "lı":
@@ -228,7 +228,6 @@ function getItemJson(item){
             break;
         case "b":
             var temp = item.getElementsByClassName("textbox")[0].textContent.split("-");
-
             newItemData = temp[temp.length-1];
             temp.pop();
             newItemDescription = temp.join('-');
