@@ -415,3 +415,6 @@
     cursor: pointer;
     object-fit: cover;
 }
+.only-long{
+    display: none;
+}
