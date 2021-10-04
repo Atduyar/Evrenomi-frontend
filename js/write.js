@@ -409,7 +409,7 @@ function updateBlogSummaryText(t){
 function updateBlogTagText(t){////////
     
     for(var i = 0;i<tagList.length; i++){
-        tagList.outerHTML = "";
+        tagList[i].outerHTML = "";
     }
     for(var i = 0;i<t.length; i++){
         addTagElementToEnd(t[i].name);
