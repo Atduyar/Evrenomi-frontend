@@ -408,6 +408,9 @@ function updateBlogSummaryText(t){
 }
 function updateBlogTagText(t){////////
     
+    for(var i = 0;i<tagList.length; i++){
+        tagList.outerHTML = "";
+    }
     for(var i = 0;i<t.length; i++){
         addTagElementToEnd(t[i].name);
     }
@@ -416,10 +419,10 @@ function updateBlogTagText(t){////////
 }
 
 function addTagElementToEnd(htl=""){
-    tagList.innerHTML += addTagElement(htl);
+    document.getElementById("tag-list").innerHTML += addTagElement(htl);
 }
 function addTagElement(htl=""){
-    return `<li contenteditable class="tag-textbox li blog-tag-text" placeholder="Type something...">${htl}}</li>`
+    return `<li contenteditable class="tag-textbox li blog-tag-text" placeholder="Type something...">${htl}</li>`
 }
 function addTagEvent(x){
     x.addEventListener('keydown', (evt) => {
