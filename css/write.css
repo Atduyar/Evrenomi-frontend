@@ -144,7 +144,7 @@
 .item-body h1[contenteditable] {
     border-left: 1px solid white;
 }
-.item-body .textboxBbTag a[contenteditable]{
+.item-body[textboxBbTag] a[contenteditable]{
     border-left: 0!important;
     padding: 0!important;
     width: 100%;
@@ -179,7 +179,7 @@
     color: #81C14B;
     text-decoration: underline;
 }
-.item-body .textboxBbTag{
+.item-body[textboxBbTag] {
     display: flex;
     color: #81C14B;
     text-decoration: underline;

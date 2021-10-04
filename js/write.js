@@ -334,7 +334,7 @@ function getDefualtElement(htl, itemTag, lock=false, menu=true){
             </div>`:``}
             <div class="fake-menu"></div>
         </div>
-        <div class="item-body">
+        <div class="item-body"${itemTag == "b" ? " textboxbbtag" :""}>
             ${htl}
         </div>
     </div>`
