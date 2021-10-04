@@ -413,12 +413,12 @@ function addTagEvent(x){
             // addElementToNext(itemTemp, "li")
             var itemId = itemTemp.id;
             itemTemp.outerHTML += `<li contenteditable class="textbox li blog-tag-text" placeholder="Type something..."></li>`;//outerHTML brok this element event
-            var idElement = document.getElementById(itemId);
-            var tagList = document.getElementById("tag-list").getElementsByTagName("li");
             
+            var idElement = document.getElementById(itemId);
             addTagEvent(idElement);//fix new event
             
 
+            var tagList = document.getElementById("tag-list").getElementsByTagName("li");
             maxT = -1;
             for(var i = 0; i < tagList.length; i++) {
                 if(tagList[i].getAttribute("id") != null){
