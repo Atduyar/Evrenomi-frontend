@@ -413,15 +413,15 @@ function addTagEvent(x){
         var itemTemp = evt.target;
         if (evt.keyCode === 13) {
             // addElementToNext(itemTemp, "li")
-            var itemId = itemTemp.id;
+            var itemId = itemTemp.getAttribute("tag-id");
             itemTemp.outerHTML += `<li contenteditable class="tag-textbox li blog-tag-text" placeholder="Type something..."></li>`;//outerHTML brok this element event
-            
-            var idElement = document.getElementById(itemId);
+            var idElement = document.querySelectorAll('[tag-id="'+itemId+'"]')[0];
+
             addTagEvent(idElement);//fix new event
             
             fixTagEvents();
 
-            document.getElementById(max).focus();
+            document.querySelectorAll('[tag-id="'+max+'"]')[0].focus();
 
             evt.preventDefault();
         }
@@ -449,17 +449,17 @@ function fixTagEvents(){
     var tagList = document.getElementById("tag-list").getElementsByTagName("li");
     maxT = -1;
     for(var i = 0; i < tagList.length; i++) {
-        if(tagList[i].getAttribute("id") != null){
+        if(tagList[i].getAttribute("tag-id") != null){
             if(maxT < tagList[i].getAttribute("id")){
                 maxT = parseInt(tagList[i].getAttribute("id"));
             }
         }
     }
     for(var i = 0; i < tagList.length; i++) {
-        if(tagList[i].getAttribute("id") == null){
+        if(tagList[i].getAttribute("tag-id") == null){
             maxT++;
             console.table(maxT, tagList[i]);
-            tagList[i].setAttribute("id", maxT);
+            tagList[i].setAttribute("tag-id", maxT);
             addTagEvent(tagList[i]);
         }
     }
