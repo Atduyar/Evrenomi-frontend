@@ -184,21 +184,21 @@ class AtdElement{
 }
 
 function createblog(){
-    var blog = [];
+    var blogContent = [];
     var blogTitlePhotoUrl = getItemJson(icerikDiv.children[0]);
     var blogTitle = getItemJson(icerikDiv.children[1]);
     for(var i = 2; icerikDiv.children.length > i; i++){
-        blog.push(getItemJson(icerikDiv.children[i]));
+        blogContent.push(getItemJson(icerikDiv.children[i]));
     }
-    aaa = blog;
-    console.table(blog);
-    console.log(JSON.stringify(blog));
+    aaa = blogContent;
+    console.table(blogContent);
+    console.log(JSON.stringify(blogContent));
 
     var b = {
         "blogTitle": blogTitle.data,
         "blogTitlePhotoUrl": blogTitlePhotoUrl.data,
         "blogSummary": "",
-        "blogContent":blog,
+        "blogContent":blogContent,
         "blogTags":[], 
         "authorSummary":{"nickname":"Sen"},
         "blogDate":new Date().toDateString(),
