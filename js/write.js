@@ -1,6 +1,7 @@
 var apiBlog = new ApiAuth();
 var BlogId = 0;
 var textboxs = document.getElementsByClassName('textbox');
+var tagList = document.getElementById("tag-list").getElementsByTagName("li");
 var icerikDiv = document.getElementById("div-icerik");
 var aaa;
 
@@ -395,6 +396,7 @@ function setBlogWrite(b){
     fixEvents();
     document.getElementById("blog-summary-text").textContent = b.blogSummary;
     updateBlogSummaryText(b.blogSummary)
+    updateBlogTagText(b.blogTags);
 }
 function toggleBlogView(){
     createblog();
@@ -405,9 +407,20 @@ function updateBlogSummaryText(t){
     document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t
 }
 function updateBlogTagText(t){////////
-    document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t
+    
+    for(var i = 0;i<t.length; i++){
+        addTagElementToEnd(t.name);
+    }
+    fixTagEvents();
+    //document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t
 }
 
+function addTagElementToEnd(htl=""){
+    tagList.innerHTML += addTagElement(id,htl);
+}
+function addTagElement(htl=""){
+    return `<li contenteditable class="tag-textbox li blog-tag-text" placeholder="Type something...">${htl}}</li>`
+}
 function addTagEvent(x){
     x.addEventListener('keydown', (evt) => {
         var itemTemp = evt.target;
@@ -445,8 +458,7 @@ function addTagEvent(x){
 
 var maxT = -1;
 function fixTagEvents(){
-
-    var tagList = document.getElementById("tag-list").getElementsByTagName("li");
+    //tagList = document.getElementById("tag-list").getElementsByTagName("li");
     maxT = -1;
     for(var i = 0; i < tagList.length; i++) {
         if(tagList[i].getAttribute("tag-id") != null){
