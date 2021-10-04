@@ -407,12 +407,16 @@ function updateBlogSummaryText(t){
     document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t
 }
 function updateBlogTagText(t){////////
-    
-    for(var i = 0;i<tagList.length; i++){
-        tagList[i].outerHTML = "";
+    if(t.length > 0){
+        for(var i = 0;i<tagList.length; i++){
+            tagList[i].outerHTML = "";
+        }
+        for(var i = 0;i<t.length; i++){
+            addTagElementToEnd(t[i].name);
+        }
     }
-    for(var i = 0;i<t.length; i++){
-        addTagElementToEnd(t[i].name);
+    else{
+        addTagElementToEnd("");
     }
     fixTagEvents();
     //document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t
@@ -424,7 +428,7 @@ function getBlogTagText(){////////
     }
     return tags;
 }
-function fixBlogTagText(t){////////
+function fixBlogTagText(){////////
     var tags = getBlogTagText();
     
     var blogTags = document.getElementsByClassName("kategori-bar-blog-item")[0];
@@ -448,6 +452,7 @@ function addTagElement(htl=""){
 function addTagEvent(x){
     x.addEventListener('keydown', (evt) => {
         var itemTemp = evt.target;
+        fixBlogTagText();
         if (evt.keyCode === 13) {
             // addElementToNext(itemTemp, "li")
             var itemId = itemTemp.getAttribute("tag-id");
