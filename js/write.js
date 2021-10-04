@@ -417,24 +417,7 @@ function addTagEvent(x){
             var idElement = document.getElementById(itemId);
             addTagEvent(idElement);//fix new event
             
-
-            var tagList = document.getElementById("tag-list").getElementsByTagName("li");
-            maxT = -1;
-            for(var i = 0; i < tagList.length; i++) {
-                if(tagList[i].getAttribute("id") != null){
-                    if(maxT < tagList[i].getAttribute("id")){
-                        maxT = parseInt(tagList[i].getAttribute("id"));
-                    }
-                }
-            }
-            for(var i = 0; i < tagList.length; i++) {
-                if(tagList[i].getAttribute("id") == null){
-                    maxT++;
-                    console.table(maxT, tagList[i]);
-                    tagList[i].setAttribute("id", maxT);
-                    addTagEvent(tagList[i]);
-                }
-            }
+            fixTagEvents();
 
             document.getElementById(max).focus();
 
@@ -457,6 +440,28 @@ function addTagEvent(x){
     })
 }
 
+
+var maxT = -1;
+function fixTagEvents(){
+
+    var tagList = document.getElementById("tag-list").getElementsByTagName("li");
+    maxT = -1;
+    for(var i = 0; i < tagList.length; i++) {
+        if(tagList[i].getAttribute("id") != null){
+            if(maxT < tagList[i].getAttribute("id")){
+                maxT = parseInt(tagList[i].getAttribute("id"));
+            }
+        }
+    }
+    for(var i = 0; i < tagList.length; i++) {
+        if(tagList[i].getAttribute("id") == null){
+            maxT++;
+            console.table(maxT, tagList[i]);
+            tagList[i].setAttribute("id", maxT);
+            addTagEvent(tagList[i]);
+        }
+    }
+}
 
 
 
