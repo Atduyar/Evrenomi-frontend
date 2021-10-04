@@ -396,10 +396,9 @@ function toggleBlogView(){
     document.getElementById("div-edit-menu").classList.toggle("summary");
 }
 
-
-
-
-
+function updateBlogSummaryText(t){
+    document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t.textContent
+}
 
 
 
