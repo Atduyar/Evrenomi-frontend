@@ -38,7 +38,7 @@ function setBlogs(b) {
                 </p>
                 <div class="blog-des-group">
                     <p class="text-color p-baslik-blog-item c-p">${b[i].blogTitle}</p>
-                    <p class="p-aciklama-blog-item">${(b[i].blogSummary.length > 250) ? b[i].blogSummary.substring(0, 225) + "...":b[i].blogSummary }</p>
+                    <p class="p-aciklama-blog-item">${b[i].blogSummary != undefined ? ((b[i].blogSummary.length > 250) ? b[i].blogSummary.substring(0, 225) + "...":b[i].blogSummary ) : ""}</p>
                 </div>
                 <div class="blog-item-details">
                     <div class="kategori-bar-blog-item">

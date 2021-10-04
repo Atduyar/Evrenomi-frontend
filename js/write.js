@@ -47,11 +47,13 @@ function addEvent(x){
     })
 }
 
-addElementToEnd("img","","",true, false);
-addElementToEnd("h","Baslık","",true);
-addElementToEnd("p","paragraf","");
-addElementToEnd("b","paragraf","");
-fixEvents();
+function addNewBlogElement(name){
+    addElementToEnd("img","","",true, false);
+    addElementToEnd("h",name,"",true);
+    addElementToEnd("p","paragraf","");
+    fixEvents();
+}
+
 var max = -1;
 function fixEvents(){
     // oninput="if(this.innerHTML.trim()==='<br>')this.innerHTML=''"
