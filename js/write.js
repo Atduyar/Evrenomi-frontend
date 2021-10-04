@@ -412,7 +412,7 @@ function addTagEvent(x){
         if (evt.keyCode === 13) {
             // addElementToNext(itemTemp, "li")
             var itemId = itemTemp.id;
-            itemTemp.outerHTML += `<li contenteditable class="textbox li blog-tag-text" placeholder="Type something..."></li>`;//outerHTML brok this element event
+            itemTemp.outerHTML += `<li contenteditable class="tag-textbox li blog-tag-text" placeholder="Type something..."></li>`;//outerHTML brok this element event
             
             var idElement = document.getElementById(itemId);
             addTagEvent(idElement);//fix new event

@@ -173,7 +173,18 @@
     color: #555; 
     /* padding-left: 16px; */
 }
-.textbox[placeholder]:empty:focus:before {
+.tag-textbox[placeholder]:empty:focus:before {
+    content: "";
+}
+.tag-textbox{
+    padding: 0px 16px;
+}
+.tag-textbox[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: #555; 
+    /* padding-left: 16px; */
+}
+.tag-textbox[placeholder]:empty:focus:before {
     content: "";
 }
 
