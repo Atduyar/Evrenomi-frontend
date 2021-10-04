@@ -74,3 +74,12 @@ function setUserBlogs(b){
         </div>`
     }
 }
+
+
+
+
+
+
+function addBlog(){
+    prompt("Blog imini giriniz: ")
+}
