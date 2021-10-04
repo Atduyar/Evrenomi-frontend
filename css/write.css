@@ -288,8 +288,14 @@
 .blog-summary{
     display: none;
 }
-.summary .closebtn:nth-child(2){
+.summary .backbtn{
     display: none;
+}
+.backbtn{
+    display: block;
+    padding: 0 0 0 025px;
+    font-size: 50px;
+    color: #dddddd;
 }
 
 
