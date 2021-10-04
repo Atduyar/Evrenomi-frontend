@@ -228,6 +228,8 @@ function createblog(){
             </div>
         </div>
     </div>`;
+    //get tag
+    fixTagEvents();
     return b;
 }
 function getItemJson(item){
