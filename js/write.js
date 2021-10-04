@@ -200,7 +200,7 @@ function createblog(){
         "blogTitlePhotoUrl": blogTitlePhotoUrl.data,
         "blogSummary": document.getElementById("blog-summary-text").textContent,
         "blogContent":blogContent,
-        "blogTags":[], 
+        "blogTags": getBlogTagText(), 
         "authorSummary":{"nickname":"Sen"},
         "blogDate":new Date().toDateString(),
         "blogId":0
@@ -417,13 +417,26 @@ function updateBlogTagText(t){////////
     fixTagEvents();
     //document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t
 }
-function getBlogTagText(t){////////
+function getBlogTagText(){////////
     var tags = []
     for(var i = 0;i<tagList.length; i++){
         tags.push({"name":tagList[i].textContent});
     }
-    fixTagEvents();
-    //document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t
+    return tags;
+}
+function fixBlogTagText(t){////////
+    var tags = getBlogTagText();
+    
+    var blogTags = document.getElementsByClassName("kategori-bar-blog-item")[0];
+    var temp = blogTags.getElementsByTagName("a");
+    
+    for(var i = 0;i<temp.length; i++){
+        temp[i].outerHTML = "";
+    }
+    for(var i = 0;i<tags.length; i++){
+        blogTags.innerHTML += `<a href="/category/${tags[i].name}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${tags[i].name}</a>`;
+    }
+    return tags;
 }
 
 function addTagElementToEnd(htl=""){
