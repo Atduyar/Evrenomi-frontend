@@ -206,6 +206,11 @@ function createblog(){
         "blogId":0
     };
     document.getElementById("mobilView").contentWindow.setBlogDetail(b);
+    var tags = getBlogTagText();
+    var tagsHtml = "";
+    for(var i = 0; i< tags.length;i++){
+        tagsHtml += `<a href="/category/Elestiri" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">Eleştiri</a>`;
+    }
     document.getElementById("mobilSummaryView").innerHTML = `<div class="blog-item">
         <a onclick="toggleBlogView()" class="a-img-blog-item" >
             <img class="img-blog-item" onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="${b.blogTitlePhotoUrl == null ? "" : b.blogTitlePhotoUrl}" loading="lazy" alt="${b.blogTitle}">
@@ -223,8 +228,7 @@ function createblog(){
                     <div class="blog-item-author-info">
                         <a class="inactive-blackbg c-p td-n">${b.authorSummary.nickname}</a>
                     </div>
-                    <a href="/category/Politika" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">Politika</a>
-                    <a href="/category/Elestiri" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">Eleştiri</a>
+                    ${tagsHtml}
                 </div>
             </div>
         </div>
@@ -397,7 +401,7 @@ function setBlogWrite(b){
     document.getElementById("blog-summary-text").textContent = b.blogSummary;
     //updateBlogSummaryText(b.blogSummary)
     updateBlogTagText(b.blogTags);
-    fixBlogTagText();
+    // fixBlogTagText();
 }
 function toggleBlogView(){
     createblog();
