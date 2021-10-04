@@ -406,6 +406,56 @@ function updateBlogTagText(t){////////
     document.getElementById('mobilSummaryView').getElementsByClassName('p-aciklama-blog-item')[0].innerHTML = t
 }
 
+function addTagEvent(x){
+    x.addEventListener('keydown', (evt) => {
+        var itemTemp = evt.target.parentElement.parentElement;
+        if (evt.keyCode === 13) {
+            // addElementToNext(itemTemp, "li")
+            
+            itemTemp.outerHTML += addElement("li");//outerHTML brok this element event
+            var temp = itemTemp.getElementsByClassName("item-body")[0];
+            var idElement = document.getElementById(temp.children[temp.children.length-1].id);
+            addTagEvent(idElement);//fix new event
+            
+
+            var tagList = document.getElementById("tag-list").getElementsByTagName("li");
+            maxT = -1;
+            for(var i = 0; i < tagList.length; i++) {
+                if(tagList[i].getAttribute("id") != null){
+                    if(maxT < tagList[i].getAttribute("id")){
+                        maxT = parseInt(tagList[i].getAttribute("id"));
+                    }
+                }
+            }
+            for(var i = 0; i < tagList.length; i++) {
+                if(tagList[i].getAttribute("id") == null){
+                    maxT++;
+                    console.table(maxT, tagList[i]);
+                    tagList[i].setAttribute("id", maxT);
+                    addTagEvent(tagList[i]);
+                }
+            }
+
+            document.getElementById(max).focus();
+
+            evt.preventDefault();
+        }
+        else if (evt.key === "Backspace" || evt.key === "Delete") {
+            //console.log(evt.target.textContent);
+            //console.log(itemTemp);
+            if(evt.target.textContent == "" && itemTemp.getAttribute("lock") == null){
+                console.log("deletedItem: " + evt.target.tagName);
+                deleteElement(itemTemp);
+            }
+        }
+    });
+    x.addEventListener('paste', function (evt) {
+        evt.preventDefault();
+        var text = evt.clipboardData.getData('text/plain').replace(/\n/g,"");
+        console.log("pasted: " + text);
+        document.execCommand('insertText', false, text);
+    })
+}
 
 
 
