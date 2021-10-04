@@ -421,7 +421,7 @@ function addTagEvent(x){
             
             fixTagEvents();
 
-            document.querySelectorAll('[tag-id="'+max+'"]')[0].focus();
+            document.querySelectorAll('[tag-id="'+maxT+'"]')[0].focus();
 
             evt.preventDefault();
         }
