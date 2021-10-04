@@ -79,7 +79,23 @@ function setUserBlogs(b){
 
 
 
-
+var apiAddBlog = new ApiAuth();
 function addBlog(){
-    var blogName = prompt("Blog imini giriniz: ")
+    var blogName = prompt("Blog ismini giriniz: ")
+
+    apiAddBlog.resultFunction = (t) => {
+        apiAddBlog.resultFunction = (b) => {
+            console.log(b);
+            history.pushState({}, null, window.location.origin + '/write/'+b.data);
+        }
+        apiAddBlog.resultErrFunction = apiAddBlog.resultErrFunction;
+        apiAddBlog.GetAuth("blogs/addBlogDraft?blogTitle="+blogName, t.token);
+    }
+    apiAddBlog.resultErrFunction = (t) => {
+        console.log(t);
+    }
+    apiAddBlog.resultUnAuthFunction = (t) => {
+        console.log(t);
+    }
+    ApiAuth.GetToken(apiAddBlog)
 }
