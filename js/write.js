@@ -113,7 +113,7 @@ function addElement(tagName, data="", des="", lock=false, menu=true){
             return getDefualtElement(`<a contenteditable class="textbox" spellcheck="false" placeholder="Type url...">${data}</a>`, "a", lock, menu)
             break;
         case "b":
-            return getDefualtElement(`<p class="textboxBbTag">evrenomi.com/blogView/<a contenteditable class="textbox" spellcheck="false" placeholder="Type url...">${data}</a></p>`, "b", lock, menu)
+            return getDefualtElement(`evrenomi.com/blogView/<a contenteditable class="textbox" spellcheck="false" placeholder="Type url...">${data}</a>`, "b", lock, menu)
             break;
         case "li":
         case "lı":
