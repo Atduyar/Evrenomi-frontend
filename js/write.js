@@ -450,8 +450,8 @@ function fixTagEvents(){
     maxT = -1;
     for(var i = 0; i < tagList.length; i++) {
         if(tagList[i].getAttribute("tag-id") != null){
-            if(maxT < tagList[i].getAttribute("id")){
-                maxT = parseInt(tagList[i].getAttribute("id"));
+            if(maxT < tagList[i].getAttribute("tag-id")){
+                maxT = parseInt(tagList[i].getAttribute("tag-id"));
             }
         }
     }
