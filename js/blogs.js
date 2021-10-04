@@ -30,7 +30,7 @@ function setBlogs(b) {
         blogsHtml +=
             `<div class="${((i%14) >= 12)?"blog-list-long ":""}blog-item">
             <a href="/blogView/${b[i].blogId}" class="a-img-blog-item" >
-                <img class="img-blog-item" src="${b[i].blogTitlePhotoUrl == null ? "" : b[i].blogTitlePhotoUrl}" loading="lazy" alt="${b[i].blogTitle}">
+                <img class="img-blog-item" onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="${b[i].blogTitlePhotoUrl == null ? "" : b[i].blogTitlePhotoUrl}" loading="lazy" alt="${b[i].blogTitle}">
             </a>
             <div class='blog-content'>
                 <p class="p-publish-title only-long">

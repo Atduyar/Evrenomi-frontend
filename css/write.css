@@ -278,3 +278,12 @@
     border-radius: 5px;
     color: white;
 }
+.summary #mobilView{
+    display: none;
+}
+.summary .blog-summary{
+    display: block;
+}
+.blog-summary{
+    display: none;
+}
