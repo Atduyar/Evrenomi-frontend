@@ -104,8 +104,9 @@
             <p contenteditable="" class="textbox" id="blog-summary-text" placeholder="Type something..." onkeypress="updateBlogSummaryText(this.textContent)"></p>
         </div>
         <div style="padding: 0 25px;">
-            <h1>Blog Kategoriler</h1>
-            <p contenteditable="" class="textbox" id="blog-tag-text" placeholder="Type something..." onkeypress="updateBlogTagText(this.textContent)"></p>
+            <h1>Blog Kategorileri</h1>
+            <li contenteditable class="textbox li" id="blog-tag-text" onkeypress="updateBlogTagText(this.textContent)" placeholder="Type something...">${data}</li>
+            <p contenteditable="" class="textbox" placeholder="Type something..." ></p>
         </div>
     </div>
     <p class="backbtn c-p" onclick="toggleBlogView()">⬅</p>
