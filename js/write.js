@@ -203,7 +203,7 @@ function createblog(){
         "blogTags": getBlogTagText(), 
         "authorSummary":{"nickname":"Sen"},
         //"blogDate":new Date().toDateString(),
-        "blogId": 
+        "blogId": globalBogId
     };
     document.getElementById("mobilView").contentWindow.setBlogDetail(b);
     var tags = getBlogTagText();
@@ -546,15 +546,17 @@ function saveBlog(){
 
 
 
-
+var globalBogId;
 var xxTemp = new URLSearchParams(window.location.search).get('id');
 if(xxTemp != null){
+    globalBogId = xxidTemp;
     getBlogDetail(xxidTemp);//, (BlogTitle)=>{history.pushState({}, null, "/blogView.html?name=" + fixUrlChar(BlogTitle) + "&id=" + xxidTemp)});
     // getUser(xxTemp, (userNickname)=>{history.pushState({}, null, "/user.html?name=" + xxTemp)});
 }
 function setParam(param){
     var x = param.split("-");
     BlogId = x[x.length - 1];
+    globalBogId = BlogId;
     getBlogDetail(BlogId);//, (BlogTitle)=>{history.pushState({}, null, "/blogView/" + fixUrlChar(BlogTitle) + "-" + BlogId)});
     // getUser(x[0], (userNickname)=>{history.pushState({}, null, "/user/" + x[0])});
 }
