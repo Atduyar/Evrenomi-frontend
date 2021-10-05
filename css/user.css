@@ -107,14 +107,13 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin: 0 auto;
+    width: 100%;
 }
 
 #user-body-nav ul li{
     display: inline-block;;
     cursor: pointer;
-    padding: 0.6em 5vw;
-    width: 20vw;
+    width: calc(100% / 3);
     text-align: center;
 }
 
