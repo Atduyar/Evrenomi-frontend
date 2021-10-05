@@ -418,7 +418,7 @@ function updateBlogSummaryText(t){
 }
 function updateBlogTagText(t){////////
     if(t.length > 0){
-        for(var i = 0;i<tagList.length; i++){
+        for(var i = tagList.length-1;i>=0; i--){
             tagList[i].outerHTML = "";
         }
         for(var i = 0;i<t.length; i++){
