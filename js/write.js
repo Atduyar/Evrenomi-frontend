@@ -539,11 +539,13 @@ function saveBlog(){
 }
 var apiPublishBlog = new ApiAuth();
 function publishBlog(b = true){
-    var metod = b ? "publishBlog" : "unPublishBlog"; 
+    var metod = bool ? "publishBlog" : "unPublishBlog"; 
     apiSaveBlog.resultFunction = (t) => {
         apiSaveBlog.resultFunction = (b) => {
             console.log(b);
-            alert("Blog "+b? "yayınlandı": "yayından kaldırıldı")
+            alert("Blog "+ bool ? "yayınlandı": "yayından kaldırıldı")
+            globalBogStatus = bool ? "p" : "t";
+            window.location.href = window.location.origin + '/write/'+globalBogId+"-"+globalBogStatus;
         }
         apiSaveBlog.resultErrFunction = apiSaveBlog.resultErrFunction;
         apiSaveBlog.GetAuth("blogs/"+metod+"?blogId="+globalBogId, t.token);
@@ -578,7 +580,7 @@ var xxTemp = new URLSearchParams(window.location.search).get('id');
 if(xxTemp != null){
     var x = xxTemp.split("-");
     var BlogId = x[0];
-    if(x.length > 0){
+    if(x.length > 1){
         globalBogStatus = x[1];
     }
     else{
@@ -591,13 +593,13 @@ if(xxTemp != null){
 function setParam(param){
     var x = param.split("-");
     var BlogId = x[0];
-    console.log(x.length)
-    if(x.length > 0){
+    if(x.length > 1){
         globalBogStatus = x[1];
     }
     else{
         globalBogStatus = "t";
     }
+    setPublishBtn(globalBogStatus.includes("y"));
     globalBogId = parseInt(BlogId);
     getBlogDetail(BlogId);//, (BlogTitle)=>{history.pushState({}, null, "/blogView/" + fixUrlChar(BlogTitle) + "-" + BlogId)});
     // getUser(x[0], (userNickname)=>{history.pushState({}, null, "/user/" + x[0])});
