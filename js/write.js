@@ -573,11 +573,17 @@ function setPublishBtn(b){
 
 
 var globalBogId;
+var globalBogStatus;
 var xxTemp = new URLSearchParams(window.location.search).get('id');
 if(xxTemp != null){
     var x = xxTemp.split("-");
     var BlogId = x[0];
-    console.log(x[1]);
+    if(x.length > 0){
+        globalBogStatus = x[1];
+    }
+    else{
+        globalBogStatus = "t";
+    }
     globalBogId = parseInt(BlogId);
     getBlogDetail(xxidTemp);//, (BlogTitle)=>{history.pushState({}, null, "/blogView.html?name=" + fixUrlChar(BlogTitle) + "&id=" + xxidTemp)});
     // getUser(xxTemp, (userNickname)=>{history.pushState({}, null, "/user.html?name=" + xxTemp)});
@@ -585,7 +591,13 @@ if(xxTemp != null){
 function setParam(param){
     var x = param.split("-");
     var BlogId = x[0];
-    console.log(x[1]);
+    console.log(x.length)
+    if(x.length > 0){
+        globalBogStatus = x[1];
+    }
+    else{
+        globalBogStatus = "t";
+    }
     globalBogId = parseInt(BlogId);
     getBlogDetail(BlogId);//, (BlogTitle)=>{history.pushState({}, null, "/blogView/" + fixUrlChar(BlogTitle) + "-" + BlogId)});
     // getUser(x[0], (userNickname)=>{history.pushState({}, null, "/user/" + x[0])});
