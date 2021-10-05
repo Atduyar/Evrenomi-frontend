@@ -316,7 +316,15 @@
     padding: 15px;
     font-size: 1.3em;
 }
-
+#unpublish{
+    display: none;
+}
+.blog-publised #unpublish{
+    display: inline-block!important;
+}
+.blog-publised #publish{
+    display: none!important;
+}
 
 
 
