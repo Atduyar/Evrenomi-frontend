@@ -202,8 +202,8 @@ function createblog(){
         "blogContent":blogContent,
         "blogTags": getBlogTagText(), 
         "authorSummary":{"nickname":"Sen"},
-        "blogDate":new Date().toDateString(),
-        "blogId":0
+        //"blogDate":new Date().toDateString(),
+        "blogId": 
     };
     document.getElementById("mobilView").contentWindow.setBlogDetail(b);
     var tags = getBlogTagText();
