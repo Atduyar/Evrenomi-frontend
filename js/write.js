@@ -540,23 +540,23 @@ function saveBlog(){
 var apiPublishBlog = new ApiAuth();
 function publishBlog(bool = true){
     var metod = bool ? "publishBlog" : "unPublishBlog"; 
-    apiSaveBlog.resultFunction = (t) => {
-        apiSaveBlog.resultFunction = (b) => {
+    apiPublishBlog.resultFunction = (t) => {
+        apiPublishBlog.resultFunction = (b) => {
             console.log(b);
-            alert("Blog "+ (bool ? "yayınlandı": "yayından kaldırıldı"));
+            alert("Blog "+ (bool ? "yayınlandı.": "yayından kaldırıldı."));
             globalBogStatus = bool ? "p" : "t";
             window.location.href = window.location.origin + '/write/'+globalBogId+"-"+globalBogStatus;
         }
-        apiSaveBlog.resultErrFunction = apiSaveBlog.resultErrFunction;
-        apiSaveBlog.GetAuth("blogs/"+metod+"?blogId="+globalBogId, t.token);
+        apiPublishBlog.resultErrFunction = apiPublishBlog.resultErrFunction;
+        apiSavapiPublishBlogeBlog.GetAuth("blogs/"+metod+"?blogId="+globalBogId, t.token);
     }
-    apiSaveBlog.resultErrFunction = (t) => {
+    apiPublishBlog.resultErrFunction = (t) => {
         console.log(t);
     }
-    apiSaveBlog.resultUnAuthFunction = (t) => {
+    apiPublishBlog.resultUnAuthFunction = (t) => {
         console.log(t);
     }
-    ApiAuth.GetToken(apiSaveBlog)
+    ApiAuth.GetToken(apiPublishBlog)
 }
 
 function setPublishBtn(b){
