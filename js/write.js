@@ -520,14 +520,13 @@ function fixTagEvents(){
 var apiSaveBlog = new ApiAuth();
 function saveBlog(){
     var blog = createblog();
-    var b = blog;
     apiSaveBlog.resultFunction = (t) => {
         apiSaveBlog.resultFunction = (b) => {
             console.log(b);
             setBlogWrite(b);
         }
         apiSaveBlog.resultErrFunction = apiSaveBlog.resultErrFunction;
-        apiSaveBlog.PostAuth("blogs/updateBlog", t.token, b);
+        apiSaveBlog.PostAuth("blogs/updateBlog", t.token, blog);
     }
     apiSaveBlog.resultErrFunction = (t) => {
         console.log(t);
