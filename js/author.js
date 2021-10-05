@@ -50,7 +50,7 @@ function setUserBlogs(b){
     for(var i = 0; i< b.length;i++){
         userBlogsPage.innerHTML += 
         `<div class="${((i%14) >= 12)?"blog-list-long ":""}blog-item">
-            <a href="/write/${b[i].blogId}" class="a-img-blog-item" >
+            <a href="/write/${b[i].blogId}-${b[i].authorName.includes("Yayında") ? "p" :"t"}" class="a-img-blog-item" >
                 <img class="img-blog-item" onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="${b[i].blogTitlePhotoUrl == null ? "" : b[i].blogTitlePhotoUrl}" loading="lazy" alt="${b[i].blogTitle}">
             </a>
             <div class='blog-content'>
