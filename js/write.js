@@ -517,25 +517,25 @@ function fixTagEvents(){
         }
     }
 }
-var saveBlog = new ApiAuth();
+var apiSaveBlog = new ApiAuth();
 function saveBlog(){
     var blog = createblog();
     var b = blog;
-    saveBlog.resultFunction = (t) => {
-        saveBlog.resultFunction = (b) => {
+    apiSaveBlog.resultFunction = (t) => {
+        apiSaveBlog.resultFunction = (b) => {
             console.log(b);
             setBlogWrite(b);
         }
-        saveBlog.resultErrFunction = saveBlog.resultErrFunction;
-        saveBlog.PostAuth("blogs/updateBlog", t.token, b);
+        apiSaveBlog.resultErrFunction = apiSaveBlog.resultErrFunction;
+        apiSaveBlog.PostAuth("blogs/updateBlog", t.token, b);
     }
-    saveBlog.resultErrFunction = (t) => {
+    apiSaveBlog.resultErrFunction = (t) => {
         console.log(t);
     }
-    saveBlog.resultUnAuthFunction = (t) => {
+    apiSaveBlog.resultUnAuthFunction = (t) => {
         console.log(t);
     }
-    ApiAuth.GetToken(saveBlog)
+    ApiAuth.GetToken(apiSaveBlog)
 }
 
 
