@@ -317,7 +317,7 @@
     font-size: 1.3em;
 }
 #unpublish{
-    display: none;
+    display: none!important;
 }
 .blog-publised #unpublish{
     display: inline-block!important;
