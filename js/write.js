@@ -549,14 +549,14 @@ function saveBlog(){
 var globalBogId;
 var xxTemp = new URLSearchParams(window.location.search).get('id');
 if(xxTemp != null){
-    globalBogId = xxidTemp;
+    globalBogId = parseInt(xxTemp);
     getBlogDetail(xxidTemp);//, (BlogTitle)=>{history.pushState({}, null, "/blogView.html?name=" + fixUrlChar(BlogTitle) + "&id=" + xxidTemp)});
     // getUser(xxTemp, (userNickname)=>{history.pushState({}, null, "/user.html?name=" + xxTemp)});
 }
 function setParam(param){
     var x = param.split("-");
     BlogId = x[x.length - 1];
-    globalBogId = BlogId;
+    globalBogId = parseInt(BlogId);
     getBlogDetail(BlogId);//, (BlogTitle)=>{history.pushState({}, null, "/blogView/" + fixUrlChar(BlogTitle) + "-" + BlogId)});
     // getUser(x[0], (userNickname)=>{history.pushState({}, null, "/user/" + x[0])});
 }
