@@ -524,7 +524,7 @@ function saveBlog(){
     apiSaveBlog.resultFunction = (t) => {
         apiSaveBlog.resultFunction = (b) => {
             console.log(b);
-            setBlogWrite(b.data);
+            setBlogWrite(b);
         }
         apiSaveBlog.resultErrFunction = apiSaveBlog.resultErrFunction;
         apiSaveBlog.PostAuth("blogs/updateBlog", t.token, b);
