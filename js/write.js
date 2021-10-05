@@ -543,7 +543,7 @@ function publishBlog(bool = true){
     apiSaveBlog.resultFunction = (t) => {
         apiSaveBlog.resultFunction = (b) => {
             console.log(b);
-            alert("Blog "+ bool ? "yayınlandı": "yayından kaldırıldı")
+            alert("Blog "+ (bool ? "yayınlandı": "yayından kaldırıldı"));
             globalBogStatus = bool ? "p" : "t";
             window.location.href = window.location.origin + '/write/'+globalBogId+"-"+globalBogStatus;
         }
