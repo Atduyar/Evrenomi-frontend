@@ -586,7 +586,7 @@ if(xxTemp != null){
     else{
         globalBogStatus = "t";
     }
-    setPublishBtn(globalBogStatus.includes("y"));
+    setPublishBtn(globalBogStatus.includes("p"));
     globalBogId = parseInt(BlogId);
     getBlogDetail(xxidTemp);//, (BlogTitle)=>{history.pushState({}, null, "/blogView.html?name=" + fixUrlChar(BlogTitle) + "&id=" + xxidTemp)});
     // getUser(xxTemp, (userNickname)=>{history.pushState({}, null, "/user.html?name=" + xxTemp)});
@@ -600,7 +600,7 @@ function setParam(param){
     else{
         globalBogStatus = "t";
     }
-    setPublishBtn(globalBogStatus.includes("y"));
+    setPublishBtn(globalBogStatus.includes("p"));
     globalBogId = parseInt(BlogId);
     getBlogDetail(BlogId);//, (BlogTitle)=>{history.pushState({}, null, "/blogView/" + fixUrlChar(BlogTitle) + "-" + BlogId)});
     // getUser(x[0], (userNickname)=>{history.pushState({}, null, "/user/" + x[0])});
