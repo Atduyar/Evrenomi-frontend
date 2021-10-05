@@ -538,7 +538,7 @@ function saveBlog(){
     ApiAuth.GetToken(apiSaveBlog)
 }
 var apiPublishBlog = new ApiAuth();
-function publishBlog(b = true){
+function publishBlog(bool = true){
     var metod = bool ? "publishBlog" : "unPublishBlog"; 
     apiSaveBlog.resultFunction = (t) => {
         apiSaveBlog.resultFunction = (b) => {
