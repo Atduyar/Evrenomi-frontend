@@ -586,6 +586,7 @@ if(xxTemp != null){
     else{
         globalBogStatus = "t";
     }
+    setPublishBtn(globalBogStatus.includes("y"));
     globalBogId = parseInt(BlogId);
     getBlogDetail(xxidTemp);//, (BlogTitle)=>{history.pushState({}, null, "/blogView.html?name=" + fixUrlChar(BlogTitle) + "&id=" + xxidTemp)});
     // getUser(xxTemp, (userNickname)=>{history.pushState({}, null, "/user.html?name=" + xxTemp)});
