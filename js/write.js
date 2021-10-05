@@ -557,7 +557,14 @@ function publishBlog(b = true){
     ApiAuth.GetToken(apiSaveBlog)
 }
 
-
+function setPublishBtn(b){
+    if(b){
+        document.getElementById("top-menu-id").classList.add("blog-publised");
+    }
+    else{
+        document.getElementById("top-menu-id").classList.remove("blog-publised");
+    }
+}
 
 
 
