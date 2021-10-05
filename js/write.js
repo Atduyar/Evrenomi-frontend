@@ -537,6 +537,25 @@ function saveBlog(){
     }
     ApiAuth.GetToken(apiSaveBlog)
 }
+var apiPublishBlog = new ApiAuth();
+function publishBlog(b = true){
+    var metod = b ? "publishBlog" : "unPublishBlog"; 
+    apiSaveBlog.resultFunction = (t) => {
+        apiSaveBlog.resultFunction = (b) => {
+            console.log(b);
+            alert("Blog "+b? "yayınlandı": "yayından kaldırıldı")
+        }
+        apiSaveBlog.resultErrFunction = apiSaveBlog.resultErrFunction;
+        apiSaveBlog.GetAuth("blogs/"+metod+"?blogId="+globalBogId, t.token);
+    }
+    apiSaveBlog.resultErrFunction = (t) => {
+        console.log(t);
+    }
+    apiSaveBlog.resultUnAuthFunction = (t) => {
+        console.log(t);
+    }
+    ApiAuth.GetToken(apiSaveBlog)
+}
 
 
 
