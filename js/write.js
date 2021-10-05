@@ -517,8 +517,26 @@ function fixTagEvents(){
         }
     }
 }
-
-
+var saveBlog = new ApiAuth();
+function saveBlog(){
+    var blog = createblog();
+    var b = blog;
+    saveBlog.resultFunction = (t) => {
+        saveBlog.resultFunction = (b) => {
+            console.log(b);
+            setBlogWrite(b);
+        }
+        saveBlog.resultErrFunction = saveBlog.resultErrFunction;
+        saveBlog.PostAuth("blogs/updateBlog", t.token, b);
+    }
+    saveBlog.resultErrFunction = (t) => {
+        console.log(t);
+    }
+    saveBlog.resultUnAuthFunction = (t) => {
+        console.log(t);
+    }
+    ApiAuth.GetToken(saveBlog)
+}
 
 
 
