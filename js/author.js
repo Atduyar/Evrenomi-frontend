@@ -1,4 +1,5 @@
 var apiUser = new ApiAuth();
+var apiDeleteBlog = new ApiAuth();
 
 getUser();
 function getUser() {
@@ -114,4 +115,22 @@ function deleteBlog(id,name=""){
     if(id == parseInt(result)){
         console.log(result);
     }
+}
+
+function getUserBlogs(blogId) {
+    apiDeleteBlog.resultFunction = (t) => {
+        apiDeleteBlog.resultFunction = (b) => {
+            console.log(b);
+            setUserBlogs(b);
+        }
+        apiDeleteBlog.resultErrFunction = apiDeleteBlog.resultErrFunction;
+        apiDeleteBlog.GetAuth("blogs/deleteBlog?blogId="+blogId, t.token);
+    }
+    apiDeleteBlog.resultErrFunction = (t) => {
+        console.log(t);
+    }
+    apiDeleteBlog.resultUnAuthFunction = (t) => {
+        console.log(t);
+    }
+    ApiAuth.GetToken(apiDeleteBlog)
 }
