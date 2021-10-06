@@ -20,7 +20,7 @@
     * {
         --icerik-w: 825px;
         --nav-size: 20vw;
-        --nav-line-fix: 0vw;
+        --nav-line-fix: 10vw;
     }
     .blog-item {
         width: calc((100% / 2) - 32px)!important;
@@ -31,7 +31,7 @@
     * {
         --icerik-w: 100%;
         --nav-size: 20vw;
-        --nav-line-fix: 0vw;
+        --nav-line-fix: 10vw;
     }
     .blog-item {
         width: calc(100% - 32px)!important;
