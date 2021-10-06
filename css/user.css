@@ -145,11 +145,11 @@
 
 #user-body-nav-line{
     height: 5px;
-    padding: 0 0 0 calc(0 * 20vw + var(--nav-line-fix));;
+    padding: 0 0 0  calc(100% / 3 / 2 - var(--nav-line-fix ));
     /* padding: 0 20vw 0 20vw;
     padding: 0 00vw 0 40vw; */
     width: 100%;
-    margin: 0 calc(( 100% - 60vw ) / 2);
+    /* margin: 0 calc(( 100% - 60vw ) / 2); */
     transition: 0.5s;
 }
 #user-body-nav-line div{
