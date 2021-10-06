@@ -309,21 +309,17 @@
 .menubtn-div p{
     display: inline-block;
     width: 50%;
-    padding: 0 0 0 025px;
+    padding: 0 25px 0 25px;
     font-size: 50px;
     margin-top: -25px;
     color: #dddddd;
 }
 .menubtn-div p:nth-child(1){
-    color: #39D1B4;
-}
-.menubtn-div p:nth-child(2){
     color: crimson;
 }
-.summary .backbtn{
-    display: none;
-}
-.backbtn{
+.menubtn-div p:nth-child(2){
+    color: #39D1B4;
+    text-align: right;
 }
 
 .blog-tag-text,
