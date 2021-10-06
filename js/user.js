@@ -134,7 +134,7 @@ function setUserBlogs(b){
     userBlogsPageId++;
     var tags = "";
     aa = b;
-    if(b[i].blogTags != null && b[i].blogTags != undefined && b){
+    if(b[i].blogTags != null && b[i].blogTags != undefined ){
         for(var j = 0; i < b[i].blogTags.length;i++){
             tags += `<a href="/category/${b[i].blogTags[j]}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${b[i].blogTags[j]}</a>`
         }
