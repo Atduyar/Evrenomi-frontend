@@ -73,7 +73,7 @@ function setUserReaded(b){
     for(var i = 0; i< b.length;i++){
         var tags = "";
         if(b[i].blogTags != null && b[i].blogTags != undefined){
-            for(var j = 0; i < b[i].blogTags.length;i++){
+            for(var j = 0; i < b[i].blogTags.length;j++){
                 tags += `<a href="/category/${b[i].blogTags[j].name}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${b[i].blogTags[j].name}</a>`
             }
         }
@@ -135,7 +135,7 @@ function setUserBlogs(b){
     for(var i = 0; i< b.length;i++){
         var tags = "";
         if(b[i].blogTags != null && b[i].blogTags != undefined ){
-            for(var j = 0; i < b[i].blogTags.length;i++){
+            for(var j = 0; i < b[i].blogTags.length;j++){
                 tags += `<a href="/category/${b[i].blogTags[j].name}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${b[i].blogTags[j].name}</a>`
             }
         }
