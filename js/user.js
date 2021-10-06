@@ -39,7 +39,7 @@ var userPageLine = document.getElementById("user-body-nav-line");
 var oldUBPage = 0;
 function changeUBPage(x){
     userPage.style = "transform: translateX(calc( (-100% / 3) * "+x+" ));";
-    userPageLine.style = "padding-left: calc("+(x)+" * 20vw + var(--nav-line-fix    ));!important";
+    userPageLine.style = "padding-left: calc("+x+" * 100% / 3 + 100% / 3 / 2 - var(--nav-line-fix ));!important";
     //active
     userPage.children[oldUBPage].classList.remove("active");
     oldUBPage = x;
