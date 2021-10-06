@@ -56,7 +56,7 @@ function setUserBlogs(b){
         }
         userBlogsPage.innerHTML += 
         `<div class="${((i%14) >= 12)?"blog-list-long ":""}blog-item">
-            <div class="delete-btn" onclick="deleteBlog(${b[i].blogId},${b[i].blogTitle})">X</div>
+            <div class="delete-btn" onclick="deleteBlog(${b[i].blogId},"${b[i].blogTitle}")">X</div>
             <a href="/write/${b[i].blogId}-${b[i].authorName.includes("Yayında") ? "p" :"t"}" class="a-img-blog-item" >
                 <img class="img-blog-item" onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="${b[i].blogTitlePhotoUrl == null ? "" : b[i].blogTitlePhotoUrl}" loading="lazy" alt="${b[i].blogTitle}">
             </a>
