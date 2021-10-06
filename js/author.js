@@ -110,6 +110,8 @@ function deleteMod(){
     document.getElementById("user-blog-list").classList.toggle("delete-mod");
 }
 function deleteBlog(id,name=""){
-    var result = window.prompt("DİKAT "+name+" ADLI "+id+" İD Lİ BLOG SİLİNECEK.\nEğer onaylıyorsanız \""+id+"\" yazıp tamam a tıklayın.","Blog id sini buraya yazınız.");
-    console.log(result);
+    var result = window.prompt("DİKAT!!\n"+name+" ADLI, "+id+" İD Lİ BLOG SİLİNECEK.\nEğer onaylıyorsanız \""+id+"\" yazıp tamam a tıklayın.","Blog id sini buraya yazınız.");
+    if(id == parseInt(result)){
+        console.log(result);
+    }
 }
