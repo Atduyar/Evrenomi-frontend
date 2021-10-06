@@ -547,7 +547,7 @@ function publishBlog(bool = true){
             window.location.href = window.location.origin + '/write/'+globalBogId+"-"+globalBogStatus;
         }
         apiPublishBlog.resultErrFunction = apiPublishBlog.resultErrFunction;
-        apiSavapiPublishBlogeBlog.GetAuth("blogs/"+metod+"?blogId="+globalBogId, t.token);
+        apiPublishBlog.GetAuth("blogs/"+metod+"?blogId="+globalBogId, t.token);
     }
     apiPublishBlog.resultErrFunction = (t) => {
         console.log(t);
