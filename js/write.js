@@ -191,7 +191,6 @@ function createblog(){
     for(var i = 2; icerikDiv.children.length > i; i++){
         blogContent.push(getItemJson(icerikDiv.children[i]));
     }
-    aaa = blogContent;
     console.table(blogContent);
     console.log(JSON.stringify(blogContent));
 

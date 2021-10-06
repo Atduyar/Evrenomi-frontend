@@ -36,7 +36,10 @@
             <button style="border-color: #4634eb;margin-top: 12px;" onclick="toggleBlogView()"> Görünümü göster / İlerle</button>
         </div>
     </div>
-    <p class="backbtn c-p" onclick="toggleBlogView()">⬅</p>
+    <div class="menubtn-div">
+        <p class="c-p" onclick="toggleBlogView()">⬅</p>
+        <p class="c-p" onclick="createblog()">⟲</p>
+    </div>
     <iframe id="mobilView" src="https://Evrenomi.com/blogView/0" style="width: 90%;height: 75%;margin: 0 5% 30vh 5%;"></iframe>
     <script>document.getElementById("mobilView").src = window.location.origin + '/blogView/0'</script>
 </div>
