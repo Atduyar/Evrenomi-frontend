@@ -163,3 +163,18 @@
     border-radius: 5px;
     color: white;
 }
+
+.delete-btn{
+    display: none;
+    position: absolute;
+    z-index: 15;
+    right: 0;
+    top: 0;
+    padding: 10px 20px;
+    color: red;
+    font-size: 36px;
+    font-weight: bolder;
+}
+.delete-mod .delete-btn{
+    display: block!important;
+}
