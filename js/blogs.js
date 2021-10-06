@@ -26,6 +26,12 @@ function setBlogs(b) {
         blogTitle.innerHTML = firstBlog.blogTitle;
         blogAut.innerHTML = firstBlog.blogDate + " <a class='inactive-blackbg c-p td-u' href=/user/" + firstBlog.authorName + ">" + firstBlog.authorName + "</a> tarafından yazıldı.";
     }
+    var tags = "";
+    if(b[i].BlogTags != null && b[i].BlogTags != undefined){
+        for(var j = 0; i < b[i].BlogTags.length;i++){
+            tags += `<a href="/category/${b[i].BlogTags[j]}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${b[i].BlogTags[j]}</a>`
+        }
+    }
     for (var i = 0; i < b.length; i++) {//((i+((pageNumber == 1)?1:0))%13 == 0)
         blogsHtml +=
             `<div class="${((i%14) >= 12)?"blog-list-long ":""}blog-item">
@@ -45,8 +51,7 @@ function setBlogs(b) {
                         <div class="blog-item-author-info">
                             <a href="/user/${b[i].authorName}" class="inactive-blackbg c-p td-n">${b[i].authorName}</a>
                         </div>
-                        <a href="/category/Politika" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">Politika</a>
-                        <a href="/category/Elestiri" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">Eleştiri</a>
+                        ${tags}
                     </div>
                 </div>
             </div>

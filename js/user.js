@@ -69,6 +69,13 @@ function setUserReaded(b){
         readedPage.innerHTML = "";
     } 
     userReadedPageId++;
+    
+    var tags = "";
+    if(b[i].BlogTags != null && b[i].BlogTags != undefined){
+        for(var j = 0; i < b[i].BlogTags.length;i++){
+            tags += `<a href="/category/${b[i].BlogTags[j]}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${b[i].BlogTags[j]}</a>`
+        }
+    }
     for(var i = 0; i< b.length;i++){
         readedPage.innerHTML += 
         `<div class="${((i%14) >= 12)?"blog-list-long ":""}blog-item">
@@ -88,8 +95,7 @@ function setUserReaded(b){
                         <div class="blog-item-author-info">
                             <a href="/user/${b[i].authorName}" class="inactive-blackbg c-p td-n">${b[i].authorName}</a>
                         </div>
-                        <a href="/category/Politika" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">Politika</a>
-                        <a href="/category/Elestiri" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">Eleştiri</a>
+                        ${tags}
                     </div>
                 </div>
             </div>
