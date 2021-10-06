@@ -114,10 +114,11 @@ function deleteBlog(id,name=""){
     var result = window.prompt("DİKAT!!\n"+name+" ADLI, "+id+" İD Lİ BLOG SİLİNECEK.\nEğer onaylıyorsanız \""+id+"\" yazıp tamam a tıklayın.","Blog id sini buraya yazınız.");
     if(id == parseInt(result)){
         console.log(result);
+        deleteBlogApi(id);
     }
 }
 
-function getUserBlogs(blogId) {
+function deleteBlogApi(blogId) {
     apiDeleteBlog.resultFunction = (t) => {
         apiDeleteBlog.resultFunction = (b) => {
             console.log(b);
