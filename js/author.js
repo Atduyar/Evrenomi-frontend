@@ -25,7 +25,6 @@ var userBlogsPageId = 1;
 function getUserBlogs(userId) {
     apiUser.resultFunction = (t) => {
         apiUser.resultFunction = (b) => {
-            console.log(b);
             setUserBlogs(b);
         }
         apiUser.resultErrFunction = apiUser.resultErrFunction;
