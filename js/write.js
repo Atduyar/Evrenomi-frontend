@@ -524,6 +524,7 @@ function saveBlog(){
         apiSaveBlog.resultFunction = (b) => {
             console.log(b);
             setBlogWrite(b);
+            alert("Blog güncellemesi basarılı.");
         }
         apiSaveBlog.resultErrFunction = apiSaveBlog.resultErrFunction;
         apiSaveBlog.PostAuth("blogs/updateBlog", t.token, blog);
