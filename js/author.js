@@ -117,11 +117,11 @@ function deleteBlog(t,id,name=""){
     }
 }
 
-function deleteBlogApi(blogId, t) {
+function deleteBlogApi(blogId, blogThis) {
     apiDeleteBlog.resultFunction = (t) => {
         apiDeleteBlog.resultFunction = (b) => {
             console.log(b);
-            t.parentElement.outerHTML = "";
+            blogThis.parentElement.outerHTML = "";
         }
         apiDeleteBlog.resultErrFunction = apiDeleteBlog.resultErrFunction;
         apiDeleteBlog.GetAuth("blogs/deleteBlog?blogId="+blogId, t.token);
