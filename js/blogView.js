@@ -30,7 +30,7 @@ function setBlogDetail(b){
     
     <meta name="twitter:description" content="${b.blogSummary}">`;
 
-    if(b[i].blogTags != null && b[i].blogTags != undefined){
+    if(b.blogTags != null && b.blogTags != undefined){
         for(var i = 0;i<b.blogTags.length;i++){
             tags.innerHTML += `<a href="/category/${b.blogTags[i].id}" class="p-kategori inactive c-p td-n">${b.blogTags[i].name}</a>`;
         }
