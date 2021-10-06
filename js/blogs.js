@@ -27,9 +27,9 @@ function setBlogs(b) {
         blogAut.innerHTML = firstBlog.blogDate + " <a class='inactive-blackbg c-p td-u' href=/user/" + firstBlog.authorName + ">" + firstBlog.authorName + "</a> tarafından yazıldı.";
     }
     var tags = "";
-    if(b[i].BlogTags != null && b[i].BlogTags != undefined){
-        for(var j = 0; i < b[i].BlogTags.length;i++){
-            tags += `<a href="/category/${b[i].BlogTags[j]}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${b[i].BlogTags[j]}</a>`
+    if(b[i].blogTags != null && b[i].blogTags != undefined){
+        for(var j = 0; i < b[i].blogTags.length;i++){
+            tags += `<a href="/category/${b[i].blogTags[j]}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${b[i].blogTags[j]}</a>`
         }
     }
     for (var i = 0; i < b.length; i++) {//((i+((pageNumber == 1)?1:0))%13 == 0)
