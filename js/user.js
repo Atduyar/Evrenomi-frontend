@@ -124,7 +124,7 @@ function getUserReaded(userId) {
 
 ////////////////////////////////////////////////////////////////////
 
-
+var aa;
 function setUserBlogs(b){
     console.log(b);
     var BlogsPage = document.getElementById("user-body-page").getElementsByClassName("user-body-page-item")[2].children[0];
@@ -133,7 +133,8 @@ function setUserBlogs(b){
     } 
     userBlogsPageId++;
     var tags = "";
-    if(b[i].blogTags != null && b[i].blogTags != undefined){
+    aa = b;
+    if(b[i].blogTags != null && b[i].blogTags != undefined && b){
         for(var j = 0; i < b[i].blogTags.length;i++){
             tags += `<a href="/category/${b[i].blogTags[j]}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${b[i].blogTags[j]}</a>`
         }
