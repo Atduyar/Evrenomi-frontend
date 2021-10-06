@@ -30,8 +30,10 @@ function setBlogDetail(b){
     
     <meta name="twitter:description" content="${b.blogSummary}">`;
 
-    for(var i = 0;i<b.blogTags.length;i++){
-        tags.innerHTML += `<a href="/category/${b.blogTags[i].id}" class="p-kategori inactive c-p td-n">${b.blogTags[i].name}</a>`;
+    if(b[i].blogTags != null && b[i].blogTags != undefined){
+        for(var i = 0;i<b.blogTags.length;i++){
+            tags.innerHTML += `<a href="/category/${b.blogTags[i].id}" class="p-kategori inactive c-p td-n">${b.blogTags[i].name}</a>`;
+        }
     }
     blogTitle.innerHTML = b.blogTitle;
     titleAut.innerHTML = blogDate +` tarihinde <a class='inactive c-p td-u' href="/user/${b.authorSummary.nickname}">${b.authorSummary.nickname}</a> tarafından yazıldı.`;
