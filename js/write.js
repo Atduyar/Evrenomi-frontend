@@ -6,13 +6,13 @@ var icerikDiv = document.getElementById("div-icerik");
 var aaa;
 
 function addEvent(x){
-    if(x.classList.contains("img")){
+    if(x.classList.contains("img") || x.classList.contains("ımg")){
         x.addEventListener("input", (evt)=>{
             changeImgeUrl(evt.target);
         }, false);
         changeImgeUrl(x);
     }
-    if(x.classList.contains("video")){
+    if(x.classList.contains("video") || x.classList.contains("vıdeo") ){
         x.addEventListener("input", (evt)=>{
             changeVideoUrl(evt.target)
         }, false);

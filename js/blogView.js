@@ -80,10 +80,11 @@ function addBlogContent(content, blogContent){
             console.log("a");
             text = `<a href="${content.description}">${content.data}</a>`;
             break;
-            case "video":
-                console.log("a");
-                text = `<iframe src="${content.data}"></iframe>`;
-                break;
+        case "video":
+        case "vıdeo":
+            console.log("a");
+            text = `<iframe src="${content.data}"></iframe>`;
+            break;
         // case "sep":
         //     console.log("sep");
         //     text = 
