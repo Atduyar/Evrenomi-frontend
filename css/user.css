@@ -266,16 +266,16 @@
 .active .blog-list {
     display: flex!important;
 }
+/* Fake Start */
 .fakse-user{
     display: none!important;
 }
-.fake-mode #user-div{
+.fake-mode{
     display: none!important;
 }
 .fake-mode .fakse-user{
     display: block!important;
 }
-
 
 
 .wrapper {
