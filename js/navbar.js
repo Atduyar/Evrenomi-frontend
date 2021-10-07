@@ -84,16 +84,47 @@ var apiAraNav = new ApiAuth;
 function getAra(text){
     splitedText = text.split(" ");
     apiAraNav.resultFunction = (t) => { //token alırsan
-        apiAraNav.resultFunction = (u) => { //kullanıcıyı alırsan
-            console.log(u);
+        apiAraNav.resultFunction = (b) => { //kullanıcıyı alırsan
+            console.log(b);
+            setAra(b);
         }
         apiAraNav.PostAuth("blogs/searchBlogs",t.token,splitedText);
     };
-    apiAraNav.resultErrFunction = (t) => { //token almasa
-        console.log(t);
-    };
-    apiAraNav.resultUnAuthFunction = (t) => { //token almasa
-        console.log(t);
-    };
     ApiAuth.GetToken(apiAraNav);
+}
+
+var araBlogList = document.getElementById("ara-blog-list");
+function setAra(b){
+
+    for(var i = 0; i< b.length;i++){
+        var tags = "";
+        if(b[i].blogTags != null && b[i].blogTags != undefined){
+            for(var j = 0; j < b[i].blogTags.length;j++){
+                tags += `<a href="/category/${b[i].blogTags[j].name}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${b[i].blogTags[j].name}</a>`
+            }
+        }
+        araBlogList.innerHTML += 
+        `<div class="blog-item">
+            <a href="/blogView/${b[i].blogId}" class="a-img-blog-item" >
+                <img class="img-blog-item" src="${b[i].blogTitlePhotoUrl}" loading="lazy" alt="${b[i].blogTitle}">
+            </a>
+            <div class='blog-content'>
+                <p class="p-publish-title only-long">
+                    ${b[i].blogDate}
+                </p>
+                <div class="blog-des-group">
+                    <p class="text-color p-baslik-blog-item c-p">${b[i].blogTitle}</p>
+                    <p class="p-aciklama-blog-item">${(b[i].blogSummary.length > 250) ? b[i].blogSummary.substring(0, 225) + "...":b    [i].blogSummary }</p>
+                </div>
+                <div class="blog-item-details">
+                    <div class="kategori-bar-blog-item">
+                        <div class="blog-item-author-info">
+                            <a href="/user/${b[i].authorName}" class="inactive-blackbg c-p td-n">${b[i].authorName}</a>
+                        </div>
+                        ${tags}
+                    </div>
+                </div>
+            </div>
+        </div>`
+    }
 }
