@@ -18,12 +18,13 @@ function setBlogDetail(b){
     var titleAut = title.getElementsByClassName("p-publish-title")[0];
     var blogDate = new Date(b.blogDate).toDateString();
     var blogTitle = title.getElementsByClassName("p-main-title")[0];
-    var blogTitle = title.getElementsByClassName("p-main-title")[0];
     var tags = document.getElementsByClassName("kategori-bar")[0];
     var img = document.getElementsByClassName("top-bar")[0].getElementsByClassName("img-div")[0].getElementsByTagName("img")[0];
     img.src = b.blogTitlePhotoUrl;
     img.style = "";
     tags.innerHTML = "";
+    blogTitle.style = "";
+    titleAut.style = "";
     document.head.innerHTML += `<meta name="description" content="${b.blogSummary}">
 
     <meta property="og:description" content="${b.blogSummary}">
