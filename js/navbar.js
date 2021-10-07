@@ -86,8 +86,6 @@ function getAra(text){
     apiAraNav.resultFunction = (t) => { //token alırsan
         apiAraNav.resultFunction = (u) => { //kullanıcıyı alırsan
             console.log(u);
-            globalUser = u;
-            setUserAuth(u);
         }
         apiAraNav.PostAuth("blogs/searchBlogs",t.token,splitedText);
     };
