@@ -97,7 +97,7 @@ function getAra(text){
 
 var araBlogList = document.getElementById("ara-blog-list");
 async function setAra(b, id){
-    await sleep(2000);
+    await sleep(400);
     console.log(id+" - "+globalId);
     if(id != globalId){
         console.log("pas");
