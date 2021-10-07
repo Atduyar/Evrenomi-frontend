@@ -283,7 +283,15 @@
 .fake-mode #fake-user-div{
     display: block!important;
 }
-
+#fake-user-div #user-pp div {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 42px;
+}
+#fake-user-div .blog-item{
+    transition: none!important;
+}
 
 .wrapper {
     width: 0px;
@@ -309,10 +317,4 @@
     }
 }
 
-#fake-user-div #user-pp div {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    margin: 42px;
-}
 /* fake-end */
