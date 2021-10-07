@@ -266,3 +266,12 @@
 .active .blog-list {
     display: flex!important;
 }
+#fakse-user{
+    display: none;
+}
+.fake-mode #user-div{
+    display: none!important;
+}
+.fake-mode #fakse-user{
+    display: block!important;
+}
