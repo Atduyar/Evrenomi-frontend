@@ -40,6 +40,7 @@
     text-align: center;
     position: relative;
     top: calc(var(--navbar-h) + 42px + 21px);
+    padding-bottom: 25vh;
 }
 
 .top-bar {
