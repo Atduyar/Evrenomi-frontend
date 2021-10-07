@@ -82,7 +82,7 @@ function addBlogContent(content, blogContent){
             break;
         case "video":
         case "vıdeo":
-            console.log("a");
+            console.log("video");
             text = `<iframe src="${content.data}"></iframe>`;
             break;
         // case "sep":
