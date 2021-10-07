@@ -302,4 +302,11 @@
         background-position: 1000px 0;
     }
 }
+
+.fake-user-div .user-pp div {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 42px;
+}
 /* fake-end */
