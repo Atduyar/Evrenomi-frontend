@@ -212,7 +212,8 @@
     width:75%;
     margin:auto;
     outline:1px solid #fff;
-    border-radius:3px
+    border-radius:3px;
+    margin-bottom: 50px;
 }
 #ara-div .blog-list{
     margin-top: 10px!important;
