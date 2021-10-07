@@ -303,7 +303,7 @@
     }
 }
 
-.fake-user-div .user-pp div {
+.fake-user-div #user-pp div {
     height: 150px;
     width: 150px;
     border-radius: 50%;
