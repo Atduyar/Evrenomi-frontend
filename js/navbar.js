@@ -88,7 +88,7 @@ function getAra(text){
         apiAraNav.resultFunction = (b) => { //kullanıcıyı alırsan
             console.log(b);
             globalId++;
-            setTimeout(setAra(b,globalId), 2000);
+            setAra(b,globalId);
         }
         apiAraNav.PostAuth("blogs/searchBlogs",t.token,splitedText);
     };
@@ -96,7 +96,8 @@ function getAra(text){
 }
 
 var araBlogList = document.getElementById("ara-blog-list");
-function setAra(b, id){
+async function setAra(b, id){
+    await sleep(2000);
     console.log(id+" - "+globalId);
     if(id != globalId){
         console.log("pas");
@@ -136,3 +137,14 @@ function setAra(b, id){
         </div>`
     }
 }
+
+
+
+
+
+
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  
