@@ -116,6 +116,7 @@ function getBlogDetail(id, fixUrl = ()=>{}){
         apiBlogDetail.resultFunction = (b)=>{
             console.log(b);
             fixUrl(b.blogTitle);
+            document.getElementById("div-icerik").classList.remove("fake");
             setBlogDetail(b);
         }
         apiBlogDetail.GetAuth("blogs/getBlogGuest?id="+id);
