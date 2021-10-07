@@ -7,6 +7,9 @@
     .div-makale iframe{
         height: 300px!important;
     }
+    .fakse .img-div div{
+        width: 50vh;
+    }
 }
 @media only screen and (max-width: 835px) {
     .div-makale hr{
@@ -14,6 +17,9 @@
     }
     .div-makale iframe{
         height: 250px!important;
+    }
+    .fakse .img-div div{
+        width: 30vh;
     }
 }
 .main-div {
