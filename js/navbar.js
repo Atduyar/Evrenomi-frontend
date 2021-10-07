@@ -68,7 +68,7 @@ function ara(b){
 
 var araBar = document.getElementById("ara-bar");
 
-araBar.addEventListener('onkeydown', (evt) => {
+araBar.addEventListener('change', (evt) => {
     console.log(evt);
 });
 araBar.addEventListener('paste', function (evt) {
