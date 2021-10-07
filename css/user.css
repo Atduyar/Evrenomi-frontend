@@ -274,13 +274,13 @@
     display: flex!important;
 }
 /* Fake Start */
-.fake-user-div{
+#fake-user-div{
     display: none!important;
 }
 .fake-mode #user-div{
     display: none!important;
 }
-.fake-mode .fake-user-div{
+.fake-mode #fake-user-div{
     display: block!important;
 }
 
