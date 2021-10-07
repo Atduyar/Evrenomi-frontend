@@ -64,6 +64,12 @@ function ara(b){
         myAra.style.opacity = "0";/* sadece opacity dokun */
         setTimeout(() => { myAra.style.display = "none"; }, 500);/* sadece sondaki sayıya dokun -transition: 0.3s*/
     }
-
-    
 }
+
+var araBar = document.getElementById("ara-bar");
+araBar.addEventListener('paste', function (evt) {
+    evt.preventDefault();
+    var text = evt.clipboardData.getData('text/plain').replace(/\n/g,"");
+    console.log("pasted: " + text);
+    document.execCommand('insertText', false, text);
+})
