@@ -48,6 +48,12 @@
         margin-left: 50%!important;
         transform: translateX(-50%)!important;
     }
+    #fake-user-div #user-pp div {
+        max-width: 200px!important;
+        position: relative!important;
+        margin-left: 50%!important;
+        transform: translateX(-50%)!important;
+    }
 }
 
 .user-div,
