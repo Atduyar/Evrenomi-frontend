@@ -53,3 +53,17 @@ function getUser() {
     };
     ApiAuth.GetToken(apiNav);
 }
+
+var myAra = document.getElementById("ara-div");
+function ara(b){
+    if(b){
+        myAra.style.display = "block";
+        setTimeout(() => { myAra.style.opacity = "1"; }, 100);/* sadece opacity dokun  */
+    }
+    else{
+        myAra.style.opacity = "0";/* sadece opacity dokun */
+        setTimeout(() => { myAra.style.display = "none"; }, 500);/* sadece sondaki sayıya dokun -transition: 0.3s*/
+    }
+
+    
+}
