@@ -137,7 +137,7 @@ function addElement(tagName, data="", des="", lock=false, menu=true){
             if(data == ""){
                 data = "https://www.youtube.com/embed/iik25wqIuFo";
             }
-            return getDefualtElement(`<iframe onerror="this.src='https://www.youtube.com/embed/iik25wqIuFo';" src="https://www.youtube.com/embed/iik25wqIuFo"></iframe><p contenteditable class="textbox video" placeholder="Type some url...">${data}</p>`, "vıdeo", lock, menu)
+            return getDefualtElement(`<iframe onerror="this.src='https://www.youtube.com/embed/iik25wqIuFo';" src="https://www.youtube.com/embed/iik25wqIuFo"></iframe><p contenteditable class="textbox video" placeholder="Type some url...">${data}</p>`, "video", lock, menu)
             break;
     }
 }
