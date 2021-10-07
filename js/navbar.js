@@ -95,7 +95,7 @@ function getAra(text){
 
 var araBlogList = document.getElementById("ara-blog-list");
 function setAra(b){
-
+    araBlogList.innerHTML = "";
     for(var i = 0; i< b.length;i++){
         var tags = "";
         if(b[i].blogTags != null && b[i].blogTags != undefined){
