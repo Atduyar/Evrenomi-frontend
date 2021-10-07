@@ -67,6 +67,10 @@ function ara(b){
 }
 
 var araBar = document.getElementById("ara-bar");
+
+x.addEventListener('keypress', (evt) => {
+    console.log(evt);
+});
 araBar.addEventListener('paste', function (evt) {
     evt.preventDefault();
     var text = evt.clipboardData.getData('text/plain').replace(/\n/g,"");
