@@ -88,7 +88,7 @@ function getAra(text){
         apiAraNav.resultFunction = (b) => { //kullanıcıyı alırsan
             console.log(b);
             globalId++;
-            setAra(b,globalId);
+            setTimeout(setAra(b,globalId), 2000);
         }
         apiAraNav.PostAuth("blogs/searchBlogs",t.token,splitedText);
     };
