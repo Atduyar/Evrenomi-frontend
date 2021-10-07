@@ -159,12 +159,17 @@ img:hover {
     font-size: 1.575em;
     color: white;
 }
-
+.only-fake{
+    display: none!important;
+}
 /* Fake Start */
 
 .img-div div{
     width: 100%;
     height: 70vh;
+}
+.fake .only-fake{
+    display: block!important;
 }
 
 .wrapper {
