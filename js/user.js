@@ -18,6 +18,7 @@ function getUser(userName, fixUrl=()=>{}) {
             user = b;
             fixUrl(b.nickname);
             setUser(b);
+            document.getElementById("fake-mode").classList.remove("fake-mode");
             getUserReaded(b.id);
             getUserBlogs(b.id);
             getUserComments(b.id);
