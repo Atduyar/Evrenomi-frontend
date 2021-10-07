@@ -152,7 +152,7 @@
     transition: 0.3s;
 }
 
-.sidenav a {
+.sidenav .menu-items a {
     margin: 20px;
     height: 40px;
     text-decoration: none;
