@@ -81,12 +81,14 @@ araBar.addEventListener('paste', function (evt) {
 })
 
 var apiAraNav = new ApiAuth;
+var globalId = 0;
 function getAra(text){
     splitedText = text.split(" ");
     apiAraNav.resultFunction = (t) => { //token alırsan
         apiAraNav.resultFunction = (b) => { //kullanıcıyı alırsan
             console.log(b);
-            setAra(b);
+            globalId++;
+            setAra(b,globalId);
         }
         apiAraNav.PostAuth("blogs/searchBlogs",t.token,splitedText);
     };
@@ -94,7 +96,13 @@ function getAra(text){
 }
 
 var araBlogList = document.getElementById("ara-blog-list");
-function setAra(b){
+function setAra(b, id){
+    console.log(id+" - "+globalId);
+    if(id != globalId){
+        console.log("pas");
+        return;
+    }
+
     araBlogList.innerHTML = "";
     for(var i = 0; i< b.length;i++){
         var tags = "";
