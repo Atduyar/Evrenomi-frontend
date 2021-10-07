@@ -69,7 +69,9 @@ function ara(b){
 var araBar = document.getElementById("ara-bar");
 
 araBar.addEventListener('keyup', (evt) => {
-    console.log(araBar.innerHTML);
+    var text = araBar.innerHTML;
+    console.log(text);
+    getAra(text);
 });
 araBar.addEventListener('paste', function (evt) {
     evt.preventDefault();
@@ -77,3 +79,16 @@ araBar.addEventListener('paste', function (evt) {
     console.log("pasted: " + text);
     document.execCommand('insertText', false, text);
 })
+
+var apiAraNav = new ApiAuth;
+function getAra(){
+    apiAraNav.resultFunction = (t) => { //token alırsan
+        apiAraNav.resultFunction = (u) => { //kullanıcıyı alırsan
+            console.log(u);
+            globalUser = u;
+            setUserAuth(u);
+        }
+        apiAraNav.GetMyProfil(t.token);
+    };
+    ApiAuth.GetToken(apiAraNav);
+}

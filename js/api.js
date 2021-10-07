@@ -1,7 +1,7 @@
 const mainUrl = "https://api.atduyar.com/api/";
 
 class ApiAuth {
-    constructor(resultFunction = () => {}, resultErrFunction = () => {}, resultUnAuthFunction = () => {}) {
+    constructor(resultFunction = (r) => {console.log(r)}, resultErrFunction = (t) => {console.log(t)}, resultUnAuthFunction = (t) => {console.log(t)}) {
         this.resultFunction = resultFunction;
         this.resultErrFunction = resultErrFunction;
         this.resultUnAuthFunction = resultUnAuthFunction;
