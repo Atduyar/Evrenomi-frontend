@@ -50,6 +50,7 @@
     }
 }
 
+.user-div,
 #user-div{
     position: relative;
     top: calc(var(--navbar-h) + 42px + 21px);
@@ -267,13 +268,13 @@
     display: flex!important;
 }
 /* Fake Start */
-.fakse-user{
+.fake-user-div{
     display: none!important;
 }
-.fake-mode{
+.fake-mode #user-div{
     display: none!important;
 }
-.fake-mode .fakse-user{
+.fake-mode .fake-user-div{
     display: block!important;
 }
 
