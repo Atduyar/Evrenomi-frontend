@@ -81,14 +81,15 @@ araBar.addEventListener('paste', function (evt) {
 })
 
 var apiAraNav = new ApiAuth;
-function getAra(){
+function getAra(text){
+    splitedText = text.split(" ");
     apiAraNav.resultFunction = (t) => { //token alırsan
         apiAraNav.resultFunction = (u) => { //kullanıcıyı alırsan
             console.log(u);
             globalUser = u;
             setUserAuth(u);
         }
-        apiAraNav.GetMyProfil(t.token);
+        apiAraNav.PostAuth("blogs/searchBlogs",t.token,splitedText);
     };
     ApiAuth.GetToken(apiAraNav);
 }
