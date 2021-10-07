@@ -89,5 +89,11 @@ function getAra(text){
         }
         apiAraNav.PostAuth("blogs/searchBlogs",t.token,splitedText);
     };
+    apiAraNav.resultErrFunction = (t) => { //token almasa
+        console.log(t);
+    };
+    apiAraNav.resultUnAuthFunction = (t) => { //token almasa
+        console.log(t);
+    };
     ApiAuth.GetToken(apiAraNav);
 }
