@@ -2,22 +2,26 @@ let and, or;
 function preload() {
     and = loadImage('/assets/and.png');
 }
-
+let activeWire;
+let passiveWire;
+ 
 let a;
 let b;
-let w;
+let ww;
 function setup() { 
+    activeWire = color(100,255,0);
+    passiveWire = color(0);
     createCanvas(windowWidth, windowHeight);
     a = new And(100,100);
     b = new And(200,200);
-    w = new Wire(a.out1,b.in1);
+    ww = new Wire(a.out1,b.in1);
 } 
 
 function draw() {
     background(255);
     a.draw();
     b.draw();
-    w.draw();
+    ww.draw();
     b.move(mouseX,mouseY);
 }
 
@@ -92,9 +96,10 @@ class Wire{
         this.to=to;
         this.status=0;// 0 = normal  1 = aktif
         this.rendered=false;// 0 = normal  1 = aktif
+        this.color=passiveWire;
     }
     draw(){
-        drawWire(this.from.x, this.from.y, this.to.x, this.to.y, this.from.h, this.to.h, true);
+        drawWire(this.color,this.from.x, this.from.y, this.to.x, this.to.y, this.from.h, this.to.h, true);
     }
 }
 
