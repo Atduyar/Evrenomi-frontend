@@ -1,6 +1,6 @@
 
 // 0→  1↓  2←  3↑
-let Direct = Object.freeze({
+const Direct = Object.freeze({
     "Right" : 0,
     "Down" : 1,
     "Left" : 2,
