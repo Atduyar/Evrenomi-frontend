@@ -18,6 +18,39 @@ function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
 
+class Node{
+	constructor(x,y,h=true){
+    	this.x=x;
+        this.y=y;
+        this.h=h;//horizontal
+        this.r=20;
+    }
+    setPoz(x,y){
+    	this.x=x;
+        this.y=y;
+    }
+    draw(){
+        fill(255)//beyaz iç
+        stroke(0);//siyah dıs
+        circle(x, y, r);
+    }
+}
+
+class Gate{
+	constructor(x,y,p=0){
+    	this.x=x;
+        this.y=y;
+        this.p=p;// 0→  1↓  2←  3↑
+        this.h=(p%2==0);// horizontal
+    }
+    move(x,y){
+        throw new Error("Gate implemense edilmemis");
+    }
+    draw(){
+        throw new Error("Gate implemense edilmemis");
+    }
+}
+
 class And extends Gate{
 	constructor(x,y,p=0){
         super(x,y,p);
@@ -38,38 +71,10 @@ class And extends Gate{
     }
 }
 
-class Gate{
-	constructor(x,y,p=0){
-    	this.x=x;
-        this.y=y;
-        this.p=p;// 0→  1↓  2←  3↑
-        this.h=(p%2==0);// horizontal
-    }
-    move(x,y){
-        throw new Error("Gate implemense edilmemis");
-    }
-    draw(){
-        throw new Error("Gate implemense edilmemis");
-    }
-}
 
-class Node{
-	constructor(x,y,h=true){
-    	this.x=x;
-        this.y=y;
-        this.h=h;//horizontal
-        this.r=20;
-    }
-    setPoz(x,y){
-    	this.x=x;
-        this.y=y;
-    }
-    draw(){
-        fill(255)//beyaz iç
-        stroke(0);//siyah dıs
-        circle(x, y, r);
-    }
-}
+
+
+
 
 class Wire{
 	constructor(from,to){
