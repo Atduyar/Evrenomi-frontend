@@ -66,7 +66,7 @@ class And extends Gate{
         fill(100,255,0)//beyaz iç
         stroke(0);//siyah dıs
         circle(this.x, this.y, 20);
-        image(and, this.x, this.y, 50, 50);
+        image(and, this.x/and.width, this.y/and.height, 50, 50);
         this.in1.draw();
         this.in2.draw();
         this.out1.draw();
