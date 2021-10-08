@@ -36,7 +36,16 @@ let ww;
 let rootG = [];
 function setup() { 
     mouse = {
-        node : new Node(mouseX,mouseY)
+        node : new Node(mouseX,mouseY),
+        status : 0,
+        grap : null,
+        update : ()=>{
+            this.node.move(mouseX,mouseY);
+            if(this.status == 1){
+                grap.x = this.node.x;
+                grap.y = this.node.y;
+            }
+        }
     }
 
     activeWire = color(100,255,0);
@@ -50,14 +59,15 @@ function setup() {
 
 function draw() {
     background(255);
-    mouse.move(mouseX,mouseY);
   
     ww.draw();
     for(var i = 0;i<rootG.length;i++){
         rootG[i].draw();
     }
     for(var i = 0;i<rootG.length;i++){
-        rootG[i].collision(mouseX,mouseY);
+        if(rootG[i].collision(mouseX,mouseY)){
+            break;
+        }
     }
     //rootG[1].move(mouseX,mouseY);
 }
@@ -135,7 +145,8 @@ class And extends Gate{
         else{
             if(x > this.x && x < this.x + this.w &&
                y > this.y && y < this.y + this.h){
-                
+                mouse.grap = this;
+                mouse.status = 1;
                 return true;
             }
         }
