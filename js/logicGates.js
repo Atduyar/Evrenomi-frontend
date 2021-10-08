@@ -8,6 +8,7 @@ function setup() {
 } 
 
 function draw() {
+    image(and, 50, 50);
     if (mouseIsPressed) {
         fill(0);
     } else {
