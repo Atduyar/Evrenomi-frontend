@@ -183,47 +183,7 @@
 .p-main-title {
     text-align: center;
 }
-
-.p-publish-title {
-    text-align: center;
-}
-
-.blog-item .p-publish-title {
-    z-index: 1;
-}
-
-.description .p-text{
-    text-align: center;
-}
-
-.not-first{
-    margin: 0px auto 0px auto!important;
-}
-.blog-list {
-    display: flex;
-    flex-wrap: wrap;
-    width: var(--icerik-w);
-    margin: 75px auto 0px auto;
-}
-.only-long{
-    display: none;
-}
-
-#blog-list-fake .blog-item{
-    margin-bottom: 50px;
-}
-#blog-list-fake .p-kategori-black-blog-item{
-    height: calc(1.125em + 20px);
-    width: 30%;
-}
-#blog-list-fake .p-baslik-blog-item{
-    height: 0.6em;
-    border-radius: 0.3em;
-}
-#blog-list-fake .p-aciklama-blog-item{
-    height: 0.6em;
-    border-radius: 0.3em;
-}
+/* 111 */
 .wrapper {
     width: 0px;
     animation: fullView 0.5s forwards cubic-bezier(0.250, 0.460, 0.450, 0.940);
@@ -248,75 +208,4 @@
     }
 }
 /* fake-end */
-
-.blog-content{
-    z-index: 1;
-    width: 100%;
-    margin-top: auto;
-    padding: 16px 32px 32px;
-    pointer-events: none;
-}
-.p-aciklama-blog-item{
-    margin-bottom: 12px;
-    font-size: 14px;
-    line-height: 17px;
-    color: #DDD;
-}
-.a-img-blog-item::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(15,14,21,.4);
-    pointer-events: none;
-}
-.blog-item-details{
-    pointer-events: all;
-}
-.kategori-bar-blog-item {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    text-align: left;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.kategori-bar-blog-item:last-child {
-    margin-right: 0px!important;
-}
-
-.blog-item {
-    width: calc((100% / 3) - 32px);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    min-height: 250px;
-    border-radius: 16px;
-    margin: 0 16px;
-    margin-bottom: 32px;
-    transition: 0.3s;
-    -webkit-box-shadow: 0 5px 10px 0 rgb(0 0 0 / 50%);
-    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 50%);
-    background-color: #09080f;
-}
-
-.blog-item:hover{
-    transform: translateY(-5px);
-}
-
-.blog-list-long{
-    width: calc((100% / 2) - 32px);
-}
-
-.img-blog-item {
-    width: 100%;
-    /* height: 200px; */
-    position: absolute;
-    z-index: 0;
-    height: 100%;
-    border-radius: 16px;
-    cursor: pointer;
-    object-fit: cover;
-}
+/* 222 */
