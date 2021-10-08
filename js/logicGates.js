@@ -1,6 +1,6 @@
 let and, or;
 function preload() {
-    and = loadImage('assets/and.png');
+    and = loadImage('/assets/and.png');
 }
 
 function setup() { 
