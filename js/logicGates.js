@@ -1,3 +1,28 @@
+
+// 0→  1↓  2←  3↑
+let Direct = Object.freeze({
+    "Right" : 0,
+    "Down" : 1,
+    "Left" : 2,
+    "Up" : 3,
+    "Horizontal" : 4,
+    "Vertical" : 5,
+    "Orijn" : 6,
+    "flip" : (x)=>{
+        switch(x){
+            case 0:
+                return 2;
+            case 1:
+                return 3;
+            case 2:
+                return 0;
+            case 3:
+                return 1;
+            default:
+                return x;
+        }
+    }
+});
 let and, or;
 function preload() {
     and = loadImage('/assets/and.png');
@@ -35,7 +60,7 @@ function windowResized() {
 }
 
 class Node{
-	constructor(x,y,r,p=Direction.Orijn){
+	constructor(x,y,r,p=Direct.Orijn){
     	this.x=x;
         this.y=y;
         this.r=r;
@@ -52,34 +77,6 @@ class Node{
         circle(this.x, this.y, this.r);
     }
 }
-// 0→  1↓  2←  3↑
-const Direction = {
-    Right = 0,
-    Down = 1,
-    Left = 2,
-    Up = 3,
-    Horizontal = 4,
-    Vertical = 5,
-    Orijn = 6,
-    flip = (x)=>{
-        switch(x){
-            case 0:
-                return 2;
-                break;
-            case 1:
-                return 3;
-                break;
-            case 2:
-                return 0;
-                break;
-            case 3:
-                return 1;
-                break;
-            default:
-                return x;
-        }
-    }
-};
 
 class Gate{
 	constructor(x,y,p=0){
@@ -98,8 +95,8 @@ class Gate{
 class And extends Gate{
 	constructor(x,y,p=0){
         super(x,y,p);
-        this.in1 = new Node(x-25,y+8,10,Direction.flip(super.p));
-        this.in2 = new Node(x-25,y-8,10,Direction.flip(super.p));
+        this.in1 = new Node(x-25,y+8,10,Direct.flip(super.p));
+        this.in2 = new Node(x-25,y-8,10,Direct.flip(super.p));
         this.out1 = new Node(x+25,y,10,super.p);
     }
     move(x,y){
