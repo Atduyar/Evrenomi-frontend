@@ -59,7 +59,8 @@ function setup() {
 
 function draw() {
     background(255);
-  
+    
+    mouse.update();
     ww.draw();
     for(var i = 0;i<rootG.length;i++){
         rootG[i].draw();
