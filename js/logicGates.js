@@ -10,7 +10,7 @@ function setup() {
 } 
 
 function draw() {
-    //image(and, 50, 50,50,50);
+    image(and, 50, 50,50,50);
     a.draw();
 }
 
@@ -62,8 +62,8 @@ class And extends Gate{
         
     }
     draw(){
-        fill(255)//beyaz iç
-        stroke(100,255,50);//siyah dıs
+        fill(100,255,0)//beyaz iç
+        stroke(0);//siyah dıs
         circle(this.x, this.y, this.r);
         this.in1.draw();
         this.in2.draw();
