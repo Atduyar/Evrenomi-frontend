@@ -3,13 +3,15 @@ function preload() {
     and = loadImage('/assets/and.png');
 }
 
+let a;
 function setup() { 
     createCanvas(windowWidth, windowHeight);
+    a = new And(200,200);
 } 
 
 function draw() {
     //image(and, 50, 50,50,50);
-
+    a.draw();
 }
 
 function windowResized() {
@@ -19,13 +21,20 @@ function windowResized() {
 class And extends Gate{
 	constructor(x,y,p=0){
         super(x,y,p);
-        this.in1 = new Node(x+10,y+10,h);
+        this.in1 = new Node(x-25,y+25,h);
+        this.in2 = new Node(x-25,y-25,h);
+        this.out1 = new Node(x+25,y,h);
     }
     move(x,y){
         
     }
     draw(){
+        fill(255)//beyaz iç
+        stroke(100,255,50);//siyah dıs
+        circle(x, y, r);
         this.in1.draw();
+        this.in2.draw();
+        this.out1.draw();
     }
 }
 
