@@ -35,18 +35,6 @@ let mouse;
 let ww;
 let rootG = [];
 function setup() { 
-    mouse = {
-        node : new Node(mouseX,mouseY),
-        status : 0,
-        grap : null,
-        update : ()=>{
-            this.node.move(mouseX,mouseY);
-            if(this.status == 1){
-                grap.x = this.node.x;
-                grap.y = this.node.y;
-            }
-        }
-    }
 
     activeWire = color(100,255,0);
     passiveWire = color(255);
@@ -55,6 +43,18 @@ function setup() {
     rootG.push(new And(100,100));
     rootG.push(new And(200,200));
     ww = new Wire(rootG[0].out1,rootG[1].in1);
+    mouse = {
+        node : new Node(mouseX,mouseY),
+        status : 0,
+        grap : rootG[1],
+        update : ()=>{
+            this.node.move(mouseX,mouseY);
+            if(this.status == 1){
+                grap.x = this.node.x;
+                grap.y = this.node.y;
+            }
+        }
+    }
 } 
 
 function draw() {
