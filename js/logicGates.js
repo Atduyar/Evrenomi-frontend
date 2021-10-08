@@ -1,6 +1,10 @@
+let and, or;
+function preload() {
+    and = loadImage('assets/and.png');
+}
 
 function setup() { 
-  createCanvas(windowWidth, windowHeight);
+    createCanvas(windowWidth, windowHeight);
 } 
 
 function draw() {
