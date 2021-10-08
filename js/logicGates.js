@@ -8,21 +8,26 @@ let passiveWire;
 let a;
 let b;
 let ww;
+let root = [];
 function setup() { 
     activeWire = color(100,255,0);
-    passiveWire = color(0);
+    passiveWire = color(255);
     createCanvas(windowWidth, windowHeight);
-    a = new And(100,100);
-    b = new And(200,200);
-    ww = new Wire(a.out1,b.in1);
+    root.push(new And(100,100));
+    root.push(new And(200,200));
+    ww = new Wire(root[0].out1,root[1].in1);
 } 
 
 function draw() {
     background(255);
+    ww.draw();
     a.draw();
     b.draw();
-    ww.draw();
-    b.move(mouseX,mouseY);
+    for(var i = 0;i<root.length;i++){
+        root[i].draw();
+    }
+    root[1].move(mouseX,mouseY);
+    //b.move(mouseX,mouseY);
 }
 
 function windowResized() {
