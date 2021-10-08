@@ -4,14 +4,21 @@ function preload() {
 }
 
 let a;
+let b;
+let w;
 function setup() { 
     createCanvas(windowWidth, windowHeight);
-    a = new And(200,200);
+    a = new And(100,100);
+    b = new And(200,200);
+    w = new Wire(a.out1,b.in1);
 } 
 
 function draw() {
     background(255);
     a.draw();
+    b.draw();
+    w.draw();
+    b.move(mouseX,mouseY);
 }
 
 function windowResized() {
@@ -25,11 +32,12 @@ class Node{
         this.r=r;
         this.h=h;//horizontal
     }
-    setPoz(x,y){
+    move(x,y){
     	this.x=x;
         this.y=y;
     }
     draw(){
+        strokeWeight(1);
         fill(255)//beyaz iç
         stroke(0);//siyah dıs
         circle(this.x, this.y, this.r);
@@ -59,7 +67,11 @@ class And extends Gate{
         this.out1 = new Node(x+25,y,10,super.h);
     }
     move(x,y){
-        
+        this.x = x;
+        this.y = y;
+        this.in1.move(x-25,y+8);
+        this.in2.move(x-25,y-8);
+        this.out1.move(x+25,y);
     }
     draw(){
         image(and, this.x-25, this.y-25, 50, 50);
@@ -79,9 +91,10 @@ class Wire{
     	this.from=from;
         this.to=to;
         this.status=0;// 0 = normal  1 = aktif
+        this.rendered=false;// 0 = normal  1 = aktif
     }
     draw(){
-        drawWire(from.x, from.y, to.x, to.y, from.h, to.h, true);
+        drawWire(this.from.x, this.from.y, this.to.x, this.to.y, this.from.h, this.to.h, true);
     }
 }
 
@@ -116,6 +129,6 @@ function drawWire(c,x1,y1,x2,y2,h1=true,h2=true,re=true){
     endShape();
     
     if(re){
-        createLine(c,x1,y1,x2,y2,h1,h2,false);
+        drawWire(c,x1,y1,x2,y2,h1,h2,false);
     }
 }
