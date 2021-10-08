@@ -95,9 +95,9 @@ class Gate{
 class And extends Gate{
 	constructor(x,y,p=0){
         super(x,y,p);
-        this.in1 = new Node(x-25,y+8,10,Direct.flip(super.p));
-        this.in2 = new Node(x-25,y-8,10,Direct.flip(super.p));
-        this.out1 = new Node(x+25,y,10,super.p);
+        this.in1 = new Node(x-25,  y+8,10, Direct.flip(this.p));
+        this.in2 = new Node(x-25,  y-8,10, Direct.flip(this.p));
+        this.out1 = new Node(x+25, y,10,   this.p);
     }
     move(x,y){
         this.x = x;
