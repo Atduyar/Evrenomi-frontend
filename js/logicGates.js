@@ -23,6 +23,7 @@ const Direct = Object.freeze({
         }
     }
 });
+const mouse;
 let and, or;
 function preload() {
     and = loadImage('/assets/and.png');
@@ -34,9 +35,12 @@ let mouse;
 let ww;
 let rootG = [];
 function setup() { 
+    mouse = {
+        node : new Node(mouseX,mouseY)
+    }
+
     activeWire = color(100,255,0);
     passiveWire = color(255);
-    mouse = new Node(mouseX,mouseY);
   
     createCanvas(windowWidth, windowHeight);
     rootG.push(new And(100,100));
@@ -51,6 +55,9 @@ function draw() {
     ww.draw();
     for(var i = 0;i<rootG.length;i++){
         rootG[i].draw();
+    }
+    for(var i = 0;i<rootG.length;i++){
+        rootG[i].collision(mouseX,mouseY);
     }
     //rootG[1].move(mouseX,mouseY);
 }
@@ -90,6 +97,9 @@ class Gate{
     draw(){
         throw new Error("Gate implemense edilmemis");
     }
+    collision(){
+        throw new Error("Gate implemense edilmemis");
+    }
 }
 
 class And extends Gate{
@@ -111,6 +121,25 @@ class And extends Gate{
         this.in1.draw();
         this.in2.draw();
         this.out1.draw();
+    }
+    collision(x, y){
+        if(this.in1.collision()){
+            return true;
+        }
+        else if(this.in2.collision()){
+            return true;
+        }
+        else if(this.out1.collision()){
+            return true;
+        }
+        else{
+            if(x > this.x && x < this.x + this.w &&
+               y > this.y && y < this.y + this.h){
+                
+                return true;
+            }
+        }
+        return false;
     }
 }
 
@@ -206,7 +235,7 @@ function drawWire(c,x1,y1,x2,y2,h1=0,h2=0,re=true){
 // function drawWire(c,x1,y1,x2,y2,h1=true,h2=true,re=true){
 //     h = x1 - x2;
 //     w = y1 - y2;
-//     noFill();
+//     noFill();    
 //     if(re){
 //         strokeWeight(5);
 //         stroke(0, 0, 0);
