@@ -20,11 +20,11 @@ function windowResized() {
 }
 
 class Node{
-	constructor(x,y,h=true){
+	constructor(x,y,r,h=true){
     	this.x=x;
         this.y=y;
+        this.r=r;
         this.h=h;//horizontal
-        this.r=20;
     }
     setPoz(x,y){
     	this.x=x;
@@ -55,9 +55,9 @@ class Gate{
 class And extends Gate{
 	constructor(x,y,p=0){
         super(x,y,p);
-        this.in1 = new Node(x-25,y+25,super.h);
-        this.in2 = new Node(x-25,y-25,super.h);
-        this.out1 = new Node(x+25,y,super.h);
+        this.in1 = new Node(x-25,y+25,10,super.h);
+        this.in2 = new Node(x-25,y-25,10,super.h);
+        this.out1 = new Node(x+25,y,10,super.h);
     }
     move(x,y){
         
@@ -66,7 +66,7 @@ class And extends Gate{
         fill(100,255,0)//beyaz iç
         stroke(0);//siyah dıs
         circle(this.x, this.y, 20);
-        image(and, this.x/and.width, this.y/and.height, 50, 50);
+        image(and, this.x-25, this.y-25, 50, 50);
         this.in1.draw();
         this.in2.draw();
         this.out1.draw();
