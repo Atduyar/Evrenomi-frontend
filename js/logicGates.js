@@ -32,7 +32,7 @@ class Node{
     draw(){
         fill(255)//beyaz iç
         stroke(0);//siyah dıs
-        circle(x, y, r);
+        circle(this.x, this.y, this.r);
     }
 }
 
@@ -54,9 +54,9 @@ class Gate{
 class And extends Gate{
 	constructor(x,y,p=0){
         super(x,y,p);
-        this.in1 = new Node(x-25,y+25,h);
-        this.in2 = new Node(x-25,y-25,h);
-        this.out1 = new Node(x+25,y,h);
+        this.in1 = new Node(x-25,y+25,super.h);
+        this.in2 = new Node(x-25,y-25,super.h);
+        this.out1 = new Node(x+25,y,super.h);
     }
     move(x,y){
         
@@ -64,7 +64,7 @@ class And extends Gate{
     draw(){
         fill(255)//beyaz iç
         stroke(100,255,50);//siyah dıs
-        circle(x, y, r);
+        circle(this.x, this.y, this.r);
         this.in1.draw();
         this.in2.draw();
         this.out1.draw();
@@ -86,7 +86,6 @@ class Wire{
         drawWire(from.x, from.y, to.x, to.y, from.h, to.h, true);
     }
 }
-
 
 function drawWire(c,x1,y1,x2,y2,h1=true,h2=true,re=true){
     h = x1 - x2;
