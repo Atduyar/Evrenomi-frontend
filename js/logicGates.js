@@ -21,8 +21,6 @@ function setup() {
 function draw() {
     background(255);
     ww.draw();
-    a.draw();
-    b.draw();
     for(var i = 0;i<root.length;i++){
         root[i].draw();
     }
