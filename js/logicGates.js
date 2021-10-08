@@ -5,27 +5,29 @@ function preload() {
 let activeWire;
 let passiveWire;
  
-let a;
-let b;
+let mouse;
 let ww;
-let root = [];
+let rootG = [];
 function setup() { 
     activeWire = color(100,255,0);
     passiveWire = color(255);
+    mouse = new Node(mouseX,mouseY);
+  
     createCanvas(windowWidth, windowHeight);
-    root.push(new And(100,100));
-    root.push(new And(200,200));
-    ww = new Wire(root[0].out1,root[1].in1);
+    rootG.push(new And(100,100));
+    rootG.push(new And(200,200));
+    ww = new Wire(rootG[0].out1,rootG[1].in1);
 } 
 
 function draw() {
     background(255);
+    mouse.move(mouseX,mouseY);
+  
     ww.draw();
-    for(var i = 0;i<root.length;i++){
-        root[i].draw();
+    for(var i = 0;i<rootG.length;i++){
+        rootG[i].draw();
     }
-    root[1].move(mouseX,mouseY);
-    //b.move(mouseX,mouseY);
+    //rootG[1].move(mouseX,mouseY);
 }
 
 function windowResized() {
