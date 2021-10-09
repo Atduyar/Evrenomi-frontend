@@ -94,7 +94,7 @@ function draw() {
         }
     }
   
-    drawMenu();
+    //drawMenu();
     //rootG[1].move(mouseX,mouseY);
 }
 
