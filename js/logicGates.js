@@ -23,7 +23,8 @@ const Direct = Object.freeze({
         }
     }
 });
-const mouse;
+
+let mouse;
 let and, or;
 function preload() {
     and = loadImage('/assets/and.png');
@@ -31,9 +32,8 @@ function preload() {
 let activeWire;
 let passiveWire;
  
-let mouse;
-let ww;
 let rootG = [];
+let rootW = [];
 function setup() { 
 
     activeWire = color(100,255,0);
@@ -42,16 +42,36 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     rootG.push(new And(100,100));
     rootG.push(new And(200,200));
-    ww = new Wire(rootG[0].out1,rootG[1].in1);
+    rootG.push(new And(300,300));
+    //rootW.push(new Wire(rootG[0].out1,rootG[1].in1));
+  
     mouse = {
         node : new Node(mouseX,mouseY),
         status : 0,
-        grap : rootG[1],
+        grap : null,
+        temp : false,
         update : ()=>{
-            this.node.move(mouseX,mouseY);
-            if(this.status == 1){
-                grap.x = this.node.x;
-                grap.y = this.node.y;
+            mouse.node.move(mouseX,mouseY);
+            if(mouse.status == 1){
+                mouse.grap.move(mouse.node.x, mouse.node.y);
+                if(!mouseIsPressed){
+                    mouse.status = 0;
+                }
+            }
+            else if(mouse.status == 2){
+                rootW.push(new Wire(mouse.grap, mouse.node));
+                mouse.status = 3;
+            }
+            else if(mouse.status == 4){
+                rootW[rootW.length-1].to = mouse.grap;
+                mouse.node.to = null;
+                mouse.node.from = null;
+                mouse.status = 5;
+            }
+            else if(mouse.status == 5){
+                if(!mouseIsPressed){
+                    mouse.status = 0;
+                }
             }
         }
     }
@@ -59,9 +79,12 @@ function setup() {
 
 function draw() {
     background(255);
-    
     mouse.update();
-    ww.draw();
+  
+    for(var i = 0;i<rootW.length;i++){
+        rootW[i].draw();
+    }
+  
     for(var i = 0;i<rootG.length;i++){
         rootG[i].draw();
     }
@@ -94,6 +117,22 @@ class Node{
         stroke(0);//siyah dıs
         circle(this.x, this.y, this.r);
     }
+    collision(x, y){
+        if(pointCircle(x,y,this.x,this.y,this.r) && mouseIsPressed){
+            if(mouse.grap != this && mouse.status == 3){
+                mouse.grap = this;
+                mouse.status = 4;
+                return true;
+            }
+            else if(mouse.status == 0){
+                mouse.grap = this;
+                mouse.status = 2;
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
 }
 
 class Gate{
@@ -108,7 +147,7 @@ class Gate{
     draw(){
         throw new Error("Gate implemense edilmemis");
     }
-    collision(){
+    collision(x,y){
         throw new Error("Gate implemense edilmemis");
     }
 }
@@ -132,20 +171,22 @@ class And extends Gate{
         this.in1.draw();
         this.in2.draw();
         this.out1.draw();
+        //rect(this.x-25, this.y-25, 50, 50);
     }
     collision(x, y){
-        if(this.in1.collision()){
+        if(this.in1.collision(x,y)){
             return true;
         }
-        else if(this.in2.collision()){
+        else if(this.in2.collision(x,y)){
             return true;
         }
-        else if(this.out1.collision()){
+        else if(this.out1.collision(x,y)){
             return true;
         }
-        else{
-            if(x > this.x && x < this.x + this.w &&
-               y > this.y && y < this.y + this.h){
+        else if(mouse.status == 0){
+            if(x > this.x-25 && x < this.x-25 + 50 &&
+               y > this.y-25 && y < this.y-25 + 50 &&
+              mouseIsPressed){
                 mouse.grap = this;
                 mouse.status = 1;
                 return true;
@@ -278,3 +319,13 @@ function drawWire(c,x1,y1,x2,y2,h1=0,h2=0,re=true){
 //         drawWire(c,x1,y1,x2,y2,h1,h2,false);
 //     }
 // }
+
+function pointCircle(px, py, cx, cy, r){
+    var distX = px - cx;
+    var distY = py - cy;
+    var distance = sqrt( (distX*distX) + (distY*distY) );
+    if (distance <= r) {
+        return true;
+    }
+    return false;
+}
