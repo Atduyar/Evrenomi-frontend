@@ -93,6 +93,8 @@ function draw() {
             break;
         }
     }
+  
+    drawMenu();
     //rootG[1].move(mouseX,mouseY);
 }
 
