@@ -63,6 +63,30 @@ function setup() {
                 mouse.status = 3;
             }
             else if(mouse.status == 4){
+                var flag = false;
+                for(var i = 0;i<rootW.length-1;i++){
+                    if(rootW[i].from == mouse.grap &&
+                       rootW[i].to == rootW[rootW.length-1].from){
+                        flag = true;
+                        break;
+                    }
+                    if(rootW[i].to == mouse.grap &&
+                       rootW[i].from == rootW[rootW.length-1].from){
+                        flag = true;
+                        break;
+                    }
+                    if(mouse.grap == rootW[rootW.length-1].from){
+                        flag = true;
+                        break;
+                    }
+                }
+                if(flag){
+                  flag = false;
+                  mouse.grap = null;
+                  mouse.status = 3;
+                  return;
+                }
+                console.log(rootW);
                 rootW[rootW.length-1].to = mouse.grap;
                 mouse.node.to = null;
                 mouse.node.from = null;
@@ -93,7 +117,8 @@ function draw() {
             break;
         }
     }
-  
+    
+    //console.log(rootW);
     //drawMenu();
     //rootG[1].move(mouseX,mouseY);
 }
@@ -212,6 +237,9 @@ class Wire{
         this.color=passiveWire;
     }
     draw(){
+        if(this.status == 1){
+            this.color = passiveWire;
+        }
         drawWire(this.color,this.from.x, this.from.y, this.to.x, this.to.y, this.from.p, this.to.p, true);
     }
 }
@@ -286,41 +314,6 @@ function drawWire(c,x1,y1,x2,y2,h1=0,h2=0,re=true){
         drawWire(c,x1,y1,x2,y2,h1,h2,false);
     }
 }
-
-// function drawWire(c,x1,y1,x2,y2,h1=true,h2=true,re=true){
-//     h = x1 - x2;
-//     w = y1 - y2;
-//     noFill();    
-//     if(re){
-//         strokeWeight(5);
-//         stroke(0, 0, 0);
-//     }
-//     else{
-//         strokeWeight(3);
-//         stroke(c);
-//     }
-//     beginShape();
-//     if(h1){
-//         curveVertex(x1+h, y1-w);
-//     }
-//     else{
-//         curveVertex(x1-h, y1+w);
-//     }
-//     curveVertex(x1, y1);
-    
-//     curveVertex(x2, y2);
-//     if(h2){
-//         curveVertex(x2-h, y2+w);
-//     }
-//     else{
-//         curveVertex(x2+h, y2-w);
-//     }
-//     endShape();
-    
-//     if(re){
-//         drawWire(c,x1,y1,x2,y2,h1,h2,false);
-//     }
-// }
 
 function pointCircle(px, py, cx, cy, r){
     var distX = px - cx;
