@@ -16,6 +16,10 @@ mwrite:
 	htmlCreator/main.exe write write
 mauthor:
 	htmlCreator/main.exe author author
+mprivacy:
+	htmlCreator/main.exe privacy privacy
+
+	
 
 
 
