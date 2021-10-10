@@ -1,4 +1,4 @@
-makeall: mIndex mblogs mblogView mlogin msignup muser mwrite mauthor github 
+makeall: mIndex mblogs mblogView mlogin msignup muser mwrite mauthor mprivacy github 
 
 mIndex:
 	htmlCreator/main.exe Index blogs 

@@ -1,0 +1,115 @@
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/const-parameter.css">
+    <link rel="stylesheet" href="/css/menu.css">
+
+    <!-- START LINK -->
+<!-- STOP  LINK -->
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500,600|Barlow:100,300,400,500,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <title>Evrenomi</title>
+</head>
+
+<body>
+
+<!-- START SIDEBAR -->
+<div id="mySidenav" class="sidenav">
+    <p href="javascript:void(0)" class="closebtn c-p" onclick="closeNav()">&times;</p>
+    <div class="menu-items">
+        <a class="c-p" href="/blogs">Bloglar</a>
+        <a class="c-p" onclick="alert('Bu kısım hala yapım asamasında');">Kategoriler</a>
+        <a class="c-p" onclick="ara(true);">Ara</a>
+        <a class="c-p unauth-a" href="/login">Giris Yap</a>
+        <a class="c-p unauth-a" href="/signup">Kayıt Ol</a>
+        <a class="c-p auth-a profil" href="/user/">Profil</a>
+        <a class="c-p auth-a" href="/blogs" onclick="ApiAuth.SingOut()">Çıkış yap</a>
+    </div>
+</div>
+
+<div id="myMask" onclick="closeNav()">
+</div>
+<!-- STOP  SIDEBAR -->
+
+    <!-- START MAIN_DIV -->
+    <div class="main-div">
+
+<!-- START NAVBAR -->
+<div id="nav-bar">
+
+    <div id="nav-bar-title">
+        <a class="logo def-tittle-color c-p td-n" href="https://Evrenomi.com">Evrenomi</a>
+    </div>
+
+    <div id="nav-bar-menu">
+        <div>
+            <ul>
+                <li><a class="c-p" href="/blogs">Bloglar</a></li>
+                <li><a class="c-p" onclick="alert('Bu kısım hala yapım asamasında');">Kategoriler</a></li>
+                <li><a class="c-p" onclick="ara(true);">Ara</a></li>
+                <li class="unauth-a"><a class="c-p" href="/login">Giris Yap</a></li>
+                <li class="unauth-a"><a class="c-p" href="/signup">Kayıt Ol</a></li>
+                <li class="auth-a profil"><a class="c-p" href="/user/">Profil</a></li>
+                <li class="auth-a"><a class="c-p" href="/blogs" onclick="ApiAuth.SingOut()">Çıkış yap</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="nav-bar-search" class="c-p">
+        <div id="nav-bar-menu-phone" onclick="openNav()">
+            <svg class="c-p" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink " x="0px" y="0px" viewBox="0 0 384 384"
+                style="enable-background:new 0 0 384 384;" xml:space="preserve">
+                <rect class="c-p" x="0" y="277.333" width="384" height="42.667" />
+                <rect class="c-p" x="0" y="170.667" width="384" height="42.667" />
+                <rect class="c-p" x="0" y="64" width="384" height="42.667" />
+            </svg>
+        </div>
+        <svg onclick="ara(true)" class="c-p" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 56.966 56.966"
+            style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve">
+            <path class="c-p"
+                d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23 s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92 c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17 s-17-7.626-17-17S14.61,6,23.984,6z" />
+        </svg>
+    </div>
+
+</div>
+
+
+<div id="ara-div" class="sidenav">
+    <p href="javascript:void(0)" class="closebtn c-p" onclick="ara(false)">×</p>
+    <h1 id="ara-bar" class="ara-h1" contenteditable></h1>
+    <div class="blog-list" id="ara-blog-list">
+    </div>
+</div>
+<!-- STOP  NAVBAR -->
+
+<!-- START PRIVACY R-->
+i
+<!-- STOP  PRIVACY R-->
+
+    </div>
+    <!-- END MAIN_DIV -->
+    
+    <script type="text/javascript" src="/js/api.js"></script>
+    <script type="text/javascript" src="/js/navbar.js"></script>
+
+    <!-- START SCRIPT -->
+    <a id="privacy-policy" href="https://www.iubenda.com/privacy-policy/39079080" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">
+        Privacy Policy
+    </a>
+
+    <script type="text/javascript">
+        (function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);
+        getEventListeners(document.getElementById("privacy-policy")).click[0].listener(document.getElementById("privacy-policy"));
+    </script>
+<!-- STOP  SCRIPT -->
+
+
+</body>
+</html>
