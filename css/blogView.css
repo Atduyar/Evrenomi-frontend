@@ -205,3 +205,18 @@ img:hover {
 }
 
 /* fake-end */
+
+
+/* blog comment */
+#blog-comment{
+    
+}
+#blog-comment ul{
+    list-style: none;
+}
+#blog-comment ul li{
+    display: flex;
+    padding: 2em;
+    background-color: red;
+    margin-bottom: 12px;
+}
