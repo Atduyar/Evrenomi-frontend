@@ -16,13 +16,13 @@
                 echo '<!DOCTYPE html>',
                      '<html lang="tr">',
                      '<head>',
-                     '<meta name="description" content="Evrenomi ile bizimle bilimi kesfedin.">',
+                     '<meta name="description" content="Evrenomi ile bizimle bilimi keşfedin.">',
                      '<meta property="og:title" content="Evrenomi">',
-                     '<meta property="og:description" content="Evrenomi ile bizimle bilimi kesfedin.">',
+                     '<meta property="og:description" content="Evrenomi ile bizimle bilimi keşfedin.">',
                      '<meta property="og:image" content="https://api.atduyar.com/ConstImage/titleBanner.png">',
                      '<meta property="og:site_name" content="Evrenomi">',
                      '<meta name="twitter:title" content="Evrenomi">',
-                     '<meta name="twitter:description" content="Evrenomi ile bizimle bilimi kesfedin.">',
+                     '<meta name="twitter:description" content="Evrenomi ile bizimle bilimi keşfedin.">',
                      '<meta name="twitter:image" content="https://api.atduyar.com/ConstImage/titleBanner.png">',
                      '<meta name="twitter:card" content="https://api.atduyar.com/ConstImage/titleBanner.png">';
             }
@@ -59,13 +59,13 @@
             echo '<!DOCTYPE html>',
                  '<html lang="tr">',
                  '<head>',
-                 '<meta name="description" content="Evrenomi ile bizimle bilimi kesfedin.">',
+                 '<meta name="description" content="Evrenomi ile bizimle bilimi keşfedin.">',
                  '<meta property="og:title" content="Evrenomi">',
-                 '<meta property="og:description" content="Evrenomi ile bizimle bilimi kesfedin.">',
+                 '<meta property="og:description" content="Evrenomi ile bizimle bilimi keşfedin.">',
                  '<meta property="og:image" content="https://api.atduyar.com/ConstImage/titleBanner.png">',
                  '<meta property="og:site_name" content="Evrenomi">',
                  '<meta name="twitter:title" content="Evrenomi">',
-                 '<meta name="twitter:description" content="Evrenomi ile bizimle bilimi kesfedin.">',
+                 '<meta name="twitter:description" content="Evrenomi ile bizimle bilimi keşfedin.">',
                  '<meta name="twitter:image" content="https://api.atduyar.com/ConstImage/titleBanner.png">',
                  '<meta name="twitter:card" content="https://api.atduyar.com/ConstImage/titleBanner.png">';
 
