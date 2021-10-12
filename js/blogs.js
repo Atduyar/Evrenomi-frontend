@@ -15,7 +15,7 @@ function setBlogs(b) {
         blogDivDes.getElementsByClassName("title")[0].getElementsByTagName("a")[0].href = "/blogView/" + firstBlog.blogId;
         var blogImg = divBlog.getElementsByClassName("div-image")[0].getElementsByTagName("img")[0];
         var blogTitle = blogDivDes.getElementsByClassName("title")[0].getElementsByTagName("p")[0];
-        var blogTags = blogDivDes.getElementsByClassName("title")[0].getElementsByTagName("kategori-bar")[0];
+        var blogTags = blogDivDes.getElementsByClassName("title")[0].getElementsByClassName("kategori-bar")[0];
         var blogDescriptionDiv = blogDivDes.getElementsByClassName("description")[0].getElementsByTagName("p");
         var blogAut = blogDescriptionDiv[0];
         var blogDes = blogDescriptionDiv[1];
