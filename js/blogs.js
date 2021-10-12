@@ -15,9 +15,16 @@ function setBlogs(b) {
         blogDivDes.getElementsByClassName("title")[0].getElementsByTagName("a")[0].href = "/blogView/" + firstBlog.blogId;
         var blogImg = divBlog.getElementsByClassName("div-image")[0].getElementsByTagName("img")[0];
         var blogTitle = blogDivDes.getElementsByClassName("title")[0].getElementsByTagName("p")[0];
+        var blogTags = blogDivDes.getElementsByClassName("title")[0].getElementsByTagName("kategori-bar")[0];
         var blogDescriptionDiv = blogDivDes.getElementsByClassName("description")[0].getElementsByTagName("p");
         var blogAut = blogDescriptionDiv[0];
         var blogDes = blogDescriptionDiv[1];
+        
+        if(firstBlog.blogTags != null && firstBlog.blogTags != undefined){
+            for(var j = 0; j < b[i].blogTags.length;j++){
+                blogTags.innerHTML += `<a href="/category/${firstBlog.blogTags[j].name}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${firstBlog.blogTags[j].name}</a>`
+            }
+        }
 
         blogDivDes.classList.add("show");
         blogDes.innerHTML = (firstBlog.blogSummary.length > 250) ? firstBlog.blogSummary.substring(0, 225) + "..." : firstBlog.blogSummary ;//firstBlog.blogSummary;
