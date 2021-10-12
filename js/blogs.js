@@ -21,7 +21,7 @@ function setBlogs(b) {
         var blogDes = blogDescriptionDiv[1];
         
         if(firstBlog.blogTags != null && firstBlog.blogTags != undefined){
-            for(var j = 0; j < b[i].blogTags.length;j++){
+            for(var j = 0; j < firstBlog.blogTags.length;j++){
                 blogTags.innerHTML += `<a href="/category/${firstBlog.blogTags[j].name}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${firstBlog.blogTags[j].name}</a>`
             }
         }
