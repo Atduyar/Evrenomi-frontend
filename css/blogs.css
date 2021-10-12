@@ -41,11 +41,11 @@
 
 @media only screen and (max-width: 768px) {
     .div-image img {
-        /* min-height:65vh; */
+        min-height:65vh;
         height:65vh;
     }
     .div-image::before {
-        /* min-height:65vh; */
+        min-height:65vh;
         height:65vh;
     }
     .blog-list{
@@ -55,11 +55,11 @@
 
 @media only screen and (max-width: 576px) {
     .div-image img {
-        /* min-height:50vh; */
+        min-height:50vh;
         height:50vh;
     }
     .div-image::before {
-        /* min-height:50vh; */
+        min-height:50vh;
         height:50vh;
     }
     .blog-list{
