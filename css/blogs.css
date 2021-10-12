@@ -44,7 +44,8 @@
         min-height:65vh;
     }
     .div-image::before {
-        min-height:65vh;
+        /* min-height:65vh; */
+        min-height:80vh;
     }
     .blog-list{
         margin-top: 25vh!important;
@@ -56,7 +57,8 @@
         min-height:50vh;
     }
     .div-image::before {
-        min-height:50vh;
+        /* min-height:50vh; */
+        min-height:65vh;
     }
     .blog-list{
         margin-top: 30vh!important;
