@@ -20,6 +20,7 @@ function setBlogs(b) {
         var blogAut = blogDescriptionDiv[0];
         var blogDes = blogDescriptionDiv[1];
         
+        blogTags.innerHTML = "";
         if(firstBlog.blogTags != null && firstBlog.blogTags != undefined){
             for(var j = 0; j < firstBlog.blogTags.length;j++){
                 blogTags.innerHTML += `<a href="/category/${firstBlog.blogTags[j].name}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${firstBlog.blogTags[j].name}</a>`
