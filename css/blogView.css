@@ -247,3 +247,7 @@ img:hover {
 #blog-comment ul li div div{
     margin-left: 0;
 }
+#blog-comment ul li div a{
+    text-decoration: none;
+    color: #fff;
+}
