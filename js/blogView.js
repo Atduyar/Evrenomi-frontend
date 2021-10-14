@@ -113,6 +113,7 @@ function getBlogDetail(id, fixUrl = ()=>{}){
             console.log(b);
             fixUrl(b.blogTitle);
             setBlogDetail(b);
+            getBlogComment(b.blogId);
         }
         apiBlogDetail.GetAuth("blogs/getBlog?id="+id, t.token);
     }
@@ -121,6 +122,7 @@ function getBlogDetail(id, fixUrl = ()=>{}){
             console.log(b);
             fixUrl(b.blogTitle);
             setBlogDetail(b);
+            getBlogComment(b.blogId);
         }
         apiBlogDetail.GetAuth("blogs/getBlogGuest?id="+id);
     }
@@ -129,6 +131,45 @@ function getBlogDetail(id, fixUrl = ()=>{}){
     }
     ApiAuth.GetToken(apiBlogDetail);
 }
+function getBlogComment(blogId){
+    apiBlogDetail.resultFunction = (t)=>{
+        apiBlogDetail.resultFunction = (b)=>{
+            console.log(b);
+            setBlogComment(b);
+        }
+        apiBlogDetail.GetAuth("blogs/getBlogComment?blogId="+blogId);
+    }
+    apiBlogDetail.resultUnAuthFunction = apiBlogDetail.resultFunction;
+    apiBlogDetail.resultErrFunction = (err)=>{
+        console.log(err);
+    }
+    ApiAuth.GetToken(apiBlogDetail);
+}
+
+function setBlogComment(b){
+    var commentUl = document.getElementById("blog-comment").getElementsByTagName("ul")[0];
+    
+}
+
+function addComment(){
+    return `<li>
+        <img class="img-fluid rounded-circle" alt="User Avatar" src="https://api.atduyar.com/Images/TMIP1.jpg">
+        <div>
+            <div>
+                <h2 class="user-comment-name">${name}</h2>
+                <h5 class="user-comment-date">${date}/h5>
+            </div>
+            <p class="user-comment-text">
+                ${text}
+            </p>
+        </div>
+    </li>`;
+}
+
+
+
+
+
 
 var xxidTemp = new URLSearchParams(window.location.search).get('id');
 if(xxidTemp != null){
