@@ -210,7 +210,7 @@ function createblog(){
     for(var i = 0; i< tags.length;i++){
         tagsHtml += `<a href="/category/${tags[i].name}" class="p-kategori-black-blog-item inactive-blackbg c-p td-n">${tags[i].name}</a>`;
     }
-    document.getElementById("mobilSummaryView").innerHTML = `<div class="blog-item">
+    document.getElementById("mobilSummaryView").innerHTML = `<div class="blog-item blog-item-fake">
         <a onclick="toggleBlogView()" class="a-img-blog-item" >
             <img class="img-blog-item" onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="${b.blogTitlePhotoUrl == null ? "" : b.blogTitlePhotoUrl}" loading="lazy" alt="${b.blogTitle}">
         </a>
