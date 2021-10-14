@@ -6,7 +6,7 @@
     .blog-item {
         width: calc((100% / 3) - 32px)!important;
     }
-    .blog-item-fake {
+    .blog-item-one {
         width: calc(100% - 32px)!important;
     }
     .blog-list-long{
@@ -24,7 +24,7 @@
     .blog-item {
         width: calc((100% / 2) - 32px)!important
     }
-    .blog-item-fake {
+    .blog-item-one {
         width: calc(100% - 32px)!important;
     }
     .blog-list-long{
@@ -42,7 +42,7 @@
     .blog-item {
         width: calc(100% - 32px)!important;
     }
-    .blog-item-fake {
+    .blog-item-one {
         width: calc(100% - 32px)!important;
     }
     .blog-list-long{
