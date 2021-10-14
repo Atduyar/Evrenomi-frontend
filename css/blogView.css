@@ -225,6 +225,7 @@ img:hover {
     height: 45px;
     width: 45px;
     border-radius: 50%;
+    cursor: pointer;
 }
 #blog-comment ul li div{
     display: flex;
@@ -250,4 +251,5 @@ img:hover {
 #blog-comment ul li div a{
     text-decoration: none;
     color: #fff;
+    cursor: pointer;
 }
