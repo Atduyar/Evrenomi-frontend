@@ -160,7 +160,7 @@ function addComment(c){
         <div>
             <div userId="${c.userSummary.id}">
                 <h2 class="user-comment-name">${c.userSummary.nickname}</h2>
-                <h5 class="user-comment-date">${c.commentDate}/h5>
+                <h5 class="user-comment-date">${c.commentDate}</h5>
             </div>
             <p class="user-comment-text">
                 ${c.text}
