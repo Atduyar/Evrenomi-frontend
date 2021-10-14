@@ -148,19 +148,22 @@ function getBlogComment(blogId){
 
 function setBlogComment(b){
     var commentUl = document.getElementById("blog-comment").getElementsByTagName("ul")[0];
-    
+    commentUl.innerHTML = "";
+    for(var i = 0;i<b.length;i++){
+        commentUl.innerHTML += addComment(b[i]);
+    }
 }
 
-function addComment(){
-    return `<li>
-        <img class="img-fluid rounded-circle" alt="User Avatar" src="https://api.atduyar.com/Images/TMIP1.jpg">
+function addComment(c){
+    return `<li commentId="${c.commentId}">
+        <img class="img-fluid rounded-circle" alt="User Avatar" src="https://api.atduyar.com/Images/${c.userSummary.avatarUrl}">
         <div>
-            <div>
-                <h2 class="user-comment-name">${name}</h2>
-                <h5 class="user-comment-date">${date}/h5>
+            <div userId="${c.userSummary.id}">
+                <h2 class="user-comment-name">${c.userSummary.nickname}</h2>
+                <h5 class="user-comment-date">${c.commentDate}/h5>
             </div>
             <p class="user-comment-text">
-                ${text}
+                ${c.text}
             </p>
         </div>
     </li>`;
