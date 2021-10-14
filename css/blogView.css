@@ -209,7 +209,7 @@ img:hover {
 
 /* blog comment */
 #blog-comment{
-    background-color: #39D1B4;
+    /* background-color: #39D1B4; */
 }
 #blog-comment ul{
     list-style: none;
@@ -217,7 +217,7 @@ img:hover {
 #blog-comment ul li{
     display: flex;
     padding: 2em;
-    background-color: red;
+    background-color: rgba(0,0,0,0.15);
     margin-bottom: 12px;
     text-align: left;
 }
@@ -230,4 +230,13 @@ img:hover {
     flex-wrap: wrap;
     text-align: left;
     margin-left: 15px;
+}
+#blog-comment ul li div h2{
+    align-self: flex-start;
+    margin-right: 25px;
+}
+#blog-comment ul li div h5{
+    padding-top: 0.7em;
+    align-self: flex-start;
+    color: #a1a6a8;
 }
