@@ -240,3 +240,6 @@ img:hover {
     align-self: flex-start;
     color: #a1a6a8;
 }
+#blog-comment ul li p{
+    width: 100%;
+}
