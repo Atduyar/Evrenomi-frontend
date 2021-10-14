@@ -243,3 +243,6 @@ img:hover {
 #blog-comment ul li div p{
     width: 100%;
 }
+#blog-comment ul li div div{
+    margin-left: 0;
+}
