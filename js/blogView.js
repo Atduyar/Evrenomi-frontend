@@ -188,7 +188,7 @@ function addComment(c,com=true){
             <div class="comment-response-div">
                 <h3 contenteditable="" placeholder="Yorum yap.."></h3>
                 <a class="send-btn">Yorum yap</a>
-                <ul class="comment-response-ul">
+                <ul class="comment-response-ul" style="display: none;">
                 </ul>
             </div>` : ""}
         </div>
