@@ -177,7 +177,7 @@ function addComment(c){
 }
 
 function showCommentResponse(t,bol){
-
+    console.log(t);
 }
 
 
