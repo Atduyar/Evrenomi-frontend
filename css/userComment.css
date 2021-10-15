@@ -62,6 +62,7 @@
 }
 .comment-response-div{
     display: none;
+    width: 100%;
 }
 
 .show-comment-response .comment-response-div{
