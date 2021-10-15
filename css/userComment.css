@@ -47,9 +47,6 @@
     text-decoration: none;
     color: #fff;
     cursor: pointer;
-    background: linear-gradient(
-90deg, rgb(1, 128, 255) var(--comBtn), rgba(0, 0, 0, 0) var(--comBtn));
-    transition: 0.5s;
 }
 .comment-response{
     margin-top: 0.5em;
@@ -100,6 +97,9 @@
     border: 1px solid #39D1B4;
     border-radius: 5px;
     margin: 0.5em 0;
+    background: linear-gradient(
+90deg, rgb(1, 128, 255) var(--comBtn), rgba(0, 0, 0, 0) var(--comBtn));
+    transition: 0.5s;
 }
 .comment-response-ul{
     flex-basis: 100%;
