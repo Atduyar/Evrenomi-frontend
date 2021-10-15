@@ -178,6 +178,7 @@ function addComment(c){
 
 function showCommentResponse(t,bol){
     console.log(t);
+    t.classList.add("show-comment-response");
 }
 
 
