@@ -159,7 +159,9 @@ function setBlogComment(b){
             // console.log(evt.target.textContent);
             // evt.target.textContent = evt.target.textContent.replace(/\s\s+/g, ' ');
             // console.log(evt.target.textContent);
-            evt.target.parentElement.getElementsByTagName("a")[0].style = "";
+            var rate = evt.target.textContent.length > 20 ? "100" : evt.target.textContent.length*5 ;
+            evt.target.parentElement.getElementsByTagName("a")[0].style = 
+            "background: linear-gradient(90deg, rgba(1,128,255,1) "+rate+"%, rgba(0,0,0,0) "+rate+"%);";
         });
         lis[i].addEventListener('paste', function (evt) {
             evt.preventDefault();
