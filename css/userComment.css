@@ -74,3 +74,8 @@
     width: 100%;
     outline: 1px solid white;
 }
+.comment-response-div h3[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: #555;
+    /* padding-left: 16px; */
+}

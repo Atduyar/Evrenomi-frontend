@@ -186,7 +186,7 @@ function addComment(c,com=true){
                 <a onclick="showCommentResponse(this.parentElement.parentElement.parentElement, false);"><b>${c.commentResponse} yanıtı gör</b></a>
             </div>
             <div class="comment-response-div">
-                <h3 contenteditable=""></h3>
+                <h3 contenteditable="" placeholder="Yorum yap.."></h3>
                 <ul class="comment-response-ul">
                 </ul>
             </div>` : ""}
