@@ -171,6 +171,10 @@ function addComment(c){
                 <a onclick="showCommentResponse(this.parentElement.parentElement, false);"><b>${c.commentResponse} yanıtı gör</b></a>
             </div>
             <div class="comment-response-div">
+                <h3 contenteditable=""></h3>
+                <ul>
+                    <li>asd</li>
+                </ul>
             </div>
         </div>
     </li>`;
