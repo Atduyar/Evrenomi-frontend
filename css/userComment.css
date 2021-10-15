@@ -85,6 +85,7 @@
     padding: 0.7em;
     border: 1px solid #39D1B4;
     border-radius: 5px;
+    margin: 0.5em 0;
 }
 .comment-response-ul{
     flex-basis: 100%;
