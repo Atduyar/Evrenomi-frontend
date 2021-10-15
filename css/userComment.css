@@ -78,6 +78,12 @@
 .show-comment-response .comment-response-div{
     display: flex!important;
 }
+
+#comment-div{    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
 #comment-div h3,
 .comment-response-div h3{
     width: 100%;
