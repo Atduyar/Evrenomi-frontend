@@ -131,6 +131,7 @@ function getBlogDetail(id, fixUrl = ()=>{}){
     }
     ApiAuth.GetToken(apiBlogDetail);
 }
+
 function getBlogComment(blogId){
     apiBlogDetail.resultFunction = (t)=>{
         apiBlogDetail.resultFunction = (b)=>{

@@ -188,12 +188,6 @@ function getUserBlogs(userId) {
 
 //////////////////////////////////
 
-
-
-function setUserComments(b){
-    console.log(b);
-}
-
 var userCommentsPageId = 1;
 function getUserComments(userId) {
     apiUser3.resultFunction = (t) => {
@@ -211,3 +205,26 @@ function getUserComments(userId) {
     }
     ApiAuth.GetToken(apiUser3)
 }//https://api.atduyar.com/api/blogs/getUserBlog?id=1&pageId=1&pageSize=3
+
+function setUserComments(b){
+    var commentUl = document.getElementById("blog-comment").getElementsByTagName("ul")[0];
+    commentUl.innerHTML = "";
+    for(var i = 0;i<b.length;i++){
+        commentUl.innerHTML += addComment(b[i]);
+    }
+}
+
+function addComment(c){
+    return `<li commentId="${c.commentId}">
+    <a href="/user/${c.userSummary.nickname/*+"-"+c.userSummary.id*/}"><img class="img-fluid rounded-circle" alt="User Avatar" src="https://api.atduyar.com/Images/${c.userSummary.avatarUrl}"></a>
+        <div>
+            <div userId="${c.userSummary.id}">
+                <a href="/user/${c.userSummary.nickname/*+"-"+c.userSummary.id*/}"><h2 class="user-comment-name">${c.userSummary.nickname}</h2></a>
+                <h5 class="user-comment-date">${c.commentDate}</h5>
+            </div>
+            <p class="user-comment-text">
+                ${c.text}
+            </p>
+        </div>
+    </li>`;
+}
