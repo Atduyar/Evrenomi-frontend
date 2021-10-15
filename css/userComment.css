@@ -63,12 +63,13 @@
 }
 .comment-response-div{
     display: none;
+    flex-wrap: wrap;
     margin-top: 1em;
     width: 100%!important;
 }
 
 .show-comment-response .comment-response-div{
-    display: block!important;
+    display: flex!important;
 }
 .comment-response-div h3{
     width: 100%;
