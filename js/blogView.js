@@ -158,7 +158,7 @@ function setBlogComment(b){
 function addComment(c){
     return `<li commentId="${c.commentId}">
     <a href="/user/${c.userSummary.nickname/*+"-"+c.userSummary.id*/}"><img class="img-fluid rounded-circle" alt="User Avatar" src="https://api.atduyar.com/Images/${c.userSummary.avatarUrl}"></a>
-        <div>
+        <div class="comment-body">
             <div userId="${c.userSummary.id}">
                 <a href="/user/${c.userSummary.nickname/*+"-"+c.userSummary.id*/}"><h2 class="user-comment-name">${c.userSummary.nickname}</h2></a>
                 <h5 class="user-comment-date">${c.commentDate}</h5>

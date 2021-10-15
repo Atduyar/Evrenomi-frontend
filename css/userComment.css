@@ -18,28 +18,28 @@
     border-radius: 50%;
     cursor: pointer;
 }
-#blog-comment ul li div{
+#blog-comment ul li .comment-body{
     display: flex;
     flex-wrap: wrap;
     text-align: left;
     margin-left: 15px;
 }
-#blog-comment ul li div h2{
+#blog-comment ul li .comment-body h2{
     align-self: flex-start;
     margin-right: 25px;
 }
-#blog-comment ul li div h5{
+#blog-comment ul li .comment-body h5{
     padding-top: 0.7em;
     align-self: flex-start;
     color: #a1a6a8;
 }
-#blog-comment ul li div p{
+#blog-comment ul li .comment-body p{
     width: 100%;
 }
-#blog-comment ul li div div{
+#blog-comment ul li .comment-body div[userId]{
     margin-left: 0;
 }
-#blog-comment ul li div a{
+#blog-comment ul li .comment-body a{
     text-decoration: none;
     color: #fff;
     cursor: pointer;
