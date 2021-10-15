@@ -194,17 +194,17 @@ function addComment(c,com=true){
     </li>`;
 }
 
-function showCommentResponse(t,bol){
-    console.log(t);
-    getBlogCommentResponse(t.getAttribute("commentid"),t);
-    t.classList.add("show-comment-response");
+function showCommentResponse(ths,bol){
+    console.log(ths);
+    getBlogCommentResponse(ths.getAttribute("commentid"),ths);
+    ths.classList.add("show-comment-response");
 }
 
-function getBlogCommentResponse(commentId,t){
+function getBlogCommentResponse(commentId,ths){
     apiBlogDetail.resultFunction = (t)=>{
         apiBlogDetail.resultFunction = (b)=>{
             console.log(b);
-            setBlogCommentResponse(b,t);
+            setBlogCommentResponse(b,ths);
         }
         apiBlogDetail.GetAuth("blogs/getBlogCommentResponse?blogCommentId="+commentId);
     }
@@ -215,8 +215,8 @@ function getBlogCommentResponse(commentId,t){
     ApiAuth.GetToken(apiBlogDetail);
 }
 
-function setBlogCommentResponse(b,t){
-    var crul = t.getElementsByClassName("comment-response-ul")[0];
+function setBlogCommentResponse(b,ths){
+    var crul = ths.getElementsByClassName("comment-response-ul")[0];
     crul.innerHTML = "";
     for(var i = 0;i<b.length;i++){
         crul.innerHTML += addComment(b[i],false);
