@@ -85,3 +85,6 @@
     border: 1px soid #39D1B4;
     border-radius: 5px;
 }
+.comment-response-ul{
+    flex-basis: 100%;
+}
