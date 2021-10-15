@@ -157,13 +157,11 @@ function setBlogComment(b){
     for(var i = 0;i<lis.length;i++){
         lis[i].addEventListener('keydown', (evt) => {
             var rate = evt.target.textContent.length > 20 ? "100" : evt.target.textContent.length*5 ;
-            evt.target.parentElement.getElementsByTagName("a")[0].style =  "--comBtn: "+rate+"%";/*
-            "background: linear-gradient(90deg, rgba(1,128,255,1) "+rate+"%, rgba(0,0,0,0) "+rate+"%);";*/
+            evt.target.parentElement.getElementsByTagName("a")[0].style = "--comBtn: "+rate+"%";
         });
         lis[i].addEventListener('keyup', (evt) => {
             var rate = evt.target.textContent.length > 20 ? "100" : evt.target.textContent.length*5 ;
-            evt.target.parentElement.getElementsByTagName("a")[0].style =   "--comBtn: "+rate+"%";/*
-            "background: linear-gradient(90deg, rgba(1,128,255,1) "+rate+"%, rgba(0,0,0,0) "+rate+"%);";*/
+            evt.target.parentElement.getElementsByTagName("a")[0].style =  "--comBtn: "+rate+"%";
         });
         lis[i].addEventListener('paste', function (evt) {
             evt.preventDefault();
@@ -177,13 +175,11 @@ function setBlogComment(b){
 var bch = document.getElementById("blog-comment-h");
 bch.addEventListener('keydown', (evt) => {
     var rate = evt.target.textContent.length > 20 ? "100" : evt.target.textContent.length*5 ;
-    evt.target.parentElement.getElementsByTagName("a")[0].style = 
-    "background: linear-gradient(90deg, rgba(1,128,255,1) "+rate+"%, rgba(0,0,0,0) "+rate+"%);";
+    evt.target.parentElement.getElementsByTagName("a")[0].style = "--comBtn: "+rate+"%";
 });
 bch.addEventListener('keyup', (evt) => {
     var rate = evt.target.textContent.length > 20 ? "100" : evt.target.textContent.length*5 ;
-    evt.target.parentElement.getElementsByTagName("a")[0].style = 
-    "background: linear-gradient(90deg, rgba(1,128,255,1) "+rate+"%, rgba(0,0,0,0) "+rate+"%);";
+    evt.target.parentElement.getElementsByTagName("a")[0].style = "--comBtn: "+rate+"%";
 });
 bch.addEventListener('paste', function (evt) {
     evt.preventDefault();
