@@ -44,6 +44,15 @@
     color: #fff;
     cursor: pointer;
 }
+.comment-response{
+    margin-top: 0.5em;
+}
 .comment-response a{
     margin-right: 25px;
+}
+.comment-response a:nth-child(2){
+    display: none;
+}
+.show-comment-response a:nth-child(2){
+    display: inline-block!important;
 }
