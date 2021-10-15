@@ -182,8 +182,8 @@ function addComment(c,com=true){
             </p>
             ${com ? `
             <div class="comment-response${c.commentResponse > 0 ? " show-comment-response": ""}">
-                <a onclick="showCommentResponse(this.parentElement.parentElement, true);"><b>Yanlıtla</b></a>
-                <a onclick="showCommentResponse(this.parentElement.parentElement, false);"><b>${c.commentResponse} yanıtı gör</b></a>
+                <a onclick="showCommentResponse(this.parentElement.parentElement.parentElement.parentElement, true);"><b>Yanlıtla</b></a>
+                <a onclick="showCommentResponse(this.parentElement.parentElement.parentElement.parentElement, false);"><b>${c.commentResponse} yanıtı gör</b></a>
             </div>
             <div class="comment-response-div">
                 <h3 contenteditable=""></h3>
@@ -196,11 +196,47 @@ function addComment(c,com=true){
 
 function showCommentResponse(t,bol){
     console.log(t);
+    getBlogCommentResponse();
     t.classList.add("show-comment-response");
 }
 
+function getBlogCommentResponse(commentId,t){
+    apiBlogDetail.resultFunction = (t)=>{
+        apiBlogDetail.resultFunction = (b)=>{
+            console.log(b);
+            setBlogCommentResponse(b,t);
+        }
+        apiBlogDetail.GetAuth("blogs/getBlogCommentResponse?blogCommentId="+commentId);
+    }
+    apiBlogDetail.resultUnAuthFunction = apiBlogDetail.resultFunction;
+    apiBlogDetail.resultErrFunction = (err)=>{
+        console.log(err);
+    }
+    ApiAuth.GetToken(apiBlogDetail);
+}
 
+function setBlogCommentResponse(b,t){
 
+    var commentUl = document.getElementById("blog-comment").getElementsByTagName("ul")[0];
+    commentUl.innerHTML = "";
+    for(var i = 0;i<b.length;i++){
+        commentUl.innerHTML += addComment(b[i]);
+    }
+    var lis = commentUl.getElementsByTagName("li");
+    for(var i = 0;i<lis.length;i++){
+        lis[i].addEventListener('keyup', (evt) => {
+            var text = araBar.innerHTML;
+            console.log(text);
+            getAra(text);
+        });
+        lis[i].addEventListener('paste', function (evt) {
+            evt.preventDefault();
+            var text = evt.clipboardData.getData('text/plain').replace(/\n/g,"");
+            console.log("pasted: " + text);
+            document.execCommand('insertText', false, text);
+        });
+    }
+}
 
 
 
