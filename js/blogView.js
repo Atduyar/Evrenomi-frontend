@@ -222,7 +222,7 @@ function getBlogCommentResponse(commentId,ths){
 function setBlogCommentResponse(b,ths){
     var crul = ths.getElementsByClassName("comment-response-ul")[0];
     crul.innerHTML = "";
-    for(var i = 0;i<b.length;i++){
+    for(var i = 1;i<b.length;i++){
         crul.innerHTML += addComment(b[i],false);
     }
 }
