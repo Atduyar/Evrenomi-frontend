@@ -71,4 +71,5 @@
 }
 .comment-response-div h3{
     width: 100%;
+    outline: 1px solid white;
 }
