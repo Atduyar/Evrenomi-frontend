@@ -156,9 +156,9 @@ function setBlogComment(b){
     var lis = commentUl.getElementsByTagName("li");
     for(var i = 0;i<lis.length;i++){
         lis[i].addEventListener('keyup', (evt) => {
-            console.log(evt.target.textContent);
-            evt.target.textContent = evt.target.textContent.replace(/\s\s+/g, ' ');
-            console.log(evt.target.textContent);
+            // console.log(evt.target.textContent);
+            // evt.target.textContent = evt.target.textContent.replace(/\s\s+/g, ' ');
+            // console.log(evt.target.textContent);
         });
         lis[i].addEventListener('paste', function (evt) {
             evt.preventDefault();
@@ -187,6 +187,7 @@ function addComment(c,com=true){
             </div>
             <div class="comment-response-div">
                 <h3 contenteditable="" placeholder="Yorum yap.."></h3>
+                <a class="send-btn">Yorum yap</a>
                 <ul class="comment-response-ul">
                 </ul>
             </div>` : ""}
