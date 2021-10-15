@@ -23,6 +23,7 @@
     flex-wrap: wrap;
     text-align: left;
     margin-left: 15px;
+    width: 100%;
 }
 #blog-comment ul li .comment-body h2{
     align-self: flex-start;
