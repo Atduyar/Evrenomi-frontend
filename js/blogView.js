@@ -187,7 +187,7 @@ function addComment(c,com=true){
             </div>
             <div class="comment-response-div">
                 <h3 contenteditable=""></h3>
-                <ul>
+                <ul class="comment-response-ul">
                 </ul>
             </div>` : ""}
         </div>
@@ -196,7 +196,7 @@ function addComment(c,com=true){
 
 function showCommentResponse(t,bol){
     console.log(t);
-    getBlogCommentResponse();
+    getBlogCommentResponse(t.getAttribute("commentid"),t);
     t.classList.add("show-comment-response");
 }
 
@@ -216,25 +216,10 @@ function getBlogCommentResponse(commentId,t){
 }
 
 function setBlogCommentResponse(b,t){
-
-    var commentUl = document.getElementById("blog-comment").getElementsByTagName("ul")[0];
-    commentUl.innerHTML = "";
+    var crul = t.getElementsByClassName("comment-response-ul")[0];
+    crul.innerHTML = "";
     for(var i = 0;i<b.length;i++){
-        commentUl.innerHTML += addComment(b[i]);
-    }
-    var lis = commentUl.getElementsByTagName("li");
-    for(var i = 0;i<lis.length;i++){
-        lis[i].addEventListener('keyup', (evt) => {
-            var text = araBar.innerHTML;
-            console.log(text);
-            getAra(text);
-        });
-        lis[i].addEventListener('paste', function (evt) {
-            evt.preventDefault();
-            var text = evt.clipboardData.getData('text/plain').replace(/\n/g,"");
-            console.log("pasted: " + text);
-            document.execCommand('insertText', false, text);
-        });
+        crul.innerHTML += addComment(b[i],false);
     }
 }
 
