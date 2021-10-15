@@ -226,8 +226,10 @@ function addComment(c){
                 ${c.text}
             </p>
             <div class="${c.commentResponse > 0 ? "show-comment-response": ""}">
-                <a>Yanlıtla</a>
-                <a>${c.commentResponse} yanıtı gör</a>
+                <a onclick="showCommentResponse(this.parentElement.parentElement, true);">Yanlıtla</a>
+                <a onclick="showCommentResponse(this.parentElement.parentElement, false);">${c.commentResponse} yanıtı gör</a>
+            </div>
+            <div class="comment-response-div">
             </div>
         </div>
     </li>`;
