@@ -52,7 +52,8 @@
 }
 
 img {
-    width: 100%;
+    /* width: 100%; */
+    width: auto;
     height: 100%;
     height: auto;
     cursor: zoom-in;
@@ -64,6 +65,7 @@ img:hover {
 
 .img-div {
     max-width: clac(var(--icerik-w) - 10px * 2);
+    max-height: 95vh;
     margin: 20px 10px;
     overflow: hidden;
 }
