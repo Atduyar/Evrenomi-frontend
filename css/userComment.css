@@ -68,3 +68,6 @@
 .show-comment-response .comment-response-div{
     display: block!important;
 }
+.comment-response-div h3{
+    width: 100%;
+}

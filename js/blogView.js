@@ -153,10 +153,24 @@ function setBlogComment(b){
     for(var i = 0;i<b.length;i++){
         commentUl.innerHTML += addComment(b[i]);
     }
+    var lis = commentUl.getElementsByTagName("li");
+    for(var i = 0;i<lis.length;i++){
+        lis[i].addEventListener('keyup', (evt) => {
+            var text = araBar.innerHTML;
+            console.log(text);
+            getAra(text);
+        });
+        lis[i].addEventListener('paste', function (evt) {
+            evt.preventDefault();
+            var text = evt.clipboardData.getData('text/plain').replace(/\n/g,"");
+            console.log("pasted: " + text);
+            document.execCommand('insertText', false, text);
+        });
+    }
 }
 
-function addComment(c){
-    return `<li commentId="${c.commentId}">
+function addComment(c,com=true){
+    var text = `<li commentId="${c.commentId}">
     <a href="/user/${c.userSummary.nickname/*+"-"+c.userSummary.id*/}"><img class="img-fluid rounded-circle" alt="User Avatar" src="https://api.atduyar.com/Images/${c.userSummary.avatarUrl}"></a>
         <div class="comment-body">
             <div userId="${c.userSummary.id}">
@@ -166,6 +180,7 @@ function addComment(c){
             <p class="user-comment-text">
                 ${c.text}
             </p>
+            ${com ? `
             <div class="comment-response${c.commentResponse > 0 ? " show-comment-response": ""}">
                 <a onclick="showCommentResponse(this.parentElement.parentElement, true);"><b>Yanlıtla</b></a>
                 <a onclick="showCommentResponse(this.parentElement.parentElement, false);"><b>${c.commentResponse} yanıtı gör</b></a>
@@ -173,9 +188,8 @@ function addComment(c){
             <div class="comment-response-div">
                 <h3 contenteditable=""></h3>
                 <ul>
-                    <li>asd</li>
                 </ul>
-            </div>
+            </div>` : ""}
         </div>
     </li>`;
 }
