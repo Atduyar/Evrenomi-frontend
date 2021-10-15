@@ -57,3 +57,12 @@
 .show-comment-response a:nth-child(2){
     display: inline-block!important;
 }
+.show-comment-response .comment-response{
+    display: none!important;
+}
+.comment-response-div{
+    display: none;
+}
+.show-comment-response .comment-response-div{
+    display: block!important;
+}
