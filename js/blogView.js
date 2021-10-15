@@ -155,10 +155,12 @@ function setBlogComment(b){
     }
     var lis = commentUl.getElementsByTagName("li");
     for(var i = 0;i<lis.length;i++){
+        lis[i].addEventListener('keydown', (evt) => {
+            var rate = evt.target.textContent.length > 20 ? "100" : evt.target.textContent.length*5 ;
+            evt.target.parentElement.getElementsByTagName("a")[0].style = 
+            "background: linear-gradient(90deg, rgba(1,128,255,1) "+rate+"%, rgba(0,0,0,0) "+rate+"%);";
+        });
         lis[i].addEventListener('keyup', (evt) => {
-            // console.log(evt.target.textContent);
-            // evt.target.textContent = evt.target.textContent.replace(/\s\s+/g, ' ');
-            // console.log(evt.target.textContent);
             var rate = evt.target.textContent.length > 20 ? "100" : evt.target.textContent.length*5 ;
             evt.target.parentElement.getElementsByTagName("a")[0].style = 
             "background: linear-gradient(90deg, rgba(1,128,255,1) "+rate+"%, rgba(0,0,0,0) "+rate+"%);";
@@ -171,6 +173,24 @@ function setBlogComment(b){
         });
     }
 }
+
+var bch = document.getElementById("blog-comment-h");
+bch.addEventListener('keydown', (evt) => {
+    var rate = evt.target.textContent.length > 20 ? "100" : evt.target.textContent.length*5 ;
+    evt.target.parentElement.getElementsByTagName("a")[0].style = 
+    "background: linear-gradient(90deg, rgba(1,128,255,1) "+rate+"%, rgba(0,0,0,0) "+rate+"%);";
+});
+bch.addEventListener('keyup', (evt) => {
+    var rate = evt.target.textContent.length > 20 ? "100" : evt.target.textContent.length*5 ;
+    evt.target.parentElement.getElementsByTagName("a")[0].style = 
+    "background: linear-gradient(90deg, rgba(1,128,255,1) "+rate+"%, rgba(0,0,0,0) "+rate+"%);";
+});
+bch.addEventListener('paste', function (evt) {
+    evt.preventDefault();
+    var text = evt.clipboardData.getData('text/plain').replace(/\n/g,"");
+    console.log("pasted: " + text);
+    document.execCommand('insertText', false, text);
+});
 
 function addComment(c,com=true){
     return `<li commentId="${c.commentId}">
@@ -189,7 +209,7 @@ function addComment(c,com=true){
                 <a onclick="showCommentResponse(this.parentElement.parentElement.parentElement, false);"><b>${c.commentResponse} yanıtı gör</b></a>
             </div>
             <div class="comment-response-div">
-                <h3 contenteditable="" placeholder="Yorum yap.."></h3>
+                <h3 contenteditable placeholder="Yorum yap.."></h3>
                 <a class="send-btn" style="display: none!important;">Yorum yap</a>
                 <ul class="comment-response-ul">
                 </ul>
