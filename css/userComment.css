@@ -64,6 +64,7 @@
 .comment-response-div{
     display: none;
     flex-wrap: wrap;
+    justify-content: flex-end;
     margin-top: 1em;
     width: 100%!important;
 }
