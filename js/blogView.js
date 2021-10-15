@@ -166,7 +166,7 @@ function addComment(c){
             <p class="user-comment-text">
                 ${c.text}
             </p>
-            <div class="${c.commentResponse > 0 ? "show-comment-response": ""}">
+            <div class="comment-response${c.commentResponse > 0 ? " show-comment-response": ""}">
                 <a><b>Yanlıtla</b></a>
                 <a><b>${c.commentResponse} yanıtı gör</b></a>
             </div>

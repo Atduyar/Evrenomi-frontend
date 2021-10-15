@@ -44,3 +44,6 @@
     color: #fff;
     cursor: pointer;
 }
+.comment-response a{
+    margin-right: 25px;
+}
