@@ -86,6 +86,7 @@
 .comment-response-div h3{
     width: 100%;
     outline: 1px solid white;
+    text-align: left;
 }
 .comment-response-div h3[placeholder]:empty:before {
     content: attr(placeholder);
