@@ -159,7 +159,7 @@ function setBlogComment(b){
             // console.log(evt.target.textContent);
             // evt.target.textContent = evt.target.textContent.replace(/\s\s+/g, ' ');
             // console.log(evt.target.textContent);
-            evt.target.style = "";
+            evt.target.parentElement.getElementsByClassName("h3")[0].style = "";
         });
         lis[i].addEventListener('paste', function (evt) {
             evt.preventDefault();
