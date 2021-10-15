@@ -2,6 +2,9 @@
 
 /* #blog-comment{
 } */
+*{
+    --comBtn: 0%;
+}
 #blog-comment ul{
     list-style: none;
 }
@@ -44,6 +47,9 @@
     text-decoration: none;
     color: #fff;
     cursor: pointer;
+    background: linear-gradient(
+90deg, rgb(1, 128, 255) var(--comBtn), rgba(0, 0, 0, 0) var(--comBtn));
+    transition: 0.5s;
 }
 .comment-response{
     margin-top: 0.5em;
