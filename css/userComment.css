@@ -81,4 +81,6 @@
 }
 .send-btn{
     padding: 1em;
+    border: 1px soid #39D1B4;
+    border-radius: 5px;
 }
