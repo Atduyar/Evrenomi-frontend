@@ -156,9 +156,9 @@ function setBlogComment(b){
     var lis = commentUl.getElementsByTagName("li");
     for(var i = 0;i<lis.length;i++){
         lis[i].addEventListener('keyup', (evt) => {
-            console.log(evt.target);
-            evt.target = evt.target.replace(/\s\s+/g, ' ');
-            console.log(evt.target);
+            console.log(evt.target.innerHTML);
+            evt.target.innerHTML = evt.target.innerHTML.replace(/\s\s+/g, ' ');
+            console.log(evt.target.innerHTML);
         });
         lis[i].addEventListener('paste', function (evt) {
             evt.preventDefault();
