@@ -49,6 +49,7 @@
 }
 .comment-response a{
     margin-right: 25px;
+    cursor: pointer;
 }
 .comment-response a:nth-child(2){
     display: none;
