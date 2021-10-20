@@ -73,6 +73,7 @@ img:hover {
 
 .img-div img {
     transition: transform .5s ease;
+    width: 100%;
 }
 
 .top-bar .img-div {
