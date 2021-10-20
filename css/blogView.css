@@ -71,9 +71,12 @@ img:hover {
     overflow: hidden;
 }
 
+.top-bar .img-div img {
+    width: 100%!important;
+}
+
 .img-div img {
     transition: transform .5s ease;
-    width: 100%!important;
 }
 
 .top-bar .img-div {
