@@ -6,6 +6,8 @@ String.prototype.turkishToUrl = function(){
 }	
 
 var apiBlogDetail = new ApiAuth();
+var apiAddBlogComment = new ApiAuth();
+var apiAddBlogCommentResonse = new ApiAuth();
 // const urlParams = new URLSearchParams(window.location.search);
 // const BlogId = urlParams.get('id');
 
@@ -206,7 +208,7 @@ function addComment(c,com=true){
             </div>
             <div class="comment-response-div">
                 <h3 contenteditable placeholder="Yorum yap.."></h3>
-                <a class="send-btn" style="display: none!important;">Yorum yap</a>
+                <a class="send-btn c-p" style="display: none!important;" onclick="sendBlogCommentResponse(this.parentElement.children[0].textContent,${c.commentId}),this.parentElement.parentElement.parentElement">Yorum yap</a>
                 <ul class="comment-response-ul">
                 </ul>
             </div>` : ""}
@@ -247,18 +249,35 @@ function sendBlogComment(tex){
     postAddBlogComment(BlogId,tex);
 }
 function postAddBlogComment(blogId,tex){
-    apiBlogDetail.resultFunction = (t)=>{
-        apiBlogDetail.resultFunction = (b)=>{
+    apiAddBlogComment.resultFunction = (t)=>{
+        apiAddBlogComment.resultFunction = (b)=>{
             console.log(b);
             getBlogComment(BlogId);
         }
-        apiBlogDetail.PostAuth("blogs/addBlogComment",t.token,{"BlogId":parseInt(BlogId),"Text":tex});
+        apiAddBlogComment.PostAuth("blogs/addBlogComment",t.token,{"BlogId":parseInt(BlogId),"Text":tex});
     }
-    apiBlogDetail.resultUnAuthFunction = apiBlogDetail.resultFunction;
-    apiBlogDetail.resultErrFunction = (err)=>{
+    apiAddBlogComment.resultUnAuthFunction = apiAddBlogComment.resultFunction;
+    apiAddBlogComment.resultErrFunction = (err)=>{
         console.log(err);
     }
-    ApiAuth.GetToken(apiBlogDetail);
+    ApiAuth.GetToken(apiAddBlogComment);
+}
+function sendBlogCommentResponse(tex,id,ths){
+    postAddBlogCommentResponse(BlogId,tex,commentId,ths);
+}
+function postAddBlogCommentResponse(blogId,tex,commentId,ths){
+    apiAddBlogCommentResonse.resultFunction = (t)=>{
+        apiAddBlogCommentResonse.resultFunction = (b)=>{
+            console.log(b);
+            getBlogCommentResponse(commentId,ths);
+        }
+        apiAddBlogCommentResonse.PostAuth("blogs/addBlogComment",t.token,{"BlogId":parseInt(BlogId),"Text":tex,"ParentBlogCommentId":parseInt(commentId)});
+    }
+    apiAddBlogCommentResonse.resultUnAuthFunction = apiAddBlogCommentResonse.resultFunction;
+    apiAddBlogCommentResonse.resultErrFunction = (err)=>{
+        console.log(err);
+    }
+    ApiAuth.GetToken(apiAddBlogCommentResonse);
 }
 
 
