@@ -188,6 +188,10 @@ bch.addEventListener('paste', function (evt) {
     document.execCommand('insertText', false, text);
 });
 
+function sendBlogComment(tex){
+    console.log(tex);
+}
+
 function addComment(c,com=true){
     return `<li commentId="${c.commentId}">
     <a href="/user/${c.userSummary.nickname/*+"-"+c.userSummary.id*/}"><img class="img-fluid rounded-circle" alt="User Avatar" src="https://api.atduyar.com/Images/${c.userSummary.avatarUrl}"></a>
