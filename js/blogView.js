@@ -208,7 +208,7 @@ function addComment(c,com=true){
             </div>
             <div class="comment-response-div">
                 <h3 contenteditable placeholder="Yorum yap.."></h3>
-                <a class="send-btn c-p" style="display: none!important;" onclick="sendBlogCommentResponse(this.parentElement.children[0].textContent,this.parentElement.parentElement.parentElement,${c.commentId})">Yorum yap</a>
+                <a class="send-btn c-p" style="display: none!important;" onclick="sendBlogCommentResponse(this.parentElement.children[0].textContent,${c.commentId}),this.parentElement.parentElement.parentElement">Yorum yap</a>
                 <ul class="comment-response-ul">
                 </ul>
             </div>` : ""}
