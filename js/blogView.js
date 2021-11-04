@@ -188,10 +188,6 @@ bch.addEventListener('paste', function (evt) {
     document.execCommand('insertText', false, text);
 });
 
-function sendBlogComment(tex){
-    console.log(tex);
-}
-
 function addComment(c,com=true){
     return `<li commentId="${c.commentId}">
     <a href="/user/${c.userSummary.nickname/*+"-"+c.userSummary.id*/}"><img class="img-fluid rounded-circle" alt="User Avatar" src="https://api.atduyar.com/Images/${c.userSummary.avatarUrl}"></a>
@@ -245,6 +241,24 @@ function setBlogCommentResponse(b,ths){
     for(var i = 1;i<b.length;i++){
         crul.innerHTML += addComment(b[i],false);
     }
+}
+
+function sendBlogComment(tex){
+    postAddBlogComment(blogId,tex);
+}
+function postAddBlogComment(blogId,tex){
+    apiBlogDetail.resultFunction = (t)=>{
+        apiBlogDetail.resultFunction = (b)=>{
+            console.log(b);
+            getBlogComment(BlogId);
+        }
+        apiBlogDetail.PostAuth("blogs/addBlogComment",t,{"BlogId":BlogId,"Text":tex});
+    }
+    apiBlogDetail.resultUnAuthFunction = apiBlogDetail.resultFunction;
+    apiBlogDetail.resultErrFunction = (err)=>{
+        console.log(err);
+    }
+    ApiAuth.GetToken(apiBlogDetail);
 }
 
 
