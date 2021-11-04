@@ -208,7 +208,7 @@ function addComment(c,com=true){
             </div>
             <div class="comment-response-div">
                 <h3 contenteditable placeholder="Yorum yap.."></h3>
-                <a class="send-btn c-p" style="display: none!important;" onclick="sendBlogCommentResponse(this.parentElement.children[0].textContent,${c.commentId},this.parentElement.parentElement.parentElement)">Yorum yap</a>
+                <a class="send-btn c-p" style="display: none!important;" onclick="sendBlogCommentResponse(this.parentElement.children[0],${c.commentId},this.parentElement.parentElement.parentElement)">Yorum yap</a>
                 <ul class="comment-response-ul">
                 </ul>
             </div>` : ""}
@@ -245,8 +245,9 @@ function setBlogCommentResponse(b,ths){
     }
 }
 
-function sendBlogComment(tex){
-    postAddBlogComment(BlogId,tex);
+function sendBlogComment(ths){
+    postAddBlogComment(BlogId,ths.textContent);
+    ths.textContent = "";
 }
 function postAddBlogComment(blogId,tex){
     apiAddBlogComment.resultFunction = (t)=>{
@@ -262,9 +263,10 @@ function postAddBlogComment(blogId,tex){
     }
     ApiAuth.GetToken(apiAddBlogComment);
 }
-function sendBlogCommentResponse(tex,commentId,ths){
+function sendBlogCommentResponse(ths,commentId){
     console.log(ths);
-    postAddBlogCommentResponse(BlogId,tex,commentId,ths);
+    postAddBlogCommentResponse(BlogId,ths.textContent,commentId,ths);
+    ths.textContent = "";
 }
 function postAddBlogCommentResponse(blogId,tex,commentId,ths){
     apiAddBlogCommentResonse.resultFunction = (t)=>{
