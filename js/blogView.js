@@ -263,6 +263,7 @@ function postAddBlogComment(blogId,tex){
     ApiAuth.GetToken(apiAddBlogComment);
 }
 function sendBlogCommentResponse(tex,commentId,ths){
+    console.log(ths);
     postAddBlogCommentResponse(BlogId,tex,commentId,ths);
 }
 function postAddBlogCommentResponse(blogId,tex,commentId,ths){
