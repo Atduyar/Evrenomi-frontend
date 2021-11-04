@@ -252,7 +252,7 @@ function postAddBlogComment(blogId,tex){
             console.log(b);
             getBlogComment(BlogId);
         }
-        apiBlogDetail.PostAuth("blogs/addBlogComment",t,{"BlogId":BlogId,"Text":tex});
+        apiBlogDetail.PostAuth("blogs/addBlogComment",t.token,{"BlogId":BlogId,"Text":tex});
     }
     apiBlogDetail.resultUnAuthFunction = apiBlogDetail.resultFunction;
     apiBlogDetail.resultErrFunction = (err)=>{
