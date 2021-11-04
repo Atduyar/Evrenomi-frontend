@@ -244,7 +244,7 @@ function setBlogCommentResponse(b,ths){
 }
 
 function sendBlogComment(tex){
-    postAddBlogComment(blogId,tex);
+    postAddBlogComment(BlogId,tex);
 }
 function postAddBlogComment(blogId,tex){
     apiBlogDetail.resultFunction = (t)=>{
