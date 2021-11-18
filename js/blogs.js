@@ -115,8 +115,8 @@ let currentScroll;
 let modifier = 750;
 var pageNumberTemp = 2; //1.sayfa cekildiyse 
 
-anan();
-function anan() {
+isimbulamadim();
+function isimbulamadim() {
     documentHeight = document.body.scrollHeight;
     currentScroll = window.scrollY + window.innerHeight;
     if (documentHeight < currentScroll + modifier && pageNumber == pageNumberTemp) {
@@ -126,7 +126,7 @@ function anan() {
         getBlogs(pageNumber);
     }
 
-    setTimeout(anan, 250);
+    setTimeout(isimbulamadim, 250);
 }
 
 function fakeNavBar(bool) {

@@ -21,7 +21,10 @@ int main(int argc, char** argv) {
     gci = 2;
     gar = argv;
 
-    if(argc == 1){
+    if(argc != 1){//Program menusu yapım asamasındadır.
+        htmlCreator();
+    }
+    else{
         std::cout << "Yapım asamasında!" << std::endl;
         // int getNum = 1;
         // while(getNum != 0){//std::filesystem::create_directories("./a/b/c")
@@ -37,10 +40,6 @@ int main(int argc, char** argv) {
         //         showTree();
         //     }
         // }
-
-    }
-    else{
-        htmlCreator();
     }
     
     return 0;
