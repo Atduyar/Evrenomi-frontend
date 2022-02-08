@@ -37,7 +37,7 @@ function getUserBlogs(userId) {
         console.log(t);
     }
     ApiAuth.GetToken(apiUser)
-}//https://api.atduyar.com/api/blogs/getBlogDraft?id=1&pageId=1&pageSize=42
+}//https://api.evrenomi.com/api/blogs/getBlogDraft?id=1&pageId=1&pageSize=42
 
 
 function setUserBlogs(b){
@@ -58,7 +58,7 @@ function setUserBlogs(b){
         `<div class="${((i%14) >= 12)?"blog-list-long ":""}blog-item">
             <div class="delete-btn" onclick="deleteBlog(this,${b[i].blogId},'${b[i].blogTitle}')">X</div>
             <a href="/write/${b[i].blogId}-${b[i].authorName.includes("Yayında") ? "p" :"t"}" class="a-img-blog-item" >
-                <img class="img-blog-item" onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="${b[i].blogTitlePhotoUrl == null ? "" : b[i].blogTitlePhotoUrl}" loading="lazy" alt="${b[i].blogTitle}">
+                <img class="img-blog-item" onerror="this.src='https://api.evrenomi.com/ConstImage/errorImg.jpg';" src="${b[i].blogTitlePhotoUrl == null ? "" : b[i].blogTitlePhotoUrl}" loading="lazy" alt="${b[i].blogTitle}">
             </a>
             <div class='blog-content'>
                 <p class="p-publish-title only-long">

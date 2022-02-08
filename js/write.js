@@ -128,9 +128,9 @@ function addElement(tagName, data="", des="", lock=false, menu=true){
         case "img":
         case "ımg":
             if(data == ""){
-                data = "https://api.atduyar.com/BlogImages/manzara.jpg";
+                data = "https://api.evrenomi.com/BlogImages/manzara.jpg";
             }
-            return getDefualtElement(`<img onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="https://api.atduyar.com/BlogImages/manzara.jpg"><p contenteditable class="textbox img" placeholder="Type some url...">${data}</p>`, "img", lock, menu)
+            return getDefualtElement(`<img onerror="this.src='https://api.evrenomi.com/ConstImage/errorImg.jpg';" src="https://api.evrenomi.com/BlogImages/manzara.jpg"><p contenteditable class="textbox img" placeholder="Type some url...">${data}</p>`, "img", lock, menu)
             break;
         case "video":
         case "vıdeo":
@@ -212,7 +212,7 @@ function createblog(){
     }
     document.getElementById("mobilSummaryView").innerHTML = `<div class="blog-item blog-item-one">
         <a onclick="toggleBlogView()" class="a-img-blog-item" >
-            <img class="img-blog-item" onerror="this.src='https://api.atduyar.com/ConstImage/errorImg.jpg';" src="${b.blogTitlePhotoUrl == null ? "" : b.blogTitlePhotoUrl}" loading="lazy" alt="${b.blogTitle}">
+            <img class="img-blog-item" onerror="this.src='https://api.evrenomi.com/ConstImage/errorImg.jpg';" src="${b.blogTitlePhotoUrl == null ? "" : b.blogTitlePhotoUrl}" loading="lazy" alt="${b.blogTitle}">
         </a>
         <div class='blog-content'>
             <p class="p-publish-title only-long">

@@ -7,7 +7,7 @@ var user;
 function setUser(u){
     document.getElementById("user-name").children[0].innerHTML = u.nickname;
     document.getElementById("user-des").children[0].innerHTML = u.description || "";
-    document.getElementById("user-pp").children[0].src = "https://api.atduyar.com/Images/" + u.avatarUrl;
+    document.getElementById("user-pp").children[0].src = "https://api.evrenomi.com/Images/" + u.avatarUrl;
 }
 
 function getUser(userName, fixUrl=()=>{}) {
@@ -120,7 +120,7 @@ function getUserReaded(userId) {
         console.log(t);
     }
     ApiAuth.GetToken(apiUser)
-}//https://api.atduyar.com/api/users/getUserReaded?id=1&pageId=1&pageSize=3
+}//https://api.evrenomi.com/api/users/getUserReaded?id=1&pageId=1&pageSize=3
 
 
 ////////////////////////////////////////////////////////////////////
@@ -182,7 +182,7 @@ function getUserBlogs(userId) {
         console.log(t);
     }
     ApiAuth.GetToken(apiUser2)
-}//https://api.atduyar.com/api/users/getUserBlog?id=1&pageId=1&pageSize=3
+}//https://api.evrenomi.com/api/users/getUserBlog?id=1&pageId=1&pageSize=3
 
 
 
@@ -204,7 +204,7 @@ function getUserComments(userId) {
         console.log(t);
     }
     ApiAuth.GetToken(apiUser3)
-}//https://api.atduyar.com/api/blogs/getUserBlog?id=1&pageId=1&pageSize=3
+}//https://api.evrenomi.com/api/blogs/getUserBlog?id=1&pageId=1&pageSize=3
 
 function setUserComments(b){
     var commentUl = document.getElementById("blog-comment").getElementsByTagName("ul")[0];
@@ -216,7 +216,7 @@ function setUserComments(b){
 
 function addComment(c){
     return `<li commentId="${c.commentId}">
-    <a href="/user/${c.userSummary.nickname/*+"-"+c.userSummary.id*/}"><img class="img-fluid rounded-circle" alt="User Avatar" src="https://api.atduyar.com/Images/${c.userSummary.avatarUrl}"></a>
+    <a href="/user/${c.userSummary.nickname/*+"-"+c.userSummary.id*/}"><img class="img-fluid rounded-circle" alt="User Avatar" src="https://api.evrenomi.com/Images/${c.userSummary.avatarUrl}"></a>
         <div>
             <div userId="${c.userSummary.id}">
                 <a href="/user/${c.userSummary.nickname/*+"-"+c.userSummary.id*/}"><h2 class="user-comment-name">${c.userSummary.nickname}</h2></a>

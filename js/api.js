@@ -1,4 +1,4 @@
-const mainUrl = "https://api.atduyar.com/api/";
+const mainUrl = "https://api.evrenomi.com/api/";
 
 class ApiAuth {
     constructor(resultFunction = (r) => {console.log(r)}, resultErrFunction = (t) => {console.log(t)}, resultUnAuthFunction = (t) => {console.log(t)}) {

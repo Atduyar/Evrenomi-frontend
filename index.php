@@ -11,7 +11,7 @@
             $y = __DIR__ . '/' . $x[1] . '.html';
 
             $tmp = explode("-", $x[2]);
-            $content = @file_get_contents("https://api.atduyar.com/api/blogs/getBlogMeta?id=" . end($tmp));
+            $content = @file_get_contents("https://api.evrenomi.com/api/blogs/getBlogMeta?id=" . end($tmp));
             if($content == false){//true){
                 echo '<!DOCTYPE html>',
                      '<html lang="tr">',
@@ -19,12 +19,12 @@
                      '<meta name="description" content="Evrenomi ile bizimle bilimi keşfedin.">',
                      '<meta property="og:title" content="Evrenomi">',
                      '<meta property="og:description" content="Evrenomi ile bizimle bilimi keşfedin.">',
-                     '<meta property="og:image" content="https://api.atduyar.com/ConstImage/titleBanner.png">',
+                     '<meta property="og:image" content="https://api.evrenomi.com/ConstImage/titleBanner.png">',
                      '<meta property="og:site_name" content="Evrenomi">',
                      '<meta name="twitter:title" content="Evrenomi">',
                      '<meta name="twitter:description" content="Evrenomi ile bizimle bilimi keşfedin.">',
-                     '<meta name="twitter:image" content="https://api.atduyar.com/ConstImage/titleBanner.png">',
-                     '<meta name="twitter:card" content="https://api.atduyar.com/ConstImage/titleBanner.png">';
+                     '<meta name="twitter:image" content="https://api.evrenomi.com/ConstImage/titleBanner.png">',
+                     '<meta name="twitter:card" content="https://api.evrenomi.com/ConstImage/titleBanner.png">';
             }
             else{
                 //print_r($content);
@@ -62,12 +62,12 @@
                  '<meta name="description" content="Evrenomi ile bizimle bilimi keşfedin.">',
                  '<meta property="og:title" content="Evrenomi">',
                  '<meta property="og:description" content="Evrenomi ile bizimle bilimi keşfedin.">',
-                 '<meta property="og:image" content="https://api.atduyar.com/ConstImage/titleBanner.png">',
+                 '<meta property="og:image" content="https://api.evrenomi.com/ConstImage/titleBanner.png">',
                  '<meta property="og:site_name" content="Evrenomi">',
                  '<meta name="twitter:title" content="Evrenomi">',
                  '<meta name="twitter:description" content="Evrenomi ile bizimle bilimi keşfedin.">',
-                 '<meta name="twitter:image" content="https://api.atduyar.com/ConstImage/titleBanner.png">',
-                 '<meta name="twitter:card" content="https://api.atduyar.com/ConstImage/titleBanner.png">';
+                 '<meta name="twitter:image" content="https://api.evrenomi.com/ConstImage/titleBanner.png">',
+                 '<meta name="twitter:card" content="https://api.evrenomi.com/ConstImage/titleBanner.png">';
 
             require $y;
             echo '<script type="text/javascript">',
