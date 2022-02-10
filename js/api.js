@@ -15,8 +15,8 @@ class ApiAuth {
             }
         });
         const t = await response.json();
-        if (t.success == undefined || t.success) {
-            ApiAuth.SaveToken(t);
+        if (t.success != undefined && t.success) {
+            ApiAuth.SaveToken(t.data);
             this.resultFunction(t);
         } else {
             this.resultErrFunction(t);
@@ -31,8 +31,8 @@ class ApiAuth {
             }
         });
         const t = await response.json();
-        if (t.success == undefined) {
-            ApiAuth.SaveToken(t);
+        if (t.success != undefined && t.success) {
+            ApiAuth.SaveToken(t.data);
             this.resultFunction(t);
         } else {
             this.resultErrFunction(t);
