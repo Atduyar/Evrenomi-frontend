@@ -6,22 +6,16 @@
     font-family: LMRoman10-Regular;
     src: url("../ttf/lmroman10-regular-webfont.ttf") format("truetype");
 }
-
-@media only screen and (max-height: 1285px) and (max-width: 1200px) {
-    body{
-        min-height: 99vh;
-    }
-}
-@media only screen and (max-width: 1010px) and (min-width: 835px) {
-    body{
-        min-height: 98vh;
-    }
-}
+/* 
 @media only screen and (max-width: 835px) {
-    body{
-        min-height: 97vh;
+    #contact-center input[type="email"],
+    #contact-center input[type="text"]{
+        width: 75vh;
+        margin: 16px 0;
+        display: block;
+        font-size: 28px;
     }
-}
+} */
 
 body{
     min-height: 100vh;
@@ -42,13 +36,13 @@ body{
 }
 #contact-center input[type="email"],
 #contact-center input[type="text"]{
-    width: 75vh;
+    width: 75vw;
     margin: 16px 0;
     display: block;
     font-size: 28px;
 }
 #contact-center textarea{
-    width: 75vh;
+    width: 75vw;
     font-size: 18px;
 }
 #contact-center h1{
