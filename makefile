@@ -1,4 +1,4 @@
-makeall: mIndex mblogs mblogView mlogin msignup muser mwrite mauthor mprivacy github 
+makeall: mIndex mblogs mblogView mlogin msignup muser mwrite mauthor mprivacy mcontact github 
 
 mIndex:
 	htmlCreator/main.exe Index blogs 
@@ -18,6 +18,8 @@ mauthor:
 	htmlCreator/main.exe author author
 mprivacy:
 	htmlCreator/main.exe privacy privacy
+mcontact:
+	htmlCreator/main.exe contact contact
 
 	
 

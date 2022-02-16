@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="css/menu.css">
 
     <!-- START LINK -->
-    <link rel="stylesheet" type="text/css" href="/css/login.css">
-    <script src="https://kit.fontawesome.com/c9e2d7eaae.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/contact.css">
+    <link rel="stylesheet" href="alertifyjs/css/alertify.min.css" />
+    <link rel="stylesheet" href="alertifyjs/css/themes/default.min.css" />
 <!-- STOP  LINK -->
 
 
@@ -91,61 +92,21 @@
 </div>
 <!-- STOP  NAVBAR -->
 
-<!-- START LOGIN R-->
+<!-- START CONTACT R-->
 
-<div class="block-div">
-    <div class="container right-panel-active
- " id="container">        <div class="form-container sign-up-container">
-            <form action="javascript:login()" id="signupForm">
-                <h1>Hesap oluştur</h1>
-                <div class="social-container">
-                    <a href="#" class="social c-p"><i class="fab fa-facebook-f c-p"></i></a>
-                    <a href="#" class="social c-p"><i class="fab fa-google-plus-g c-p"></i></a>
-                    <a href="#" class="social c-p"><i class="fab fa-linkedin-in c-p"></i></a>
-                </div>
-                <span>ya da mail bilgilerininle kayıt ol</span>
-                <input class="c-t" type="text" placeholder="Kullanıcı adı" autocomplete="off" value="" />
-                <input class="c-t" type="email" placeholder="Email" autocomplete="off" value="" />
-                <input class="c-t" type="password" placeholder="Şifre" autocomplete="off" value="" />
-                <button class="c-p" onclick="signup()">Kayıt Ol</button>
-                <div class="mobil button-line"></div>
-                <button class="mobil ghost c-p" id="signInM">Giriş Yap</button>
-            </form>
-        </div>
-        <div class="form-container sign-in-container">
-            <form action="javascript:login()" id="loginForm">
-                <h1>Giriş yap</h1>
-                <div class="social-container">
-                    <a href="#" class="social c-p"><i class="fab fa-facebook-f c-p"></i></a>
-                    <a href="#" class="social c-p"><i class="fab fa-google-plus-g c-p"></i></a>
-                    <a href="#" class="social c-p"><i class="fab fa-linkedin-in c-p"></i></a>
-                </div>
-                <span>ya da mail bilgilerini kullan</span>
-                <input class="c-t" type="text" placeholder="Email ya da kullanıcı adı" />
-                <input class="c-t" type="password" placeholder="Şifre" />
-                <a class="c-p" href="#">Şifreni mi unuttun?</a>
-                <button class="c-p" onclick="login()">Giriş yap</button>
-                <div class="mobil button-line"></div>
-                <button class="mobil ghost c-p" id="signUpM">Kayıt Ol</button>
-            </form>
-        </div>
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Tekrar hoş geldin!</h1>
-                    <p>Hadi giriş yap, çok evrim kaçırdın.</p>
-                    <button class="ghost c-p" id="signIn">Giriş yap</button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Merhaba bilimsever!</h1>
-                    <p>Kayıt olmanı milyonlarca yıl bekledik. Evrimin artık yeterli düzeyde, daha fazla bekletme bence.</p>
-                    <button class="ghost c-p" id="signUp">Kayıt Ol</button>
-                </div>
-            </div>
-        </div>
+<div id="contact-main">
+    <div id="contact-center">
+        <form >
+            <h1 id="contact-site">Atduyar</h1>
+            <input id="contact-name" type="text" placeholder="İsim">
+            <input id="contact-email" type="email" placeholder="Eposta" required  oninvalid="InvalidMsg(this);" onkeypress=" textbox.setCustomValidity('');">
+            <input id="contact-head" type="text" placeholder="Konu" required oninvalid="InvalidMsg(this);" onkeypress=" textbox.setCustomValidity('');">
+            <textarea id="contact-body" name="konu" rows="8" required oninvalid="this.setCustomValidity('Lütfen işaretli yerleri doldurunuz')" onkeypress=" textbox.setCustomValidity('');"></textarea>
+            <input type="submit" onclick="sendContact()" value="Gönder">
+        </form>
     </div>
 </div>
-<!-- STOP  LOGIN R-->
+<!-- STOP  CONTACT R-->
 
     </div>
     <!-- END MAIN_DIV -->
@@ -154,12 +115,7 @@
     <script type="text/javascript" src="js/navbar.js"></script>
 
     <!-- START SCRIPT -->
-    <script src="js/login.js"></script>
-
-    <link rel="stylesheet" href="/alertifyjs/css/alertify.min.css" />
-    <link rel="stylesheet" href="/alertifyjs/css/themes/default.min.css" />
-
-    <script src="/alertifyjs/alertify.min.js"></script>
+    <script src="js/contact.js"></script>
 <!-- STOP  SCRIPT -->
 
 
