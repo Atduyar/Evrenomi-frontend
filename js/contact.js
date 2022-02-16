@@ -1,7 +1,3 @@
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 var siteName = window.location.hostname == ""? "Evrenomi" : capitalizeFirstLetter(window.location.hostname.split(".")[0]);
 document.getElementById("contact-site").textContent = siteName;
 
