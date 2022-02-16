@@ -50,4 +50,4 @@ github:
 	git add --all
 
 	git commit -m "tamam"
-	git push -u origin master
+	git push

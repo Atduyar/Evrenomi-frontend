@@ -79,7 +79,8 @@
         $y = __DIR__ . '/' . $x[1] ;
     }
     elseif(count($x) > 1 and $x[1] != ''){
-        echo '<html>',
+        echo '<!DOCTYPE html>',
+             '<html>',
              '<head>';
         $y = __DIR__ . '/' . $x[1] . '.html';
         require $y;
