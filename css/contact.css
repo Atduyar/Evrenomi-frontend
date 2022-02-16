@@ -7,6 +7,22 @@
     src: url("../ttf/lmroman10-regular-webfont.ttf") format("truetype");
 }
 
+@media only screen and (max-height: 1285px) and (max-width: 1200px) {
+    body{
+        min-height: 99vh;
+    }
+}
+@media only screen and (max-width: 1010px) and (min-width: 835px) {
+    body{
+        min-height: 98vh;
+    }
+}
+@media only screen and (max-width: 835px) {
+    body{
+        min-height: 97vh;
+    }
+}
+
 body{
     min-height: 100vh;
 }
