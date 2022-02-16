@@ -24,9 +24,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-#contact-center{
-    
-}
 #contact-center input[type="email"],
 #contact-center input[type="text"]{
     width: 75vh;
