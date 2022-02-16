@@ -33,7 +33,7 @@ function InvalidMsg(textbox) {
        textbox.setCustomValidity('');
     }
     return true;
-}alertify
-.alert("This is an alert dialog.", function(){
+}
+alertify.alert("This is an alert dialog.", function(){
     alertify.message("Su anda bu bölümü yapım asamasında 1 gün içerisinde yeniden calısır olucak. Lütfen daha sonra tekrar deneyin.");
 });
