@@ -1,3 +1,7 @@
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 var siteName = window.location.hostname == ""? "Evrenomi" : capitalizeFirstLetter(window.location.hostname.split(".")[0]);
 document.getElementById("contact-site").textContent = siteName;
 
@@ -37,7 +41,3 @@ function InvalidMsg(textbox) {
 alertify.alert("This is an alert dialog.", function(){
     alertify.message("Su anda bu bölümü yapım asamasında 1 gün içerisinde yeniden calısır olucak. Lütfen daha sonra tekrar deneyin.");
 });
-
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
