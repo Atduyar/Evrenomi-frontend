@@ -23,6 +23,7 @@ function sendContact(){
 }
 
 document.getElementById("contact-submit").onsubmit = (e)=>{
+    console.log(e);
     e.preventDefault();
     sendContact();
 }
