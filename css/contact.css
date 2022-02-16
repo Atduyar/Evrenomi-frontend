@@ -7,9 +7,16 @@
     src: url("../ttf/lmroman10-regular-webfont.ttf") format("truetype");
 }
 
+body{
+    min-height: 100vh;
+}
+.main-div{
+    min-height: 100vh;
+}
 
 
 #contact-main{
+    min-height: 100vh;
     position: relative;
     width: 100%;
     height: 100%;
