@@ -99,9 +99,9 @@
         <form >
             <h1 id="contact-site">Evrenomi</h1>
             <input id="contact-name" type="text" placeholder="İsim">
-            <input id="contact-email" type="email" placeholder="Eposta" required  oninvalid="InvalidMsg(this);" onkeypress=" textbox.setCustomValidity('');">
-            <input id="contact-head" type="text" placeholder="Konu" required oninvalid="InvalidMsg(this);" onkeypress=" textbox.setCustomValidity('');">
-            <textarea id="contact-body" name="konu" rows="8" required oninvalid="this.setCustomValidity('Lütfen işaretli yerleri doldurunuz')" onkeypress=" textbox.setCustomValidity('');"></textarea>
+            <input id="contact-email" type="email" placeholder="Eposta" required>
+            <input id="contact-head" type="text" placeholder="Baslık" required>
+            <textarea id="contact-body" placeholder="Konu" rows="8" required></textarea>
             <input type="submit" onclick="sendContact()" value="Gönder">
         </form>
     </div>
