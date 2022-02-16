@@ -14,7 +14,7 @@ function sendContact(){
         alertify.message(t.message);
     };
     api.resultErrFunction = (t) => {
-        alertify.message("Su anda bu bölümü yapım asamasında 1gün içerisinde yeniden calısır olucak. Lütfen daha sonra tekrar deneyin.");
+        alertify.message("Su anda bu bölümü yapım asamasında 1 gün içerisinde yeniden calısır olucak. Lütfen daha sonra tekrar deneyin.");
         console.log(t);
         alertify.error(t.message);
     };  
@@ -33,5 +33,7 @@ function InvalidMsg(textbox) {
        textbox.setCustomValidity('');
     }
     return true;
-}
-alertify.message("Su anda bu bölümü yapım asamasında 1gün içerisinde yeniden calısır olucak. Lütfen daha sonra tekrar deneyin.");
+}alertify
+.alert("This is an alert dialog.", function(){
+    alertify.message("Su anda bu bölümü yapım asamasında 1 gün içerisinde yeniden calısır olucak. Lütfen daha sonra tekrar deneyin.");
+});
