@@ -5,10 +5,10 @@ var api = new ApiAuth();
 function sendContact(){
     contact = { 
         "site": window.location.hostname,
-        "name": document.getElementById("contact-name").innerHTML,
-        "email": document.getElementById("contact-email").innerHTML,
-        "head": document.getElementById("contact-head").innerHTML,
-        "body": document.getElementById("contact-body").innerHTML,
+        "name": document.getElementById("contact-name").value,
+        "email": document.getElementById("contact-email").value,
+        "head": document.getElementById("contact-head").value,
+        "body": document.getElementById("contact-body").value,
     };
     console.log(contact);
     api.resultFunction = (t) => {
