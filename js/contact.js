@@ -15,9 +15,8 @@ function sendContact(){
         alertify.message(t.message);
     };
     api.resultErrFunction = (t) => {
-        alertify.message(t.message);
+        alertify.error(t.message);
         console.log(t);
-        alertify.error();
     };  
     api.Post("contact/add", contact);
     
