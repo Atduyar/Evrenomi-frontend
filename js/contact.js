@@ -15,12 +15,12 @@ function sendContact(){
         alertify.message(t.message);
     };
     api.resultErrFunction = (t) => {
-        alertify.message("Su anda bu bölümü yapım asamasında 1 gün içerisinde yeniden calısır olucak. Lütfen daha sonra tekrar deneyin.");
+        alertify.message(t.message);
         console.log(t);
-        alertify.error(t.message);
+        alertify.error();
     };  
     api.Post("contact/add", contact);
     
 }
 
-alertify.alert("Su anda bu bölümü yapım asamasında 1 gün içerisinde yeniden calısır olucak. Lütfen daha sonra tekrar deneyin.");
+//alertify.alert("Su anda bu bölümü yapım asamasında 1 gün içerisinde yeniden calısır olucak. Lütfen daha sonra tekrar deneyin.");
