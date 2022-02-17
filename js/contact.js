@@ -10,6 +10,7 @@ function sendContact(){
         "head": document.getElementById("contact-head").innerHTML,
         "body": document.getElementById("contact-body").innerHTML,
     };
+    console.log(contact);
     api.resultFunction = (t) => {
         alertify.message(t.message);
     };
