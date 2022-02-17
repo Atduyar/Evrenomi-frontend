@@ -13,6 +13,7 @@ function sendContact(){
     console.log(contact);
     api.resultFunction = (t) => {
         alertify.success(t.message);
+        console.log(t);
     };
     api.resultErrFunction = (t) => {
         alertify.error(t.message);
