@@ -4,11 +4,11 @@ document.getElementById("contact-site").textContent = siteName;
 var api = new ApiAuth();
 function sendContact(){
     contact = { 
-        site: window.location.hostname,
-        name: document.getElementById("contact-name").innerHTML,
-        email: document.getElementById("contact-email").innerHTML,
-        head: document.getElementById("contact-head").innerHTML,
-        body: document.getElementById("contact-body").innerHTML,
+        "site": window.location.hostname,
+        "name": document.getElementById("contact-name").innerHTML,
+        "email": document.getElementById("contact-email").innerHTML,
+        "head": document.getElementById("contact-head").innerHTML,
+        "body": document.getElementById("contact-body").innerHTML,
     };
     api.resultFunction = (t) => {
         alertify.message(t.message);
