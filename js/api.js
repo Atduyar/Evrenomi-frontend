@@ -63,7 +63,7 @@ class ApiAuth {
                 }
             });
             const r = await response.json();
-            if (r.success != undefined && t.success == false) {
+            if (r.success != undefined && r.success == false) {
                 this.resultErrFunction(r);
             } else {
                 this.resultFunction(r);
@@ -83,7 +83,7 @@ class ApiAuth {
                 }
             });
             const r = await response.json();
-            if (r.success != undefined && t.success == false) {
+            if (r.success != undefined && r.success == false) {
                 this.resultErrFunction(r);
             } else {
                 this.resultFunction(r);
@@ -101,7 +101,7 @@ class ApiAuth {
                 }
             });
             const r = await response.json();
-            if (r.success != undefined && t.success == false) {
+            if (r.success != undefined && r.success == false) {
                 this.resultErrFunction(r);
             } else {
                 this.resultFunction(r);
@@ -120,7 +120,7 @@ class ApiAuth {
                 }
             });
             const r = await response.json();
-            if (r.success != undefined && t.success == false) {
+            if (r.success != undefined && r.success == false) {
                 this.resultErrFunction(r);
             } else {
                 this.resultFunction(r);
