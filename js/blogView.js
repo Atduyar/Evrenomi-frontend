@@ -272,7 +272,7 @@ function postAddBlogCommentResponse(blogId,tex,commentId,ths){
     apiAddBlogCommentResonse.resultFunction = (t)=>{
         apiAddBlogCommentResonse.resultFunction = (b)=>{
             console.log(b);
-            getBlogCommentResponse(commentId,ths);
+            getBlogCommentResponse(commentId,ths.parentElement);
         }
         apiAddBlogCommentResonse.PostAuth("blogs/addBlogComment",t.token,{"BlogId":parseInt(BlogId),"Text":tex,"ParentBlogCommentId":parseInt(commentId)});
     }
