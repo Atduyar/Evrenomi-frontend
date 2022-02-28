@@ -7,7 +7,7 @@ function getUser() {
         console.log(t);
         apiUser.resultFunction = (b) => {
             console.log(b);
-            getUserBlogs(b.id);
+            getUserBlogs(b.data.id);
         }
         apiUser.GetMyProfil(t.token);
     }
@@ -25,7 +25,8 @@ var userBlogsPageId = 1;
 function getUserBlogs(userId) {
     apiUser.resultFunction = (t) => {
         apiUser.resultFunction = (b) => {
-            setUserBlogs(b);
+            console.log(b);
+            setUserBlogs(b.data);
         }
         apiUser.resultErrFunction = apiUser.resultErrFunction;
         apiUser.GetAuth("blogs/getMyBlogs?pageId="+userBlogsPageId+"&pageSize=42", t.token);
@@ -41,7 +42,6 @@ function getUserBlogs(userId) {
 
 
 function setUserBlogs(b){
-    console.log(b);
     var userBlogsPage = document.getElementById("user-blog-list");
     if(userBlogsPageId == 1){
         userBlogsPage.innerHTML = "";
