@@ -85,7 +85,7 @@ function getBlogs(pageNumber = 1) {
         console.log(t);
         apiBlogs.resultFunction = (b) => {
             console.log(b);
-            setBlogs(b);
+            setBlogs(b.data);
         }
         apiBlogs.resultErrFunction = apiBlogs.resultErrFunction;
         apiBlogs.PostAuth("blogs/getbypage", t.token, { PageNumber: pageNumber, PageSize: pageBlogCounter });
@@ -102,7 +102,7 @@ function getBlogs(pageNumber = 1) {
     apiBlogs.resultUnAuthFunction = (t) => { //guest giris yapılıyor
         apiBlogs.resultFunction = (b) => {
             console.log(b);
-            setBlogs(b);
+            setBlogs(b.data);
         }
         apiBlogs.resultErrFunction = apiBlogs.resultErrFunction;
         apiBlogs.Post("blogs/getbypageGuest", { PageNumber: pageNumber, PageSize: pageBlogCounter });
