@@ -113,18 +113,18 @@ function getBlogDetail(id, fixUrl = ()=>{}){
     apiBlogDetail.resultFunction = (t)=>{
         apiBlogDetail.resultFunction = (b)=>{
             console.log(b);
-            fixUrl(b.blogTitle);
-            setBlogDetail(b);
-            getBlogComment(b.blogId);
+            fixUrl(b.data.blogTitle);
+            setBlogDetail(b.data);
+            getBlogComment(b.data.blogId);
         }
         apiBlogDetail.GetAuth("blogs/getBlog?id="+id, t.token);
     }
     apiBlogDetail.resultUnAuthFunction = (r)=>{
         apiBlogDetail.resultFunction = (b)=>{
             console.log(b);
-            fixUrl(b.blogTitle);
-            setBlogDetail(b);
-            getBlogComment(b.blogId);
+            fixUrl(b.data.blogTitle);
+            setBlogDetail(b.data);
+            getBlogComment(b.data.blogId);
         }
         apiBlogDetail.GetAuth("blogs/getBlogGuest?id="+id);
     }
@@ -138,7 +138,7 @@ function getBlogComment(blogId){
     apiBlogDetail.resultFunction = (t)=>{
         apiBlogDetail.resultFunction = (b)=>{
             console.log(b);
-            setBlogComment(b);
+            setBlogComment(b.data);
         }
         apiBlogDetail.GetAuth("blogs/getBlogComment?blogId="+blogId);
     }
@@ -226,7 +226,7 @@ function getBlogCommentResponse(commentId,ths){
     apiBlogDetail.resultFunction = (t)=>{
         apiBlogDetail.resultFunction = (b)=>{
             console.log(b);
-            setBlogCommentResponse(b,ths);
+            setBlogCommentResponse(b.data,ths);
         }
         apiBlogDetail.GetAuth("blogs/getBlogCommentResponse?blogCommentId="+commentId);
     }
