@@ -86,7 +86,7 @@ function getAra(text){
     splitedText = text.split(" ");
     apiAraNav.resultFunction = (t) => { //token alırsan
         apiAraNav.resultFunction = (b) => { //kullanıcıyı alırsan
-            console.log(b);
+            console.log(b.data);
             globalId++;
             setAra(b,globalId);
         }
