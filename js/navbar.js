@@ -39,10 +39,10 @@ function getUser() {
     }
     apiNav.resultFunction = (t) => { //token alırsan
         apiNav.resultFunction = (u) => { //kullanıcıyı alırsan
-                console.log(u);
-                globalUser = u;
-                setUserAuth(u);
-            }
+            console.log(u);
+            globalUser = u.data;
+            setUserAuth(u.data);
+        }
         apiNav.GetMyProfil(t.token);
     };
     apiNav.resultErrFunction = (t) => { //token almasa
@@ -86,9 +86,9 @@ function getAra(text){
     splitedText = text.split(" ");
     apiAraNav.resultFunction = (t) => { //token alırsan
         apiAraNav.resultFunction = (b) => { //kullanıcıyı alırsan
-            console.log(b.data);
+            console.log(b);
             globalId++;
-            setAra(b,globalId);
+            setAra(b.data,globalId);
         }
         apiAraNav.PostAuth("blogs/searchBlogs",t.token,splitedText);
     };
