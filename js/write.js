@@ -375,7 +375,7 @@ function getBlogDetail(blogId){
     apiBlog.resultFunction = (t) => {
         apiBlog.resultFunction = (b) => {
             console.log(b);
-            setBlogWrite(b);
+            setBlogWrite(b.data);
         }
         apiBlog.resultErrFunction = apiBlog.resultErrFunction;
         apiBlog.GetAuth("blogs/getBlogDraft?id="+blogId, t.token);
@@ -522,7 +522,7 @@ function saveBlog(){
     apiSaveBlog.resultFunction = (t) => {
         apiSaveBlog.resultFunction = (b) => {
             console.log(b);
-            setBlogWrite(b);
+            setBlogWrite(b.data);
             alert("Blog güncellemesi basarılı.");
         }
         apiSaveBlog.resultErrFunction = apiSaveBlog.resultErrFunction;
