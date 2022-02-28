@@ -15,13 +15,13 @@ function getUser(userName, fixUrl=()=>{}) {
         console.log(t);
         apiUser.resultFunction = (b) => {
             console.log(b);
-            user = b;
-            fixUrl(b.nickname);
-            setUser(b);
+            user = b.data;
+            fixUrl(b.data.nickname);
+            setUser(b.data);
             document.getElementById("fake-mode").classList.remove("fake-mode");
-            getUserReaded(b.id);
-            getUserBlogs(b.id);
-            getUserComments(b.id);
+            getUserReaded(b.data.id);
+            getUserBlogs(b.data.id);
+            getUserComments(b.data.id);
         }
         apiUser.resultErrFunction = apiUser.resultErrFunction;
         apiUser.GetAuth("users/getUserByName?name="+userName, t.token);
@@ -108,7 +108,7 @@ var userReadedPageId = 1;
 function getUserReaded(userId) {
     apiUser.resultFunction = (t) => {
         apiUser.resultFunction = (b) => {
-            setUserReaded(b);
+            setUserReaded(b.data);
         }
         apiUser.resultErrFunction = apiUser.resultErrFunction;
         apiUser.GetAuth("users/getUserReaded?id="+userId+"&pageId="+userReadedPageId+"&pageSize=42", t.token);
@@ -170,7 +170,7 @@ var userBlogsPageId = 1;
 function getUserBlogs(userId) {
     apiUser2.resultFunction = (t) => {
         apiUser2.resultFunction = (b) => {
-            setUserBlogs(b);
+            setUserBlogs(b.data);
         }
         apiUser2.resultErrFunction = apiUser2.resultErrFunction;
         apiUser2.GetAuth("users/getUserBlog?id="+userId+"&pageId="+userBlogsPageId+"&pageSize=42", t.token);
@@ -192,7 +192,7 @@ var userCommentsPageId = 1;
 function getUserComments(userId) {
     apiUser3.resultFunction = (t) => {
         apiUser3.resultFunction = (b) => {
-            setUserComments(b);
+            setUserComments(b.data);
         }
         apiUser3.resultErrFunction = apiUser3.resultErrFunction;
         apiUser3.GetAuth("blogs/getUserComment?id="+userId+"&pageId="+userCommentsPageId+"&pageSize=42", t.token);
