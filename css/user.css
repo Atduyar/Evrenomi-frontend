@@ -81,6 +81,8 @@
 }
 #user-pp{
     width: 33%;
+    display: flex;
+    justify-content: center;
 }
 #user-pp img{
     height: 150px;
