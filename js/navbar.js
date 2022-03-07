@@ -46,7 +46,7 @@ function getUser() {
         apiNav.GetMyProfil(t.token);
     };
     apiNav.resultErrFunction = (t) => { //token almasa
-        console.log(t);
+        console.trace(t);
     };
     apiNav.resultUnAuthFunction = (t) => { //token almasa
         console.log(t);
