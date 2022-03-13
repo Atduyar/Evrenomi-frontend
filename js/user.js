@@ -142,7 +142,7 @@ function setUserBlogs(b){
                     </p>
                     <div class="blog-des-group">
                         <p class="text-color p-baslik-blog-item c-p">${"Bloglarım"}</p>
-                        <p class="p-aciklama-blog-item">${"Bloglarım\nBlog Yaz\nBlog Yayınla"}</p>
+                        <p class="p-aciklama-blog-item">${"Bloglarım<br>Blog Yaz<br>Blog Yayınla"}</p>
                     </div>
                     <div class="blog-item-details">
                         <div class="kategori-bar-blog-item">
