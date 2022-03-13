@@ -147,7 +147,6 @@ function setUserBlogs(b){
                     <div class="blog-item-details">
                         <div class="kategori-bar-blog-item">
                             <div class="blog-item-author-info">
-                                <a href="/user/${b[i].authorName}" class="inactive-blackbg c-p td-n">${b[i].authorName}</a>
                             </div>
                         </div>
                     </div>
