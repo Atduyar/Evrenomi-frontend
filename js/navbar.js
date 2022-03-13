@@ -93,7 +93,7 @@ function getAra(text){
         apiAraNav.PostAuth("blogs/searchBlogs",t.token,splitedText);
     };
     apiAraNav.resultUnAuthFunction = (t) => {
-        apiAraNav.resultFunction = (b) => { //kullanıcıyı alırsan
+        apiAraNav.resultFunction = (b) => {
             console.log(b);
             globalId++;
             setAra(b.data,globalId);
