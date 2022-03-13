@@ -130,7 +130,34 @@ function setUserBlogs(b){
     console.log(b);
     var BlogsPage = document.getElementById("user-body-page").getElementsByClassName("user-body-page-item")[2].children[0];
     if(userBlogsPageId == 1){
-        BlogsPage.innerHTML = "";
+        if(globalUser.nickname == window.location.href.split("/").pop()){
+            BlogsPage.innerHTML = 
+            `<div class="${((i%14) >= 12)?"blog-list-long ":""}blog-item">
+                <a href="/author" class="a-img-blog-item" >
+                    <img class="img-blog-item" src="https://api.evrenomi.com/ConstImage/addBlog.png" loading="lazy" alt="Author Page">
+                </a>
+                <div class='blog-content'>
+                    <p class="p-publish-title only-long">
+                        
+                    </p>
+                    <div class="blog-des-group">
+                        <p class="text-color p-baslik-blog-item c-p">${"Bloglarım"}</p>
+                        <p class="p-aciklama-blog-item">${"Bloglarım\nBlog Yaz\nBlog Yayınla"}</p>
+                    </div>
+                    <div class="blog-item-details">
+                        <div class="kategori-bar-blog-item">
+                            <div class="blog-item-author-info">
+                                <a href="/user/${b[i].authorName}" class="inactive-blackbg c-p td-n">${b[i].authorName}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        }
+        else{
+            BlogsPage.innerHTML = "";
+        }
+        
     } 
     userBlogsPageId++;
     for(var i = 0; i< b.length;i++){
