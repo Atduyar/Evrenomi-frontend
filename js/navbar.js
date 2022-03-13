@@ -92,6 +92,14 @@ function getAra(text){
         }
         apiAraNav.PostAuth("blogs/searchBlogs",t.token,splitedText);
     };
+    apiAraNav.resultUnAuthFunction = (t) => {
+        apiAraNav.resultFunction = (b) => { //kullanıcıyı alırsan
+            console.log(b);
+            globalId++;
+            setAra(b.data,globalId);
+        }
+        apiAraNav.Post("blogs/searchBlogsGuest",splitedText);
+    };
     ApiAuth.GetToken(apiAraNav);
 }
 
