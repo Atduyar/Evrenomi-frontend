@@ -81,13 +81,15 @@
     elseif(count($x) > 1 and $x[1] != ''){
         echo '<!DOCTYPE html>',
              '<html lang="tr">',
-             '<head>';
+             '<head>',
+             '<meta name="description" content="Evrenomi ile bizimle bilimi keşfedin.">';
         $y = __DIR__ . '/' . $x[1] . '.html';
         require $y;
     }else {
         echo '<!DOCTYPE html>',
              '<html lang="tr">',
-             '<head>';
+             '<head>',
+             '<meta name="description" content="Evrenomi ile bizimle bilimi keşfedin.">';
         $y = __DIR__ . '/blogs.html';
         require $y;
     }
